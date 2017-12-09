@@ -1,0 +1,415 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0113)http://www.c-sharpcorner.com/blogs/insert-values-from-one-database-table-to-another-database-table-in-sql-server1 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><script src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/cb=gapi.loaded_0" async=""></script><script async="" src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/in.js.download"></script><script src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/in.js(1).download"></script><script src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/widgets.js.download"></script><script type="text/javascript" async="" src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/client-plusone.js.download" gapi_processed="true"></script><script id="facebook-jssdk" async="" src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/all.js.download"></script><script src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/social_plugins_20161026.js.download"></script><head id="ctl00_Head1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+Insert Values from One Database Table to Another Database Table in SQL Server
+</title><meta property="fb:app_id" content="440531902678919"><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><link rel="Shortcut Icon" href="http://csharpcorner.mindcrackerinc.netdna-cdn.com/Images/McnIcon.ico"><link href="./Insert Values from One Database Table to Another Database Table in SQL Server_files/common_details" rel="stylesheet"> <script src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/print_content.js.download"></script><script src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/jquery.TrendingNow_20160410.js.download"></script><script type="text/javascript" async="" src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/ga.js.download"></script><script>var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-535360-1"]),_gaq.push(["_trackPageview"]),function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="http://www.google-analytics.com/ga.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}();</script><meta name="Keywords" content="Insert Values from One Database Table to Another Database Table in SQL Server"><meta name="Description" content="This blog describes to insert values form one database table to the another database table."><meta name="og:url" content="http://www.c-sharpcorner.com/blogs/insert-values-from-one-database-table-to-another-database-table-in-sql-server1" property="og:url"><meta name="og:title" content="Insert Values from One Database Table to Another Database Table in SQL Server" property="og:title"><meta name="og:description" content="This blog describes to insert values form one database table to the another database table." property="og:description"><meta name="og:type" content="article" property="og:type"><meta name="og:image" content="http://www.c-sharpcorner.com/Images/csharp-corner.png" property="og:image"><style type="text/css">    .scrollToTop{padding:10px 12px;position:fixed;bottom:10px;right:10px;display:none;background:#0086dc;z-index:999;-webkit-transition:all 0.3s;-moz-transition:all 0.3s;-o-transition:all 0.3s;transition:all 0.3s;} .scrollToTop:hover{background:#252525;}</style><script src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/userspace"></script><script type="text/javascript" charset="utf-8" async="" src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/button.57411deb997a43b27baa13b432c7631e.js.download"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f9;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f9;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style><script type="text/javascript" src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/framework"></script></head> <body><a href="javascript:void(0);" class="scrollToTop" style="display: inline;">        <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 20 20">            <polygon fill="#FFFFFF" points="10,3.9 0,13.9 2.2,16.1 10,8.3 17.8,16.1 20,13.9 10,3.9 10,3.9 "></polygon>        </svg></a> <form method="post" action="http://www.c-sharpcorner.com/blogs/insert-values-from-one-database-table-to-another-database-table-in-sql-server1" id="aspnetForm"> <div class="aspNetHidden"> <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNDcxMTIxODY3ZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WAQUqY3RsMDAkSGVhZGVyTmV3RGVzaWduMSRMb2dpbjEkY2hrUmVtZWJlck1l/lwKNOj0yR0V8ZhhquhkXcCr4l0="> </div> <script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+theForm.__EVENTTARGET.value = eventTarget;
+theForm.__EVENTARGUMENT.value = eventArgument;
+theForm.submit();
+}
+}
+//]]> </script> <script src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/WebResource.axd" type="text/javascript"></script> <div class="master"> <div class="responsiveHeader"> <meta name="google-signin-scope" content="https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read profile"> <meta name="google-signin-requestvisibleactions" content="http://schemas.google.com/AddActivity"> <meta name="google-signin-cookiepolicy" content="single_host_origin"> <input id="FBAppId" type="hidden" value="440531902678919" clientidmode="Static"> <meta name="google-signin-clientid" content="1008907732563-jaf78g0pj7k52q8efh0r22c58iol91cg.apps.googleusercontent.com"> <div id="geoLocationPopup" style=""></div> <div class="page" style="position: relative; z-index: 999;"> <div class="loginControl"> <a href="javascript:void(0);" id="loginBtn" class="icons login" onclick="return false;" title="Login">&nbsp;</a> <a href="http://www.c-sharpcorner.com/register" id="ctl00_HeaderNewDesign1_Login1_HyperLinkRegister" title="New User Register Here" class="icons signUp"></a> <div id="askQuestion" class="notificationMessageCntr display_none_mobile"> <a id="PostForum" class="icons askaquestion" title="Ask A Question" href="http://www.c-sharpcorner.com/forums/AddPost.aspx?TSource=AddPost"></a> </div> <div id="commentNotification" class="notificationMessageCntr"> <span id="spanCommentsNotifications" style="display:none;" class="messageCount"></span> <span class="arrow">&nbsp;</span> </div> <div id="userCommentBox" class="msg_container" style="display: none;"> <div class="NoticationLoading"> <label id="LabelNoComments" style="display: none; text-align: center; color: red;">
+No new comments.</label> <a id="imgComments" href="javascript:void(0)" class="loadmore" style="display: none; text-align: center"> <img src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/ajax-loader-small.gif" alt="loading..."></a> </div> <ul id="dvComments"> </ul> <a class="gotoAllView" href="http://www.c-sharpcorner.com/notification/">View All Comments</a> </div> <div id="messageNotification" class="notificationMessageCntr"> <span id="spanMessages" style="display:none;" class="messageCount"></span> <span class="arrow">&nbsp;</span> </div> <div id="userMsgBox" class="msg_container" style="display: none;"> <div class="NoticationLoading"> <label id="LabelNoData" style="display: none; text-align: center; color: red;">
+No new messages.</label> <a id="imgMessages" href="javascript:void(0)" class="loadmore" style="display: none; text-align: center"> <img src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/ajax-loader-small.gif"></a> </div> <ul id="dvMessages"> </ul> <a href="http://www.c-sharpcorner.com/notification/notification.aspx" id="ctl00_HeaderNewDesign1_Login1_LinkButtonAllMessages" class="gotoAllView">View All Messages</a> </div> <div id="generalNotifications" class="notificationMessageCntr"> <span id="spanGeneralNotifications" style="display:none;" class="messageCount"></span><span class="arrow">&nbsp;</span> </div> <div id="generalNotificationContainer" class="msg_container general_notifications" style="display: none;"> <div class="NoticationLoading"> <a id="LabelNoDataNotifications" style="display: none; text-align: center; color: red;">No new notifications.</a> <a id="imgGeneralNotifications" href="javascript:void(0)" class="loadmore" style="display: none; text-align: center"> <img src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/ajax-loader-small.gif" alt="loading..."></a> </div> <ul> <div id="dvGeneralNotifications"> </div> </ul> <a class="gotoAllView" href="http://www.c-sharpcorner.com/notification/GeneralNotification.aspx">View All Notifications</a> </div> <div class="notificationMessageCntr display_none_mobile"> <span class="arrow">&nbsp;</span> </div> <div class="msg_container admin_msg_container" style="display: none;"> <ul id="ctl00_HeaderNewDesign1_Login1_UnapprovedContentStats" class="unapproved_stats"> </ul> </div> </div> <div id="LoginSpan" defaultbutton="ImageButtonLogin" class="loginPopup" style="display: none;"> <div style="text-align: center;"> <label id="LabelErrorMessage" style="padding-bottom: 5px; color: red; margin-left: 45px; display: none"> </label> </div> <span class="arrow">&nbsp;</span> <div class="row"> <label class="lableText">
+Email :</label> <input name="ctl00$HeaderNewDesign1$Login1$TextBoxUserId" type="text" id="TextBoxUserId" placeholder="Enter UserID or Email" title="Use your UserId or Email to login" onchange="RemoveValidationMessage();" class="inputBox" style="width: 150px;"> <span id="spanRequiredId" style="display: none; color: #f00;">*</span> </div> <div class="row"> <label class="lableText">
+Password :
+</label> <input name="ctl00$HeaderNewDesign1$Login1$TextBoxPassword" type="password" id="TextBoxPassword" title="enter your password" placeholder="Enter Password" onchange="RemoveValidationMessage();" maxlength="40" class="inputBox" style="width: 150px;" autocomplete="off"> <span id="spanRequiredPassword" style="display: none; color: #f00;">*</span> </div> <div class="row"> <label class="lableText">
+&nbsp;</label> <label class="lableText" style="width: auto"> <input name="ctl00$HeaderNewDesign1$Login1$chkRemeberMe" type="checkbox" id="chkRemeberMe" checked="checked">Remember me</label> </div> <div class="row"> <img class="login loader" src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/ajax-loader-small.gif" alt="please wait..."> <label class="lableText">
+&nbsp;</label> <input type="submit" name="ctl00$HeaderNewDesign1$Login1$ImageButtonLogin" value="Login" onclick="return validateRequiredFields();" id="ctl00_HeaderNewDesign1_Login1_ImageButtonLogin" title="Login"> <a href="http://www.c-sharpcorner.com/register?check=f" class="LinkRed">Forgot password?</a> </div> <div class="row2"> <label class="lableText2">
+Login using
+</label> <a class="facebook" onclick="FacebookLogin(); return false;" title="Facebook"></a>
+&nbsp;<a id="googleLoginHeader" class="google" title="Google"></a>
+&nbsp;<a id="linkedInLoginHeader" onclick="LinkedInLogin();" class="linkedIn" title="LinkedIn"></a>
+&nbsp;<a id="twitterLoginHeader" class="twitter" title="Twitter"></a> </div> </div> <a class="menuButton"></a> <a href="http://www.c-sharpcorner.com/" id="ctl00_HeaderNewDesign1_Login1_AnchorResponsiveLogo" class="logo_responsive">C# Corner</a> </div> <input type="hidden" id="HiddenErrorMessage" value="Unable to fetch your account data!"> <input type="hidden" name="ctl00$HeaderNewDesign1$Login1$hdnSocialLoginType" id="hdnSocialLoginType"> <input type="hidden" name="ctl00$HeaderNewDesign1$Login1$hdnAccessToken" id="hdnAccessToken"> <input type="hidden" name="ctl00$HeaderNewDesign1$Login1$HiddenFieldUserId" id="HiddenFieldUserId"> <input type="hidden" name="ctl00$HeaderNewDesign1$Login1$HiddenFieldEmail" id="HiddenFieldEmail"> <input type="hidden" name="ctl00$HeaderNewDesign1$Login1$HiddenFieldFirstName" id="HiddenFieldFirstName"> <input type="hidden" name="ctl00$HeaderNewDesign1$Login1$HiddenFieldLastName" id="HiddenFieldLastName"> <input type="hidden" name="ctl00$HeaderNewDesign1$Login1$HiddenFieldType" id="HiddenFieldType"> <input type="hidden" name="ctl00$HeaderNewDesign1$Login1$HiddenShowLogin" id="HiddenShowLogin"> <input type="hidden" name="ctl00$HeaderNewDesign1$Login1$HiddenShowAnnouncement" id="HiddenShowAnnouncement"> <input name="ctl00$HeaderNewDesign1$Login1$HiddenLinkedInApiKey" type="hidden" id="HiddenLinkedInApiKey" value="78fng0cgbs540z"> <input type="submit" name="ctl00$HeaderNewDesign1$Login1$BtnLoginSocial" value="" id="BtnLoginSocial" style="display: none;"> <input type="submit" name="ctl00$HeaderNewDesign1$Login1$btnLoginWithTwitter" value="" id="btnLoginWithTwitter" style="display: none;"> <div class="header"> <div class="topHeaderConainer" style="width: 100%; float: left;"> <div class="InFocusNews display_none" id="InFocus"> <div class="page" style="position: relative;"> <span class="title">
+In Focus</span> <div class="rightNew" style="display: inline;"> <div id="ticker-wrapper-1486406904955" class="ticker-wrapper has-js left"><div id="ticker-1486406904955" class="ticker"><div id="ticker-title-1486406904955" class="ticker-title"><span></span></div><p id="ticker-content-1486406904955" class="ticker-content" style="display: block; opacity: 1; left: 0px;"><a href="http://www.c-sharpcorner.com/article/introduction-to-entity-framework/" style="color: white;" rel="nofollow">
+LEARN: Introduction to Entity Framework</a></p><div id="ticker-swipe-1486406904955" class="ticker-swipe" style="left: 0px; margin-left: 280.9px;"><span style="display: block;"><!-- --></span></div></div><ul id="ticker-controls-1486406904955" class="ticker-controls"><li id="play-pause-1486406904955" class="jnt-play-pause controls"><a href="http://www.c-sharpcorner.com/blogs/insert-values-from-one-database-table-to-another-database-table-in-sql-server1"><!-- --></a></li><li id="prev-1486406904955" class="jnt-prev controls"><a href="http://www.c-sharpcorner.com/blogs/insert-values-from-one-database-table-to-another-database-table-in-sql-server1"><!-- --></a></li><li id="next-1486406904955" class="jnt-next controls"><a href="http://www.c-sharpcorner.com/blogs/insert-values-from-one-database-table-to-another-database-table-in-sql-server1"><!-- --></a></li></ul></div> </div> </div> </div> <div class="display_none"> <div class="page"> <h1 style="position:fixed; left:-99999px; top:-99999px; opacity:0;">C# Corner</h1> <a href="http://www.c-sharpcorner.com/" id="ctl00_HeaderNewDesign1_Contribution1_LogoLink" class="logo" title="C# Corner"> <img src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/SiteLogo.png" id="ctl00_HeaderNewDesign1_Contribution1_imageLogo" class="display_none" alt="C# Corner"> </a> <div id="ctl00_HeaderNewDesign1_Contribution1_ContributionLinks"> <div class="contributeList"> <a href="javascript:void(0);" class="contributeOnHeader">Contribute</a> <ul> <li> <a href="http://www.c-sharpcorner.com/publish">An Article</a> </li> <li> <a href="http://www.c-sharpcorner.com/blogs/createblog.aspx">A Blog</a> </li> <li> <a href="http://www.c-sharpcorner.com/news/createnews.aspx">A News</a> </li> <li> <a href="http://www.c-sharpcorner.com/publish/createarticle.aspx?type=videos">A Video</a> </li> <li> <a href="http://www.c-sharpcorner.com/resources/createresource.aspx">A Link</a> </li> <li> <a href="http://www.c-sharpcorner.com/interviews/question/postquestion.aspx">An Interview Question</a> </li> </ul> </div> <a id="ctl00_HeaderNewDesign1_Contribution1_PostForum" class="askQuestionOnHeader" href="http://www.c-sharpcorner.com/forums/AddPost.aspx?TSource=AddPost">Ask a Question</a> </div> </div> </div> <div id="ctl00_HeaderNewDesign1_HeaderMenu" class="HeadermenuStripBlue" style="position: fixed; top: 0px;"> <div class="page" style="position: relative;"> <div class="responsiveMenu" style="height: auto;"> <div class="SearchBox"> <div id="ctl00_HeaderNewDesign1_Panal1"> <input name="ctl00$HeaderNewDesign1$searchTextBox" type="text" id="searchTextBox" class="searchTextBox" placeholder="C# Corner Search" title="search keyword" onkeypress="SearchClick(event);"> <input type="submit" name="ctl00$HeaderNewDesign1$searchImageButton" value="" onclick="SearchContent(event);" id="searchImageButton" class="button"> </div> </div> <ul class="headerMenu"> <li class="display_none" style="background: none;"><a href="http://www.c-sharpcorner.com/" class="csharpHome" title="C# Corner Home">&nbsp;</a></li> <li><a href="http://www.c-sharpcorner.com/technologies" class="show-dropdown menuLinkBlue">TECHNOLOGIES </a> <div class="dropDownMenu" id="dropDown"> <div id="ctl00_HeaderNewDesign1_divTechnology" style="overflow: hidden; margin-bottom: 10px;"> <span id="ctl00_HeaderNewDesign1_DataListTechnologyTop"><span> <a href="http://www.c-sharpcorner.com/technologies/dot_net_2015">
+.NET
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/career-advice">
+Career Advice
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/hardware">
+Hardware
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/oop-ood">
+OOP/OOD
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/swift-programming">
+Swift
+</a> </span><br><span> <a href="http://www.c-sharpcorner.com/technologies/dotnetcore">
+.NET Core
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/cio">
+CIO
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/how-do-i">
+How do I
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/open-source">
+Open Source
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/typescript">
+TypeScript
+</a> </span><br><span> <a href="http://www.c-sharpcorner.com/technologies/ajax">
+AJAX
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/cloud">
+Cloud
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/html5">
+HTML 5
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/operating-systems">
+Operating Systems
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/unity">
+Unity
+</a> </span><br><span> <a href="http://www.c-sharpcorner.com/technologies/algorithms-in-csharp">
+Algorithms in C#
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/coding-best-practices">
+Coding Best Practices
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/internet-and-web">
+Internet &amp; Web
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/philosophy">
+Philosophy
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/universal-windows-apps">
+Universal Windows Platform
+</a> </span><br><span> <a href="http://www.c-sharpcorner.com/technologies/android-programming">
+Android
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/cognitive-services">
+Cognitive Services
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/internet-of-things">
+Internet of Things
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/php">
+PHP
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/visual-studio">
+Visual Studio
+</a> </span><br><span> <a href="http://www.c-sharpcorner.com/technologies/angular2">
+Angular 2
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/cryptography">
+Cryptography
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/ionic">
+Ionic
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/power-bi">
+Power BI
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/virtual-and-augmented-reality">
+VR and AR
+</a> </span><br><span> <a href="http://www.c-sharpcorner.com/technologies/angularjs">
+AngularJS
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/current-affairs">
+Current Affairs
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/java">
+Java
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/products">
+Products
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/wcf">
+WCF
+</a> </span><br><span> <a href="http://www.c-sharpcorner.com/technologies/architecture">
+Architecture
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/custom-controls">
+Custom Controls
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/javascript">
+JavaScript
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/project-management">
+Project Management
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/web-development">
+Web Development
+</a> </span><br><span> <a href="http://www.c-sharpcorner.com/technologies/arcobject">
+ArcObject
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/databases-and-dba">
+Databases &amp; DBA
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/jquery">
+JQuery
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/python">
+Python
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/web-services">
+Web Services
+</a> </span><br><span> <a href="http://www.c-sharpcorner.com/technologies/asp-dot-net-programming">
+ASP.NET
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/design-patterns-and-practices">
+Design Patterns &amp; Practices
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/knockout">
+Knockout
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/react">
+React
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/windows_10">
+Windows 10
+</a> </span><br><span> <a href="http://www.c-sharpcorner.com/technologies/Asp-Net-core">
+ASP.NET Core
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/deployment">
+DevOps
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/linq">
+LINQ
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/security-in-dot-net">
+Security
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/windows-forms">
+Windows Forms
+</a> </span><br><span> <a href="http://www.c-sharpcorner.com/technologies/azure">
+Azure
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/dynamics-crm">
+Dynamics CRM
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/machine-learning">
+Machine Learning
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/windows-server_2012">
+Servers
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/windows-services">
+Windows Services
+</a> </span><br><span> <a href="http://www.c-sharpcorner.com/technologies/big-data">
+Big Data
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/entityframework">
+Entity Framework
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/microsoft-office">
+Microsoft Office
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/sharepoint">
+SharePoint
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/workflow-foundation">
+Workflow Foundation
+</a> </span><br><span> <a href="http://www.c-sharpcorner.com/technologies/bootstrap">
+Bootstrap
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/games-programming-csharp">
+Games Programming
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/microsoft-phone">
+Microsoft Phone
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/testing">
+Software Testing
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/wpf">
+WPF
+</a> </span><br><span> <a href="http://www.c-sharpcorner.com/technologies/botframework">
+Bot Framework
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/google-development">
+Google Development
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/mobile">
+Mobile Development
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/sql-language">
+SQL Language
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/xamarin">
+Xamarin
+</a> </span><br><span> <a href="http://www.c-sharpcorner.com/technologies/csharp-programming">
+C#
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/graphics-design">
+Graphics Design
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/nodejs">
+Node.js
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/sql-server">
+SQL Server
+</a> </span><span> <a href="http://www.c-sharpcorner.com/technologies/xml">
+XML
+</a> </span><br><span> <a href="http://www.c-sharpcorner.com/technologies/c-cpp-and-mfc">
+C, C++, MFC
+</a> </span></span> </div> <div style="position: absolute; bottom: 5px; left: 10px;"> <a href="http://www.c-sharpcorner.com/ContactUs.aspx?type=7" class="LinkNormalBlue" style="color: #ff6600; background: none; text-transform: none; float: left;">Request
+a new Category</a><span style="float: left; color: #8D8D8D; margin-top: 4px;">|</span> <a href="http://www.c-sharpcorner.com/technologies" class="LinkNormalBlue viewAll" style="color: #36c; background: none!important; text-transform: none; float: left;">View All</a> </div> </div> </li> <li><a href="http://www.c-sharpcorner.com/forums/" title="Ask a Question">ANSWERS</a></li> <li><a href="http://www.c-sharpcorner.com/blogs/" title="Share a Blog" class="active">BLOGS</a></li> <li><a href="http://www.c-sharpcorner.com/videos/" title="Share a Video">VIDEOS</a></li> <li> <a href="http://www.c-sharpcorner.com/interviews/" title="Ask an Interview Question">INTERVIEWS</a></li> <li><a href="http://www.c-sharpcorner.com/ebooks/" title="Share a Book">BOOKS</a></li> <li><a href="http://www.c-sharpcorner.com/news/" title="Submit a News">NEWS</a></li> <li><a href="http://www.c-sharpcorner.com/chapters/" title="Attend an Event">CHAPTERS</a></li> <li><a href="http://www.c-sharpcorner.com/careerAdvice/" title="Get career advice">CAREER</a></li> <li><a href="http://www.c-sharpcorner.com/jobs/" title="Get Jobs">Jobs</a></li> <li><a href="http://www.c-sharpcorner.com/ideas/" title="Share an Idea">IDEAS</a></li> </ul> </div> </div> </div> </div> </div> </div> <div class="page"> <div class="clear"> </div> <div class="main responsive_marginTop"> <div class="leftCntr"> <div class="toasterShow"><span id="toasterSpanMessage"></span></div> <div class="article" id="div1"> <a href="http://www.c-sharpcorner.com/Blogs/" class="HeadingBold grayHeading floatLeft">Blog</a> <div class="clear"></div> <a href="http://www.c-sharpcorner.com/technologies/sql-server" id="ctl00_ContentMain_BloggerImage" class="image display_none_mobile"> <img id="ctl00_ContentMain_imgBlogger" title="SQL Server" class="image90" src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/030307AM.png"></a> <div class="detail"> <h1 class="grayText"> <span id="ctl00_ContentMain_LabelBlogTitle" class="BlogsWelcomeHeading">Insert Values from One Database Table to Another Database Table in SQL Server</span></h1> <div class="LinkNormalGrayLight">
+By <a href="http://www.c-sharpcorner.com/members/nimit-joshi" id="ctl00_ContentMain_AuthorLink" class="LinkOrange">Nimit Joshi</a> <label>
+on</label> <span id="ctl00_ContentMain_LabelDate">Jul 16<span class="year"> 2014</span></span> </div> <div class="clear"> </div> <div id="ctl00_ContentMain_DivDescription" class="normalGray">This blog describes to insert values form one database table to the another database table.</div> </div> <div class="clear"> </div> </div> <div class="loader-container"><img id="ImgPleasWait" src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/ajax-loader-small.gif" alt="Loading..." title="Loading..." style="display:none;"></div> <div class="clear"> </div> <div class="contentHeaderArticleIcons"> <ul class="right viewBar"> <li><a id="btnLike" class="emotion-icon like"> <span id="spanEmotionPopup" class="total-emotions-count" onclick="getContentReactions(&#39;15899&#39;,&#39;blog&#39;);" style="z-index: 99999;"></span> <span><span class="point"> <span id="LabelLikeCount">1</span></span></span> </a> <div id="emotionsContainer" class="emotions-container"><ul class="emotions"><li style="float:none;"><span class="anchor-emotion" onclick="reactByEmotion(15899,&quot;Blog&quot;,1,&quot;like&quot;);"><a class="emotion-icon like"></a><span>Like</span></span></li><li style="float:none;"><span class="anchor-emotion" onclick="reactByEmotion(15899,&quot;Blog&quot;,2,&quot;love&quot;);"><a class="emotion-icon love"></a><span>Love It</span></span></li><li style="float:none;"><span class="anchor-emotion" onclick="reactByEmotion(15899,&quot;Blog&quot;,4,&quot;awesome&quot;);"><a class="emotion-icon awesome"></a><span>Awesome</span></span></li><li style="float:none;"><span class="anchor-emotion" onclick="reactByEmotion(15899,&quot;Blog&quot;,5,&quot;interesting&quot;);"><a class="emotion-icon interesting"></a><span>Interesting</span></span></li><li style="float:none;"><span class="anchor-emotion" onclick="reactByEmotion(15899,&quot;Blog&quot;,7,&quot;okay&quot;);"><a class="emotion-icon okay"></a><span>It's Okay</span></span></li><li style="float:none;"><span class="anchor-emotion" onclick="reactByEmotion(15899,&quot;Blog&quot;,8,&quot;poor&quot;);"><a class="emotion-icon poor"></a><span>Thumbs Down</span></span></li></ul></div> </li> <li><a title="Views" class="newSpriteIcons views"><span class="point"><span id="ctl00_ContentMain_spanBlogViews">60<span class="unit">k</span></span></span></a></li> <li><a href="http://www.c-sharpcorner.com/blogs/insert-values-from-one-database-table-to-another-database-table-in-sql-server1#ReadAndPostComment" class="newSpriteIcons comments" title="Comments"><span class="point"><span id="spanComments">3</span></span></a></li> </ul> <ul id="ctl00_ContentMain_leftIcons" class="leftIcons" data-content-type="Blog"> <li><a class="newSpriteIcons facebook" title="Share on Facebook" href="https://www.facebook.com/sharer.php?u=http://goo.gl/plRUCm" onclick="popupwindowAtCenter(this.href,&#39;Share on Facebook&#39;,600,600);return false;" target="_blank" data-track="">facebook</a></li> <li><a class="newSpriteIcons twitter" title="Share on Twitter" href="https://twitter.com/intent/tweet?via=CsharpCorner&amp;related=CsharpCorner&amp;text=Insert+Values+from+One+Database+Table+to+Another+Database+Table+in+SQL+Server%20http://goo.gl/plRUCm%20by%20@NimitJoshi2013" target="_blank" data-track="">twitter</a></li> <li><a class="newSpriteIcons linkedIn" title="Share on Linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://goo.gl/plRUCm" onclick="popupwindowAtCenter(this.href,&#39;Share on LinkedIn&#39;,600,600);return false;" target="_blank" data-track="">linkedIn</a></li> <li><a class="newSpriteIcons googlePlus" title="Share on Google+" href="https://plus.google.com/share?url=http://goo.gl/plRUCm" onclick="popupwindowAtCenter(this.href,&#39;Share on Google+&#39;,600,600);return false;" target="_blank" data-track="">google Plus</a></li> <li><a class="newSpriteIcons reddit" title="Share on Reddit" href="http://www.reddit.com/submit?url=http://www.c-sharpcorner.com//blogs/insert-values-from-one-database-table-to-another-database-table-in-sql-server1" onclick="popupwindowAtCenter(this.href,&#39;Share on Reddit&#39;,600,600);return false;" target="_blank" data-track="">Reddit</a></li> <li><a class="newSpriteIcons whatsapp display_on_tablet" title="Share on Whatsapp" href="whatsapp://send?text=Insert+Values+from+One+Database+Table+to+Another+Database+Table+in+SQL+Server%0A%0Ahttp%3a%2f%2fwww.c-sharpcorner.com%2fblogs%2finsert-values-from-one-database-table-to-another-database-table-in-sql-server1" data-action="share/whatsapp/share" target="_blank">WhatsApp</a></li> <li class="innerArticleIcons display_none_mobile"> <ul> <li><a href="http://www.c-sharpcorner.com/userregistration/logincheck.aspx?returnurl=http://www.c-sharpcorner.com/articles/emailtofriend.aspx?blogid=15899" id="ctl00_ContentMain_EmailFriend" title="Email this blog to friend" class="newSpriteIcons email"></a></li> <li><a href="javascript:void(0);" id="ImageButtonAddToMyBookmarks" onclick="return AddToBlogBookmark();" title="Bookmark this blog" class="newSpriteIcons bookmark"></a></li> <li class="display_none"><a title="Printable Version" href="javascript:void(GetPrintVersion())" class="newSpriteIcons print"></a></li> <li><a href="http://www.c-sharpcorner.com/members/nimit-joshi/blogs" id="ctl00_ContentMain_BloggersOtherBlog" title="Blogger&#39;s other blog" class="newSpriteIcons author_other_article"></a></li> <li></li> <li class="display_none"> </li> <li class="display_none"> </li> <li class="display_none"></li> <li> </li> </ul> </li> <li><a href="javascript:void(0);" class="newSpriteIcons expand display_none_mobile" title="Expand">expand</a></li> </ul> </div> <div class="clear"> </div> <div class="linkAdContainer" id="LinkAdContainerTop"><div id="LinkAd_Container" runat="server" class="LinkAd"><a href="http://www.c-sharpcorner.com/AdRedirector.aspx?AdId=92&amp;target=http://www.e-iceblue.com/Introduce/free-products.html?aff_id=100" class="linkAd LinkNormalBlue" target="_blank" id="linkAd" runat="server" enableviewstate="false">Download 100% FREE Spire Office APIs</a></div></div> <div class="contentGray" id="div2"> <div id="divLoaderContainer" class="please-wait" style="display: none"> <img src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/ajax-loader.gif"> </div> <span id="ctl00_ContentMain_LabelBlogDetail"><p><strong>Introduction</strong></p> <p>Recently, I was working on the database and there is the situation in which I  have to insert the values from one database table to the another database table.</p> <p>Well, if the table have 2 or 3 values then we can write the Insert Query to  insert the values in the table but suppose if there are too many values, then?  The same thing happened to me. I have two tables in the database named State and  City. There are 25 records in State and 590 records in the City table.</p> <p>I got the solution to do this.</p> <p><strong>Solution</strong></p> <p>The structure of the Query is as follows:</p> <p style="margin-bottom:0pt; margin-top:0pt; "></p><div class="dp-highlighter"><div class="bar"></div><ol start="1" class="dp-sql"><li class="alt"><span><span>USE&nbsp;Target_Database&nbsp;&nbsp;</span></span></li><li class=""><span>GO&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;</span></li><li class=""><span><span class="keyword">INSERT</span><span>&nbsp;</span><span class="keyword">INTO</span><span>&nbsp;dbo.Target_Table(Column1,&nbsp;Column2,&nbsp;Column3)&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;<span class="keyword">SELECT</span><span>&nbsp;Column1,&nbsp;Column2,&nbsp;Column3&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;<span class="keyword">FROM</span><span>&nbsp;Source_Database.dbo.Source_Table&nbsp;&nbsp;</span></span></li></ol></div><p>&nbsp;I have Converted this to the following query:</p> <p>I have to insert values in two different tables:</p> <p style="margin-bottom:0pt; margin-top:0pt; "></p><div class="dp-highlighter"><div class="bar"></div><ol start="1" class="dp-sql"><li class="alt"><span><span>Use&nbsp;Country&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span><span class="keyword">INSERT</span><span>&nbsp;</span><span class="keyword">INTO</span><span>&nbsp;dbo.State(State_Name)&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;<span class="keyword">SELECT</span><span>&nbsp;State_Name&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;<span class="keyword">FROM</span><span>&nbsp;CollegeDb.dbo.State&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span><span class="keyword">INSERT</span><span>&nbsp;</span><span class="keyword">INTO</span><span>&nbsp;dbo.City(State_ID,&nbsp;City_Name)&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;<span class="keyword">SELECT</span><span>&nbsp;State_ID,&nbsp;City_Name&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;<span class="keyword">FROM</span><span>&nbsp;CollegeDb.dbo.City&nbsp;&nbsp;</span></span></li></ol></div><p>&nbsp;<strong>Output</strong></p> <p>&nbsp;<img src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/Query Execution.jpg" alt="Query Execution"></p> <p>That's it. <strong>Happy Coding!!</strong></p></span> </div> <div class="clear"> </div> <div class="linkAdContainer bottom" id="LinkAdContainerBottom"><div id="LinkAd_Container" runat="server" class="LinkAd"><a href="http://www.c-sharpcorner.com/AdRedirector.aspx?AdId=92&amp;target=http://www.e-iceblue.com/Introduce/free-products.html?aff_id=100" class="linkAd LinkNormalBlue" target="_blank" id="linkAd" runat="server" enableviewstate="false">Download 100% FREE Spire Office APIs</a></div></div> <div class="clear"></div> <div id="ctl00_ContentMain_divTagsBox" class="relatedArticle tag-box"> </div> <div class="clear"></div> <div id="AboutAuthorBox">
+<div class="auther_bio">
+    <a href="http://www.c-sharpcorner.com/members/nimit-joshi" id="ctl00_AuthorImageAnchor" class="image">
+        <img src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/4b013620151002095328.jpg.ashx" id="ctl00_AuthorImage" alt="Nimit Joshi"></a>
+    <div class="autherDetail">
+        <a href="http://www.c-sharpcorner.com/members/nimit-joshi" id="ctl00_AuthorName" class="userName">Nimit Joshi</a>
+        <img src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/top_50.png" id="TopAuthorImage" class="top-author" title="Top 50">
+        <p id="ctl00_Description" class="description">Nimit Joshi is a .NET techie, author and software developer. Nimit's background includes Master's in Computer Application and Bachelor's in Computer Application. Nimit is two times Microsoft MVP and C# Corner MVP. Nimit ... <a href="http://www.c-sharpcorner.com/members/nimit-joshi" class="LinkNormalBlue">Read more</a></p>
+        <div id="ctl00_PersonalBlogContainer" class="description">
+            <a href="http://www.c-sharpcorner.com/authors/4b0136/nimit-joshi.aspx" id="ctl00_PersonalBlog" class="LinkNormalBlue personalProfileLink" target="_blank">http://www.c-sharpcorner.com/authors/4b0136/nimit-joshi.aspx</a>
+        </div>
+        <ul class="social">
+            <li class="github"><a id="ctl00_GitHubProfileUrl" target="_blank" title="Not Available" class="notSet">GitHub</a></li>
+            <li class="twitter"><a href="https://twitter.com/intent/follow?screen_name=NimitJoshi2013" id="ctl00_TwitterFollow" target="_blank" title="Follow Nimit on Twitter">Follow</a></li>
+            <li class="facebook"><a href="https://www.facebook.com/nimit.joshi" id="ctl00_FacebookProfileUrl" target="_blank" title="Follow Nimit on Facebook">Facebook</a></li>
+            <li class="linkedIn"><a id="ctl00_LinkedInProfileUrl" target="_blank" title="Not Available" class="notSet">LinkedIn</a></li>
+            <li class="message">
+                <a href="http://www.c-sharpcorner.com/userregistration/logincheck.aspx?returnurl=http://www.c-sharpcorner.com/blogs/insert-values-from-one-database-table-to-another-database-table-in-sql-server1" id="ctl00_SendMessageImageButton" title="Send Message">message</a></li>
+        </ul>
+    </div>
+    <div class="clear">
+    </div>
+    <div class="autherIcons">
+        <ul>
+            <li id="LiAuthorRank" class="li_1" title="Overall Rank"><a href="http://www.c-sharpcorner.com/top-members"><span class="rank"></span><span id="ctl00_Rank" class="count">29</span><span class="text">rank</span></a>
+            </li>
+            <li class="li_2" title="Total Views"><a href="http://www.c-sharpcorner.com/members/nimit-joshi/top-articles">
+                <span class="reader"></span><span id="ctl00_Readers" class="count">5.7m</span>
+                <span class="text">read</span> </a></li>
+            <li id="ctl00_listMedal" class="li_4" title="Platinum Member"><span id="ctl00_Medal" class="medal Platinum"></span><span id="ctl00_MedalText" class="count Platinum">Platinum</span><span class="text">Member</span></li>
+            <li id="ctl00_CSharpMVP" class="li_3" title="User is a C# Corner MVP"><a href="http://www.c-sharpcorner.com/Members/mvps/">
+                <span class="csharpmvp"></span><span id="ctl00_MVP" class="count">3</span>
+                <span class="text">
+                    times</span> </a></li>
+            <li id="ctl00_MicrosoftMVP" class="li_5" title="User is a Microsoft MVP"><a href="https://mvp.microsoft.com/en-us/PublicProfile/5001460?fullName=Nimit%20%20Joshi" id="ImageMsMVP" target="_blank"><span class="microsoftmvp"></span><span id="ctl00_MSMVP" class="count">2</span><span class="text">times</span></a></li>
+            <li>
+                <input name="ctl00$hddTotalFollowers" type="hidden" id="hddTotalFollowers" value="112">
+            </li>
+            <li>
+                <input name="ctl00$hddTotalFollowing" type="hidden" id="hddTotalFollowing" value="1">
+            </li>
+            <li>
+                <input name="ctl00$hddIsFollowing" type="hidden" id="hddIsFollowing" value="False">
+            </li>
+            <li>
+                <input name="ctl00$hddIsLoginAuthorContent" type="hidden" id="hddIsLoginAuthorContent" value="false">
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="clear">
+</div>
+<div id="FollowPopup" class="follow-popup display" style="right: 64px;">
+    <div class="content">
+        <button class="close-popup" title="Close" onclick="return closeFollowPopup();">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <polygon points="17.3,6 12,11.3 6.7,6 6,6.7 11.3,12 6,17.3 6.7,18 12,12.7 17.3,18 18,17.3 12.7,12 18,6.7 "></polygon>
+                <rect x="64.4" y="-10.5" width="1" height="16"></rect>
+                <rect x="56.9" y="-3" width="16" height="1"></rect>
+            </svg></button>
+        <div id="FollowPopupTitle" class="title">Don’t miss Nimit Joshi’s next blog</div>
+        <div class="author-bio">
+            <a href="http://www.c-sharpcorner.com/members/nimit-joshi" id="LinkForAuthorPhoto"><img src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/4b013620151002095328.jpg.ashx" id="FollowPopupAuthorImage" class="author" width="50" title=""></a>
+            <div class="author-description">
+                <a href="http://www.c-sharpcorner.com/members/nimit-joshi" id="FollowPopupAuthorName" class="author-name">Nimit Joshi</a>
+                <ul class="rpv">
+                <li id="liRank" class="newSpriteIcons rank" title="Rank"><span id="spanRank" title="Rank">29</span></li>
+                <li class="newSpriteIcons point" title="Reputation"><span id="spanReputation">28.1k</span></li>
+                <li class="newSpriteIcons views" title="Total Views"><span id="spanReadCount">5.7m</span></li>
+            </ul>
+                <button id="btnFollowAuthor" class="follow-button" title="Follow" onclick="followAuthor(true); return false;"><span class="follow-sign">+</span>Follow</button>
+            </div>
+            <img id="loaderFollowAuthor" src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/ajax-loader-small(1).gif" style="display: none;">
+        </div>
+    </div>
+</div>
+
+<input type="hidden" name="ctl00$HiddenFieldAuthorID" id="HiddenFieldAuthorID" value="4b0136">
+<input type="hidden" name="ctl00$HiddenFieldPageReturnUrl" id="HiddenFieldPageReturnUrl" value="/blogs/insert-values-from-one-database-table-to-another-database-table-in-sql-server1">
+<input name="ctl00$hiddenAuthorInfo" type="hidden" id="hiddenAuthorInfo" data-internal="0" data-rank-classname="newSpriteIcons rank" data-popup-title="Don’t miss Nimit Joshi’s next" data-unique-name="nimit-joshi" data-author-id="4b0136" data-rank="29" data-profile-url="http://www.c-sharpcorner.com/members/nimit-joshi" data-readcount="5.7m" data-user-type="S" data-reputation="28.1k">
+</div> <div class="clear"> </div> <div class="clear"> </div> <div> </div> <div id="ctl00_ContentMain_CommentsBox" class="commentsContainer">
+<div class="clear">
+</div>
+<input type="hidden" name="ctl00$hddType" id="hddType" value="blog">
+<input type="hidden" name="ctl00$hddContentId" id="hddContentId" value="15899">
+<input type="hidden" name="ctl00$hddCurrentUser" id="hddCurrentUser">
+<input type="hidden" name="ctl00$hddCurrentRole" id="hddCurrentRole">
+<input type="hidden" name="ctl00$hddCurrentUserPhoto" id="hddCurrentUserPhoto" value="http://www.c-sharpcorner.com/UploadFile/AuthorImage/DefaultAuthorImage.jpg">
+<input type="hidden" name="ctl00$hddAllowPost" id="hddAllowPost" value="true">
+<input type="hidden" name="ctl00$hddContentUserId" id="hddContentUserId" value="4b0136">
+<input type="hidden" name="ctl00$hddContentUserEmail" id="hddContentUserEmail">
+<input type="hidden" name="ctl00$hddContentTitle" id="hddContentTitle" value="Insert Values from One Database Table to Another Database Table in SQL Server">
+<input type="hidden" name="ctl00$hiddenLoginCheckUrl" id="hiddenLoginCheckUrl" value="http://www.c-sharpcorner.com/userregistration/logincheck.aspx?returnurl=http://www.c-sharpcorner.com/blogs/insert-values-from-one-database-table-to-another-database-table-in-sql-server1">
+<input type="hidden" name="ctl00$HiddenRawUrl" id="HiddenRawUrl" value="/blogs/insert-values-from-one-database-table-to-another-database-table-in-sql-server1">
+<input type="hidden" name="ctl00$HiddenProcessType" id="HiddenProcessType" value="by-ajax">
+
+<div class="user-article-comment">
+     <h2 class="headerControls blog">
+                <div class="contentHeaderArticleIcons content-footer emotion-bottom"><ul class="viewBar"><li><a id="btnLike" class="emotion-icon like"> <span id="spanEmotionPopup" class="total-emotions-count" onclick="getContentReactions(&#39;15899&#39;,&#39;blog&#39;);" style="z-index: 99999;"></span> <span><span class="point"> <span id="LabelLikeCount">1</span></span></span> </a> <div id="emotionsContainer" class="emotions-container"><ul class="emotions"><li style="float:none;"><span class="anchor-emotion" onclick="reactByEmotion(15899,&quot;Blog&quot;,1,&quot;like&quot;);"><a class="emotion-icon like"></a><span>Like</span></span></li><li style="float:none;"><span class="anchor-emotion" onclick="reactByEmotion(15899,&quot;Blog&quot;,2,&quot;love&quot;);"><a class="emotion-icon love"></a><span>Love It</span></span></li><li style="float:none;"><span class="anchor-emotion" onclick="reactByEmotion(15899,&quot;Blog&quot;,4,&quot;awesome&quot;);"><a class="emotion-icon awesome"></a><span>Awesome</span></span></li><li style="float:none;"><span class="anchor-emotion" onclick="reactByEmotion(15899,&quot;Blog&quot;,5,&quot;interesting&quot;);"><a class="emotion-icon interesting"></a><span>Interesting</span></span></li><li style="float:none;"><span class="anchor-emotion" onclick="reactByEmotion(15899,&quot;Blog&quot;,7,&quot;okay&quot;);"><a class="emotion-icon okay"></a><span>It's Okay</span></span></li><li style="float:none;"><span class="anchor-emotion" onclick="reactByEmotion(15899,&quot;Blog&quot;,8,&quot;poor&quot;);"><a class="emotion-icon poor"></a><span>Thumbs Down</span></span></li></ul></div> </li></ul></div><span id="commentsBox"><span><i class="comment-icon"></i>comments </span><span id="TotalComments" data-total-count="0">(3)</span></span>
+         <span id="divViewPreviousComments" style="display: inline;"><a id="ViewPreviousComments" class="previousComments" style="display: none;" onclick="Comments.ViewPreviousComments();return false;">
+                View Previous Comments </a></span>
+         
+     </h2>
+        </div>
+<div class="accordianDetail" style="display: block;">
+<div style="position: relative;" class="blog" id="commentcontrolslist">
+    <a name="ReadAndPostComment" id="ReadAndPostComment"></a>
+    <div class="commentHeader">
+    
+        <img id="mainLoader" src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/ajax-loader-small(1).gif" style="position: absolute; left: 315px; top: 26px; display: none;" alt="Loading...">
+        <div id="Paging" class="commentPaging">
+            <div class="commentpage" style="display: none;">
+              
+                <label class="floatRight" style="margin-right: 3px;">
+                    of
+                </label>
+                <label id="CommentCount" class="floatRight" style="margin-right: 3px;">3</label>
+                <input id="HiddenCommentPageNumber" type="hidden" value="1">
+                <input id="HiddenTotalComments" type="hidden" value="2">
+            </div>
+            
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+    <div id="ctl00_Panel1" class="pulseMainComment" defaultbutton="Button1">
+        <div class="pulseCommentSectionMain" style="padding: 0px; overflow: inherit">
+            <div class="pulseCommentSection">
+                <div id="RootComments"><div id="comment_5878" class="pulsecomment" onmouseover="Comments.ShowEditorOptions(this,event);" onmouseout="Comments.HideEditorOptions(this,event);"><div class="pulseDelete"><span class="sprite report-comment" onclick="return Comments.ReportComment(5878,&#39;4d9083&#39;,&#39;Nice%20article&#39;,&#39;http://www.c-sharpcorner.com/members/saineshwar-bageri&#39;,&#39;Saineshwar Bageri&#39;);" title="Report this comment"></span> </div><div class="image level0"><a href="http://www.c-sharpcorner.com/members/saineshwar-bageri"><img alt="Saineshwar Bageri" title="Saineshwar Bageri" src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/4d908320160322023529.jpg.ashx"></a></div>                            <div class="commentcontent">                            <div class="commentDescription">Nice article</div>                            <div>                                <a class="LinkRed" href="http://www.c-sharpcorner.com/members/saineshwar-bageri">Saineshwar Bageri</a>                                <span class="floatRight responsive_Commenttime" style="font-size: 11px;"><span class="watchICon"></span>Jul 19, 2014</span>                            </div>                            <div style="margin-top: 4px;">                                <ul class="rpv"><li class="newSpriteIcons rank" title="Rank"><span>92</span></li>                                    <li class="newSpriteIcons point" title="Reputation"><span>12.8k</span></li>                                    <li class="newSpriteIcons views" title="Total Views"><span>6.6m</span></li></ul>                                <div class="floatRight pulseAction">                                      <img alt="Loading..." id="ajaxLoader_5878" src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/ajax-loader-small(1).gif" style="margin:4px 0px 0px 5px; display:none;">                                    <a class="newSpriteIcons like" onclick="Comments.LikeComment(5878)"><span id="Likes_5878">1</span> </a>                                    <a class="newSpriteIcons reply" onclick="Comments.ToggleReplies(5878)"><span id="Replies_5878">1</span> </a><a class="newSpriteIcons postReply" onclick="Comments.ShowReplyBox(5878)">Post Reply</a></div>                            </div>                            <div class="clear"></div>                            <div id="CommentReplies_5878"><div id="comment_5884" class="ReplyComment" onmouseover="Comments.ShowEditorOptionsReply(this,event);" onmouseout="Comments.HideEditorOptionsReply(this,event);"><div class="pulseDeleteReply"><span class="sprite report-comment" onclick="return Comments.ReportComment(5884,&#39;4b0136&#39;,&#39;Thanks...&#39;,&#39;http://www.c-sharpcorner.com/members/nimit-joshi&#39;,&#39;Nimit Joshi&#39;);" title="Report this comment"></span> </div><div class="image level1"><a href="http://www.c-sharpcorner.com/members/nimit-joshi"><img title="Nimit Joshi" src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/4b013620151002095328.jpg(1).ashx" alt=""></a></div>                <div class="commentcontent">                  <div class="commentDescription">Thanks...</div>                  <div>                    <a href="http://www.c-sharpcorner.com/members/nimit-joshi" class="LinkRed">Nimit Joshi</a>                     <span class="floatRight responsive_Commenttime" style="font-size: 11px;"><span class="watchICon"></span>Jul 20, 2014</span>                  </div>                  <div style="margin-top: 4px;">                      <ul class="rpv"><li class="newSpriteIcons rank" title="Rank"><span>29</span></li>                      <li class="newSpriteIcons point" title="Reputation"><span>28.1k</span></li>                      <li class="newSpriteIcons views" title="Total Views"><span>5.7m</span></li></ul>                     <div class="floatRight pulseAction">                         <img alt="Loading..." id="ajaxLoader_5884" src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/ajax-loader-small(1).gif" style="margin:4px 0px 0px 5px; display:none;">                         <a onclick="Comments.LikeComment(5884)" class="newSpriteIcons like"> <span id="Likes_5884">0</span></a>                    </div>                    </div>              </div></div></div>                            </div>                            </div><div id="comment_9182" class="pulsecomment BackgroundWhite" onmouseover="Comments.ShowEditorOptions(this,event);" onmouseout="Comments.HideEditorOptions(this,event);"><div class="pulseDelete"><span class="sprite report-comment" onclick="return Comments.ReportComment(9182,&#39;7e0c3d&#39;,&#39;Yes%20very%20nice&#39;,&#39;http://www.c-sharpcorner.com/members/arjun-walmiki2&#39;,&#39;Arjun Walmiki&#39;);" title="Report this comment"></span> </div><div class="image level0"><a href="http://www.c-sharpcorner.com/members/arjun-walmiki2"><img alt="Arjun Walmiki" title="Arjun Walmiki" src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/7e0c3d.jpg.ashx"></a></div>                            <div class="commentcontent">                            <div class="commentDescription">Yes very nice</div>                            <div>                                <a class="LinkRed" href="http://www.c-sharpcorner.com/members/arjun-walmiki2">Arjun Walmiki</a>                                <span class="floatRight responsive_Commenttime" style="font-size: 11px;"><span class="watchICon"></span>Jul 20, 2015</span>                            </div>                            <div style="margin-top: 4px;">                                <ul class="rpv"><li class="newSpriteIcons rank" title="Rank"><span>1127</span></li>                                    <li class="newSpriteIcons point" title="Reputation"><span>250</span></li>                                    <li class="newSpriteIcons views" title="Total Views"><span>25.7k</span></li></ul>                                <div class="floatRight pulseAction">                                      <img alt="Loading..." id="ajaxLoader_9182" src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/ajax-loader-small(1).gif" style="margin:4px 0px 0px 5px; display:none;">                                    <a class="newSpriteIcons like" onclick="Comments.LikeComment(9182)"><span id="Likes_9182">0</span> </a>                                    <a class="newSpriteIcons reply" onclick="Comments.ToggleReplies(9182)"><span id="Replies_9182">0</span> </a><a class="newSpriteIcons postReply" onclick="Comments.ShowReplyBox(9182)">Post Reply</a></div>                            </div>                            <div class="clear"></div>                            <div id="CommentReplies_9182"></div>                            </div>                            </div>
+                </div>
+                <div id="ctl00_RootPostComment" class="pulsecomment borderNone" style="min-height: 42px;">
+                    <div class="image level0">
+                        <img src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/DefaultAuthorImage.jpg" alt="">
+                    </div>
+                    <div id="ctl00_PanelPostComment" class="commentcontentPost" onkeypress="javascript:return WebForm_FireDefaultButton(event, &#39;ctl00_ButtonPost&#39;)">
+	
+                        <div class="mentions-input-box"><div class="mentions"><div></div></div><textarea id="InputCommentText_0" style="height: 30px; overflow: hidden;" onkeypress="Comments.PostComment(&#39;0&#39;,event);" class="mention" spellcheck="true" placeholder="Type your comment here and press Enter Key (Minimum 25 characters)" data-mentions-input="true"></textarea><div style="position: absolute; display: none; word-wrap: break-word; white-space: pre-wrap; border-color: rgb(220, 220, 220); border-style: solid; border-width: 1px; font-weight: normal; width: 574px; font-family: Roboto, sans-serif; line-height: normal; font-size: 14px; padding: 5px;">&nbsp;</div><div class="mentions-autocomplete-list"></div></div>
+                        <input type="submit" name="ctl00$ButtonPost" value="" id="ctl00_ButtonPost" style="display: none;">
+                    
+</div>
+                    
+                    <img id="PostLoader" src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/ajax-loader-small(1).gif" alt="Loading..." style="clear: both; margin: 10px 5px 0px 0px; float: right; display: none;">
+                </div>
+            </div>
+        </div>
+        
+        <input type="submit" name="ctl00$Button1" value="" onclick="return false;" id="ctl00_Button1" style="display: none;">
+        <input type="hidden" name="ctl00$HiddenFieldEmailComment" id="ctl00_HiddenFieldEmailComment">
+        <input type="hidden" name="ctl00$HiddenFieldIsChildComment" id="ctl00_HiddenFieldIsChildComment">
+        <input type="hidden" name="ctl00$HiddenFieldParentUserId" id="ctl00_HiddenFieldParentUserId">
+    </div>
+    <div class="clear">
+    </div>
+    
+    <div id="ctl00_SocialComments" class="socialComments">
+        <div class="commentHeader">
+            <h2 class="headerControls floatLeft">
+                Comment Using</h2>
+            <span class="facebookComments" style="margin: 3px 5px;"></span>
+        </div>
+        <div class="fb-comments fb_iframe_widget" data-href="http://www.c-sharpcorner.com/blogs/insert-values-from-one-database-table-to-another-database-table-in-sql-server1" data-width="675" data-num-posts="5" fb-xfbml-state="rendered"><span style="height: 180px; width: 675px;"><iframe id="f2f99c33b5f00d8" name="f3e11db2e4d2124" scrolling="no" title="Facebook Social Plugin" class="fb_ltr" src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/comments.html" style="border: none; overflow: hidden; height: 180px; width: 675px;"></iframe></span></div>
+    </div>
+</div>
+    </div>
+
+<div>
+</div>
+</div> <input type="hidden" name="ctl00$ContentMain$HiddenFieldCurrentPageUrl" id="ctl00_ContentMain_HiddenFieldCurrentPageUrl" value="http://goo.gl/plRUCm"> <input type="hidden" name="ctl00$ContentMain$hiddenFiledBlogID" id="hiddenFiledBlogID" value="15899"> <input type="hidden" name="ctl00$ContentMain$hiddenFieldRawUrl" id="hiddenFieldRawUrl" value="/blogs/insert-values-from-one-database-table-to-another-database-table-in-sql-server1"> <input type="hidden" name="ctl00$ContentMain$hiddenFieldReturnUrl" id="hiddenFieldReturnUrl" value="http://www.c-sharpcorner.com/userregistration/logincheck.aspx?returnurl=http://www.c-sharpcorner.com/blogs/insert-values-from-one-database-table-to-another-database-table-in-sql-server1"> <input type="hidden" name="ctl00$ContentMain$HiddenAuthorId" id="HiddenAuthorId" value="4b0136"> <input type="hidden" name="ctl00$ContentMain$HiddenIsContentApproved" id="HiddenIsContentApproved" value="true"> <input type="hidden" name="ctl00$ContentMain$HiddenContentType" id="HiddenContentType" value="blog"> <input type="hidden" name="ctl00$ContentMain$hddArticleID" id="hddArticleID" value="15899"> <input type="hidden" name="ctl00$ContentMain$HiddenFiledContentTitle" id="HiddenFiledContentTitle" value="Insert Values from One Database Table to Another Database Table in SQL Server"> <input type="hidden" name="ctl00$ContentMain$hddRawUrl" id="hddRawUrl" value="/blogs/insert-values-from-one-database-table-to-another-database-table-in-sql-server1"> <input type="hidden" name="ctl00$ContentMain$HiddenIsAllowPost" id="HiddenIsAllowPost" value="true"> <div style="display: none;" class="ui-widget-overlay" id="OverlayArea"> </div> </div> <div class="rightCntr"> <div id="PremiumSponsorTextAdBox"><div id="ctl00_SponsorWithImage" updatemode="Conditional">   
+    <div id="ctl00_SponsorAdWithImage" class="adBox">
+        <div class="adImage">
+            <a href="http://www.c-sharpcorner.com/AdRedirector.aspx?AdId=97&amp;target=https://www.aspose.com/products/total/net?utm_source=CSharpCorner&amp;utm_medium=banner&amp;utm_campaign=CSharpCorner-sponsored" id="ctl00_HrefSponsorLinkImage" rel="nofollow" target="_blank">
+                <img src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/014015AM.png" id="ctl00_imgSponsor" width="75" height="90" class="image90">
+            </a>
+        </div>
+        <div class="adRight">
+            <a href="http://www.c-sharpcorner.com/AdRedirector.aspx?AdId=97&amp;target=https://www.aspose.com/products/total/net?utm_source=CSharpCorner&amp;utm_medium=banner&amp;utm_campaign=CSharpCorner-sponsored" id="ctl00_HrefSponsorLink" class="MemberoftheMonth" target="_blank">File APIs for .NET</a>
+            <div id="ctl00_divSponsorDetail">Aspose are the market leader of .NET APIs for file business formats – natively work with DOCX, XLSX, PPT, PDF, MSG, MPP, images formats and many more!</div>
+        </div>
+    </div>
+</div>
+</div> <div id="PremiumSponsorsBox"></div> <div id="NewsArticleAdBox">
+<div class="clear newsArticleAd">
+</div>
+<div style="width: 336px; margin:10px 0;">
+    <a id="ctl00_AdRotatorArticle" href="http://www.c-sharpcorner.com/AdRedirector.aspx?BannerId=749&amp;target=http://www.syncfusion.com/resources/techportal/ebooks?utm_medium=mindcrackerfflFeb17" target="_blank"><img src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/EB_336x280_Jan17.png" alt="Download Free eBooks"></a>
+    
+</div>
+<input name="ctl00$hiddenAdInfo" type="hidden" id="hiddenAdInfo" data-id="749" data-type="banner"> 
+</div> <div class="rightBox"> <h2 class="headerControls">Latest Blogs
+<a id="A2" href="http://www.c-sharpcorner.com/RSS/Blogs.aspx" class="headerRss"></a> <a id="A1" href="http://www.c-sharpcorner.com/Blogs/CreateBlog.aspx" title="Create Blog" class="headerCreateNew"></a> </h2> <ul class="LatestQuestionBox"> <li><a href="http://www.c-sharpcorner.com/blogs/retrieving-all-users-from-a-sharepoint-group-using-csom">Retrieving All Users From A SharePoint Group Using CSOM</a></li> <li><a href="http://www.c-sharpcorner.com/blogs/powershell-script-to-delete-all-items-of-the-sharepoint2013">PowerShell Script To Delete All Items Of SharePoint 2013</a></li> <li><a href="http://www.c-sharpcorner.com/blogs/sharepoint-online-navigate-in-sharepoint-useful-pages-using-url-append">SharePoint Online - Navigate In Useful SharePoint Pages Using URL Append</a></li> <li><a href="http://www.c-sharpcorner.com/blogs/restore-a-deleted-site-collection-in-sharepoint-2010-and-2013-on-premises-using-powershell-command">Restore A Deleted Site Collection In SharePoint 2010 And 2013 On Premises Using PowerShell Command</a></li> <li><a href="http://www.c-sharpcorner.com/blogs/create-a-taxonomy-group-in-sharepoint-2013-using-powershell">Create A Taxonomy Group In SharePoint 2013 Using PowerShell</a></li> <li><a href="http://www.c-sharpcorner.com/blogs/sharepoint-version-history-cleanup-using-powershell">SharePoint Version History Cleanup Using PowerShell</a></li> <li><a href="http://www.c-sharpcorner.com/blogs/creating-own-directive-for-accepting-input-in-input-textbox-only-as-a-number-field">Creating Your Own Directive For Accepting Input In The Input Textbox As A Number Field Only</a></li> <li><a href="http://www.c-sharpcorner.com/blogs/how-to-get-the-list-of-users-with-specific-roles-in-sharepoint-online-using-csom2">How To Get The List Of Users With Specific Roles In SharePoint Online Using CSOM</a></li> <li><a href="http://www.c-sharpcorner.com/blogs/microsoft-flow-to-read-data-from-sql-and-write-to-sharepoint-list">Use Microsoft Flow To Read Data From SQL And Write To SharePoint List</a></li> <li><a href="http://www.c-sharpcorner.com/blogs/get-set-in-typescript">Get Set in TypeScript</a></li> </ul> <a id="ctl00_LatestBlogListing1_HyperLinkViewAll" class="viewAllLink" href="http://www.c-sharpcorner.com/Blogs/">View All<i></i></a> </div> <div class="outerBox"> <div class="FooterLineForArticlesJobs"> <div style="padding-top: 20px;"> <span style="margin-left: 3px;"> </span> </div> </div> </div> <div style="padding-bottom: 10px;"> <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-follow-button twitter-follow-button-rendered" title="Twitter Follow Button" src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/follow_button.b8b8e09be0884a395c5ae18831ce1cc0.en.html" style="position: static; visibility: visible; width: 233px; height: 20px;" data-screen-name="csharpcorner"></iframe> </div> <div id="fb-root" class=" fb_reset"> <div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/Sh-3BhStODe.html" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/Sh-3BhStODe(1).html" style="border: none;"></iframe></div></div></div> <div class="fb-like-box fb_iframe_widget" data-href="https://www.facebook.com/pages/C-Corner/194086953935286" data-width="336px" data-show-faces="true" data-stream="false" data-header="true" data-border-color="#c6c6c6" data-max-rows="2" style="padding-bottom: 10px;
+border: none 0px" async="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=440531902678919&amp;container_width=336&amp;header=true&amp;href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FC-Corner%2F194086953935286&amp;locale=en_US&amp;sdk=joey&amp;show_faces=true&amp;stream=false&amp;width=336px"><span style="vertical-align: bottom; width: 336px; height: 214px;"><iframe name="f1787f9922e66a" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like_box Facebook Social Plugin" src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/like_box.html" style="border: none; visibility: visible; width: 336px; height: 214px;" class=""></iframe></span></div> <div class="clear"> </div> <div id="NewArticleAdMiddle">
+<div class="clear">
+</div>
+<div style="width: 336px; margin-bottom: 10px;">
+    <a id="ctl00_AdRotatorArticle" href="http://www.c-sharpcorner.com/AdRedirector.aspx?BannerId=749&amp;target=http://www.syncfusion.com/resources/techportal/ebooks?utm_medium=mindcrackerfflFeb17" target="_blank"><img src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/EB_336x280_Jan17.png" alt="Download Free eBooks"></a>
+    
+</div>
+<input name="ctl00$hiddenAdInfo2" type="hidden" id="hiddenAdInfo2" data-id="749" data-type="banner"> 
+</div> </div> </div> </div> <div class="footer"> <div class="menuStripGray"> <div class="page"> <ul> <li class="first"><a href="http://www.c-sharpcorner.com/members/mvps/">MVPs</a></li> <li><a href="http://www.c-sharpcorner.com/most-viewed-articles">MOST VIEWED</a></li> <li><a href="http://www.c-sharpcorner.com/members/legend/">LEGENDS</a></li> <li><a href="http://www.c-sharpcorner.com/articles/">NOW</a></li> <li><a href="http://www.c-sharpcorner.com/prizes/">PRIZES</a></li> <li><a href="http://www.c-sharpcorner.com/reviews/">REVIEWS</a></li> <li><a href="http://www.c-sharpcorner.com/survey/">SURVEY</a></li> <li><a href="http://www.c-sharpcorner.com/certification/">CERTIFICATIONS</a></li> <li><a href="http://www.c-sharpcorner.com/downloads/">DOWNLOADS</a></li> </ul> <div class="rightlink"> <a href="http://www.cbeyond.net/" target="_blank"><span class="hosted">Hosted By </span>
+CBeyond Cloud Services</a></div> </div> </div> <div class="menuStripBlue"> <div class="page"> <div class="menu"> <ul> <li class="first"><a href="http://www.c-sharpcorner.com/resources/aboutus.aspx">ABOUT US</a></li> <li><a href="http://www.c-sharpcorner.com/faq">FAQ</a></li> <li><a href="http://www.c-sharpcorner.com/media/contactus.aspx">MEDIA KIT</a></li> <li><a href="http://www.c-sharpcorner.com/members/">MEMBERS</a> </li> <li><a href="http://www.c-sharpcorner.com/beginners/">STUDENTS</a> </li> <li><a href="http://www.c-sharpcorner.com/resources/">LINKS</a></li> </ul> </div> </div> </div> <div class="footerBottom"> <div class="page"> <ul> <li class="first"><a href="http://www.c-sharpcorner.com/contactus.aspx">CONTACT
+US</a></li> <li><a href="http://www.c-sharpcorner.com/privacypolicy.aspx">PRIVACY POLICY</a></li> <li><a href="http://www.c-sharpcorner.com/termsconditions.aspx">TERMS &amp;
+CONDITIONS</a></li> <li><a href="http://www.c-sharpcorner.com/sitemap/">SITEMAP</a></li> <li><a href="http://www.c-sharpcorner.com/report-bugs">REPORT A BUG</a></li> </ul> <div class="social_link"> <ul> <li><a target="_blank" href="http://www.facebook.com/pages/C-Corner/194086953935286" class="facebook">facebook</a></li> <li><a target="_blank" href="http://twitter.com/csharpcorner" class="twitter">twitter</a></li> <li><a target="_blank" href="https://plus.google.com/u/0/114221266846457741050/posts" class="google">google</a></li> <li><a target="_blank" href="http://www.youtube.com/user/CsharpCorner1/" class="media">
+media</a></li> </ul> <p class="copyright">
+©2017
+C# Corner. All contents are copyright of their authors.</p> </div> </div> </div> </div> <div class="responsive_footer"> <ul> <li class="first"><a href="http://www.c-sharpcorner.com/contactus.aspx">Contact
+Us</a></li> <li><a href="http://www.c-sharpcorner.com/privacypolicy.aspx">Privacy Policy</a></li> <li><a href="http://www.c-sharpcorner.com/termsconditions.aspx">Terms &amp;
+Conditions</a></li> <li><a href="http://www.c-sharpcorner.com/resources/aboutus.aspx">About Us</a></li> </ul> <p>
+©2017
+C# Corner. All contents are copyright of their authors.</p> </div> <div class="clear"></div> <div class="aspNetHidden"> <input type="hidden" name="__SCROLLPOSITIONX" id="__SCROLLPOSITIONX" value="0"> <input type="hidden" name="__SCROLLPOSITIONY" id="__SCROLLPOSITIONY" value="0"> <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value=""> <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value=""> <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAB7jKBqfeIEutX7WVTM3wRcaHUgF+HSci46n2xciolVcJRZmbuSdGWVElhNjyJSMPcTc7DpRqogoyNWPuMaM5Qj/E5jDj0GzXW1SFENyEh4CcTf+LSPBg57fbZIR4129EMeIZe+y9ae/15TRU9AIgCaufptu8HPxZqhVAJPCp37Ih0em7+MDoADwROHXcLEbXi/IaT6TTo3+1h1CSAYaVHOolcp+siD6hiqhT0pIbfnkFRLXUJZA7RPaYLllIqc9yze2KqNAKdLmJ8xio2FHKnRuAoVIJZgroqpD4GiY4AA3q75cm0+MuHoYhFhCvq02Rh/6ELJ5foBKJBLY2Nce6atDrksJHiy2a+10LN/OBZ17t8ZMEksgex0cXPEFoTlQTX4/MDUgdfWU3cmVU92R+YtxhsuPPRaP69itDZWrK0xTWEvrY/wKo0jA+SkkzNt2hm3gwVLncVJpewmMmJp05Zbk0AZ8y2qHcoJB2rTrJT+99XzhG+4O0hM6xGzVBiph9PllQlNO0EBMCO3JHTZbOq9sdMYOxeCg0uNR699i5uzz6jzoyDv/5hU0M6yM1CidPck1ZuM0oGqPCTzX9sncLOyTPYuCPOlo+D6AmeKysSDgeJf6+4fKXJp2BS9dABaqjAMLKIxMpeswY3WpK/L4OxU5Ex6dzA=="> </div> <script type="text/javascript">
+//<![CDATA[
+theForm.oldSubmit = theForm.submit;
+theForm.submit = WebForm_SaveScrollPositionSubmit;
+theForm.oldOnSubmit = theForm.onsubmit;
+theForm.onsubmit = WebForm_SaveScrollPositionOnSubmit;
+//]]> </script>  <script src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/common_details(1)"></script>  </div></form><iframe name="oauth2relay258945506" id="oauth2relay258945506" src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/postmessageRelay.html" tabindex="-1" aria-hidden="true" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" title="Twitter analytics iframe" src="./Insert Values from One Database Table to Another Database Table in SQL Server_files/saved_resource.html"></iframe></body></html>

@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<!-- saved from url=(0098)http://stackoverflow.com/questions/18555487/how-to-load-excel-template-and-write-to-it-in-phpexcel -->
+<html itemscope="" itemtype="http://schema.org/QAPage"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>php - How to load excel template and write to it in PHPExcel? - Stack Overflow</title>
+    <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+    <link rel="apple-touch-icon image_src" href="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta property="og:type" content="website">
+
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="How to load excel template and write to it in PHPExcel?">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="How do I load an Excel Template with PHPExcel and write to its cells and also insert images to cells dynamically?">
+    <meta property="og:url" content="http://stackoverflow.com/questions/18555487/how-to-load-excel-template-and-write-to-it-in-phpexcel">
+    <link rel="canonical" href="http://stackoverflow.com/questions/18555487/how-to-load-excel-template-and-write-to-it-in-phpexcel">
+
+    
+    
+    <script type="text/javascript" async="" src="./php - How to load excel template and write to it in PHPExcel_ - Stack Overflow_files/ados"></script><script async="" src="./php - How to load excel template and write to it in PHPExcel_ - Stack Overflow_files/quant.js.download"></script><script async="" src="./php - How to load excel template and write to it in PHPExcel_ - Stack Overflow_files/beacon.js.download"></script><script async="" src="./php - How to load excel template and write to it in PHPExcel_ - Stack Overflow_files/analytics.js.download"></script><script type="text/javascript" async="" src="./php - How to load excel template and write to it in PHPExcel_ - Stack Overflow_files/ados.js.download"></script><script src="./php - How to load excel template and write to it in PHPExcel_ - Stack Overflow_files/jquery.min.js.download"></script>
+    <script src="./php - How to load excel template and write to it in PHPExcel_ - Stack Overflow_files/stub.en.js.download"></script>
+    <link rel="stylesheet" type="text/css" href="./php - How to load excel template and write to it in PHPExcel_ - Stack Overflow_files/all.css">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;How to load excel template and write to it in PHPExcel?&#39;" href="http://stackoverflow.com/feeds/question/18555487">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/18555487/how-to-load-excel-template-and-write-to-it-in-phpexcel">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/18555487/how-to-load-excel-template-and-write-to-it-in-phpexcel">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/18555487/how-to-load-excel-template-and-write-to-it-in-phpexcel">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:1,shownCommentCount:1,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:18555487});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '18555487');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text', true); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","serverTime":1486088849,"routeName":"Questions/Show","site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"enableInsertDocLinkDialog":true,"enableSocialMediaInSharePopup":true},"user":{"fkey":"bb2b678f457a22870dda0dd9e449a176","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true,"ab":{"question_show_tweaks":{"v":"altern_unansw_cta","g":1}}},"events":{"postType":{"question":1},"postEditionSection":{"title":1,"body":2,"tags":3}},"story":{"minCompleteBodyLength":75}}, {"site":{"allowImageUploads":true,"enableUserHovercards":true,"styleCode":true,"enableNewLinkInsertDialog":true,"enableImgurHttps":true},"comments":{},"userProfile":{"openGraphAPIKey":"58740831ad23540e00c58987"},"tags":{},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true},"flags":{"allowRetractingFlags":true},"analytics":{"clientTimingsAbsoluteTimeout":30000,"clientTimingsDebounceTimeout":1000},"snippets":{"snippetsEnabled":true,"renderDomain":"stacksnippets.net"},"markdown":{"asteriskIntraWordEmphasis":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"a6c44b1fbbe5","js/moderator.en.js":"40864e2316e3","js/full-anon.en.js":"ca35c0c9a717","js/full.en.js":"93a46d41226f","js/wmd.en.js":"bcd99a830f94","js/third-party/jquery.autocomplete.min.js":"d3b8fa7fdf74","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"8c3bd5e12250","js/help.en.js":"dbd4f489eff2","js/tageditor.en.js":"491534bc508d","js/tageditornew.en.js":"a60e6cbc7358","js/inline-tag-editing.en.js":"2ddfa79492e7","js/revisions.en.js":"8f22ba768cac","js/review.en.js":"caf05200bc79","js/tagsuggestions.en.js":"7dfec0d2a2d7","js/post-validation.en.js":"5fa8a0489267","js/explore-qlist.en.js":"88f824a42b1a","js/events.en.js":"6a12a846a2b3","js/keyboard-shortcuts.en.js":"5bc8e8c8f2ee","js/external-editor.en.js":"71095ef40e9d","js/adops.en.js":"9a6a7812a212","js/external-editor.en.js":"71095ef40e9d","js/snippet-javascript.en.js":"bb9cbf50086e","js/snippet-javascript-codemirror.en.js":"44851ff2f8c6"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+<script async="" src="./php - How to load excel template and write to it in PHPExcel_ - Stack Overflow_files/full-anon.en.js.download"></script><script async="" src="./php - How to load excel template and write to it in PHPExcel_ - Stack Overflow_files/snippet-javascript.en.js.download"></script><script async="" src="./php - How to load excel template and write to it in PHPExcel_ - Stack Overflow_files/post-validation.en.js.download"></script><script async="" src="./php - How to load excel template and write to it in PHPExcel_ - Stack Overflow_files/prettify-full.en.js.download"></script><script async="" src="./php - How to load excel template and write to it in PHPExcel_ - Stack Overflow_files/external-editor.en.js.download"></script><script type="text/javascript" src="./php - How to load excel template and write to it in PHPExcel_ - Stack Overflow_files/adFeedback.js.download"></script><link rel="stylesheet" href="./php - How to load excel template and write to it in PHPExcel_ - Stack Overflow_files/adFeedback.css"><link rel="stylesheet" href="./php - How to load excel template and write to it in PHPExcel_ - Stack Overflow_files/jobs-multi.min.css" type="text/css"></head>
+<body class="question-page new-topbar">
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+            <script>(function () { var old = $.fn.contents; $.fn.contents = function () { try { return old.apply(this, arguments); } catch (e) { return $([]); } } })()</script>
+        
+
+    <div id="notify-container"></div>
+    <div id="custom-header"></div>
+
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+
+    <div class="topbar-dialog siteSwitcher-dialog dno">
+        <div class="header">
+            <h3><a href="http://stackoverflow.com/">current community</a>
+            </h3>
+        </div>
+        <div class="modal-content current-site-container">
+            <ul class="current-site">
+                    <li>
+                            <div class="related-links">
+                    <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                    </li>
+                    <li class="related-site">
+                            <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                        
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                    </li>
+            </ul>
+        </div>
+
+        <div class="header" id="your-communities-header">
+            <h3>
+your communities            </h3>
+
+        </div>
+        <div class="modal-content" id="your-communities-section">
+
+                <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=%2fusers%2fstory%2fcurrent&amp;amp;utm_source=stackoverflow.com&amp;amp;utm_medium=dev-story&amp;amp;utm_campaign=signup-redirect" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f18555487%2fhow-to-load-excel-template-and-write-to-it-in-phpexcel" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+                </div>
+        </div>
+
+        <div class="header">
+            <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a>
+            </h3>
+            <a href="http://stackoverflow.blog/" class="fr">company blog</a>
+        </div>
+        <div class="modal-content">
+                <div class="child-content"></div>
+        </div>        
+    </div>
+        </div>
+
+        <div class="network-items">
+                <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 163 Stack Exchange sites">
+                    <span class="hidden-text">Stack Exchange</span>
+                </a>
+
+    <a href="http://stackoverflow.com/questions/18555487/how-to-load-excel-template-and-write-to-it-in-phpexcel#" class="topbar-icon icon-inbox yes-hover js-inbox-button" title="Recent inbox messages">
+        <span class="hidden-text">Inbox</span>
+        <span class="unread-count" style="display:none"></span>
+    </a>
+    <a href="http://stackoverflow.com/questions/18555487/how-to-load-excel-template-and-write-to-it-in-phpexcel#" class="topbar-icon icon-achievements yes-hover js-achievements-button " data-unread-class="" title="Recent achievements: reputation, badges, and privileges earned">
+        <span class="hidden-text">Reputation and Badges</span>
+        <span class="unread-count" style="display:none">
+            
+        </span>
+    </a>
+        </div>
+
+        <div class="topbar-links">
+
+                <div class="links-container">
+                <span class="topbar-menu-links">
+                                    <a href="https://stackoverflow.com/users/signup?ssrc=head&amp;returnurl=%2fusers%2fstory%2fcurrent&amp;utm_source=stackoverflow.com&amp;utm_medium=dev-story&amp;utm_campaign=signup-redirect" class="login-link" rel="nofollow">sign up</a>
+                                <a href="https://stackoverflow.com/users/login?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f18555487%2fhow-to-load-excel-template-and-write-to-it-in-phpexcel" class="login-link" rel="nofollow">log in</a>
+
+                            <a href="http://stackoverflow.com/tour">tour</a>
+        <a href="http://stackoverflow.com/questions/18555487/how-to-load-excel-template-and-write-to-it-in-phpexcel#" class="icon-help js-help-button" title="Help Center and other resources">
+            help
+            <span class="triangle"></span>
+        </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                        <li>
+                            <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                Meta
+                                <span class="item-summary">
+                                    Discuss the workings and policies of this site
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                About Us
+                                <span class="item-summary">
+                                    Learn more about Stack Overflow the company
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.stackoverflowbusiness.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                                Business
+                                <span class="item-summary">
+                                    Learn more about hiring developers or posting ads with us
+                                </span>
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+                                            </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="http://stackoverflow.com/search" method="get" autocomplete="off">
+                        <input name="q" type="text" placeholder="Search Q&amp;A" value="" tabindex="1" autocomplete="off" maxlength="240">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+            <div id="header">
+                <br class="cbt">
+                <div id="hlogo">
+                    <a href="http://stackoverflow.com/">
+                        Stack Overflow
+                    </a>
+                </div>
+                <div id="hmenus">
+                        <div class="nav mainnavs">
+                            <ul>
+                                    <li class="youarehere">
+        <a id="nav-questions" href="http://stackoverflow.com/questions" class="js-gps-track" data-gps-track="top_nav.click({is_current:true, location:2, destination:1})">
+        Questions
+        </a>
+    </li>
+
+    <li>
+        <a id="nav-jobs" href="http://stackoverflow.com/jobs?med=site-ui&amp;ref=jobs-tab" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:6})">
+        Jobs
+        </a>
+    </li>
+                                    <li>
+        <a id="nav-docs" href="http://stackoverflow.com/documentation" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:7})">
+        Documentation
+        </a>
+    </li>
+                                    <li>
+        <a id="nav-tags" href="http://stackoverflow.com/tags" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:2})">
+        Tags
+        </a>
+    </li>
+
+                                    <li>
+        <a id="nav-users" href="http://stackoverflow.com/users" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:3})">
+        Users
+        </a>
+    </li>
+
+                                    <li>
+        <a id="nav-badges" href="http://stackoverflow.com/help/badges" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:4})">
+        Badges
+        </a>
+    </li>
+
+                            </ul>
+                        </div>
+                    <div class="nav askquestion">
+                        <ul>
+                            <li>
+                                <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        
+
+
+        <div id="content" class="snippet-hidden">
+
+
+
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+
+
+    <div id="herobox" class="alternate">
+        <div class="test"></div>
+            <div id="close">
+                <a title="click to minimize"><span>x</span> Dismiss</a>
+            </div>
+        <div class="content">
+            <b>Join the Stack Overflow Community</b>
+            <div class="separator"></div>
+            <div class="blurb">
+                Stack Overflow is a community of 6.6 million programmers, just like you, helping each other.
+                    <br>
+Join them; it only takes a minute:                    <br>
+            </div>
+            <a href="http://stackoverflow.com/users/signup?ssrc=hero&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f18555487%2fhow-to-load-excel-template-and-write-to-it-in-phpexcel" id="tell-me-more" class="button">Sign up</a>
+        </div>
+    </div>
+<script>
+    StackExchange.ready(function () {
+
+        var location = 0;
+        if ($("body").hasClass("questions-page")) {
+            location = 1;;
+        } else if ($("body").hasClass("question-page")) {
+            location = 1;;
+        } else if ($("body").hasClass("faq-page")) {
+            location = 5;;
+        } else if ($("body").hasClass("home-page")) {
+            location = 3;;
+        }
+
+        $('#tell-me-more').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+            });
+        });
+        $('#herobox #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+            });
+            $.cookie("hero", "mini", { path: "/", expires: 365 });
+            $.ajax({
+                url: "/hero-mini",
+                success: function (data) {
+                    $("#herobox").fadeOut("fast", function () {
+                        $("#herobox").replaceWith(data);
+                        $("#herobox-mini").fadeIn("fast");
+                    });
+                }
+            });
+            return false;
+        });
+    });
+
+</script>			<div id="question-header">
+                <h1 itemprop="name"><a href="http://stackoverflow.com/questions/18555487/how-to-load-excel-template-and-write-to-it-in-phpexcel" class="question-hyperlink">How to load excel template and write to it in PHPExcel?</a></h1>
+
+            
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="18555487" id="question">
+
+    <script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk1169866714",4).setZone(43); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1169866714"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjo1MjcxODEsImNoIjoxMTc4LCJjayI6e30sImNyIjoxODU3ODU4LCJkaSI6IjExODNlMDQwN2Q2MDQ3NzBiOGIzYmExYmRjNzQ4YzQwIiwiZG0iOjEsImZjIjoyMjMwMTc1LCJmbCI6MjY4MDQyMiwiaXAiOiIxMjQuMTA3LjE2Ny45Iiwia3ciOiJwaHAsdGVtcGxhdGVzLHBocGV4Y2VsLHgtcGVyc29uYS1mcm9udGVuZCIsIm53IjoyMiwicGMiOjAsImVjIjowLCJwciI6MTU2OCwicnQiOjIsInN0Ijo4Mjc3LCJ1ayI6InVlMS03ZDQ2OTk1Yjg4YTM0NzUxOTE5YTkyNmY1MmY2ODUzYyIsInpuIjo0MywidHMiOjE0ODYwODg4NTM1OTgsImJmIjp0cnVlLCJwbiI6ImFkemVyazExNjk4NjY3MTQiLCJ1ciI6Imh0dHBzOi8vd3d3LnN1cnZleW1vbmtleS5jby51ay9yL1ZDOTlDWjUifQ&amp;s=yxQiBut8H_l2pxPM-BMax57xHus" rel="nofollow" target="_blank" title=""><img src="./php - How to load excel template and write to it in PHPExcel_ - Stack Overflow_files/d52fa7e4951c4056ba7515b3d9bad186.png" title="" alt="" border="0" width="728" height="90"></a><div class="adzerk-vote-controls" style="display: none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="http://stackoverflow.com/questions/18555487/how-to-load-excel-template-and-write-to-it-in-phpexcel#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./php - How to load excel template and write to it in PHPExcel_ - Stack Overflow_files/i.gif"></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="18555487">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">7</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="http://stackoverflow.com/questions/18555487/how-to-load-excel-template-and-write-to-it-in-phpexcel#">favorite</a>
+        <div class="favoritecount"><b>4</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>How do I load an Excel Template with PHPExcel and write to its cells and also insert images to cells dynamically?</p>
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/php" class="post-tag js-gps-track" title="show questions tagged &#39;php&#39;" rel="tag">php</a> <a href="http://stackoverflow.com/questions/tagged/templates" class="post-tag js-gps-track" title="show questions tagged &#39;templates&#39;" rel="tag">templates</a> <a href="http://stackoverflow.com/questions/tagged/phpexcel" class="post-tag js-gps-track" title="show questions tagged &#39;phpexcel&#39;" rel="tag">phpexcel</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/18555487" title="short permalink to this question" class="short-link" id="link-post-18555487">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/18555487/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/18555487/revisions" title="show all edits to this post">edited <span title="2015-09-04 03:44:13Z" class="relativetime">Sep 4 '15 at 3:44</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1505120/pnuts"><div class="gravatar-wrapper-32"><img src="./php - How to load excel template and write to it in PHPExcel_ - Stack Overflow_files/f49dbeced705687b92e851736d48f208" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1505120/pnuts">pnuts</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 34,747" dir="ltr">34.7k</span><span title="6 gold badges"><span class="badge1"></span><span class="badgecount">6</span></span><span title="42 silver badges"><span class="badge2"></span><span class="badgecount">42</span></span><span title="75 bronze badges"><span class="badge3"></span><span class="badgecount">75</span></span>
+        </div>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2013-09-01 05:16:17Z" class="relativetime">Sep 1 '13 at 5:16</span>
+    </div>
+    <div class="user-gravatar32">
+        <span class="anonymous-gravatar"></span>
+    </div>
+    <div class="user-details">
+        user1894072
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                    
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-18555487" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-27300424" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Answers to these questions are provided in the Documentation, together with examples on how to do them</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/324584/mark-baker" title="148,828 reputation" class="comment-user">Mark Baker</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/18555487/how-to-load-excel-template-and-write-to-it-in-phpexcel#comment27300424_18555487"><span title="2013-09-01 10:18:52Z" class="relativetime-clean">Sep 1 '13 at 10:18</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-18555487" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/18555487/how-to-load-excel-template-and-write-to-it-in-phpexcel#" onclick=""></a>
+        </div>         
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								2 Answers
+                                <span style="display:none;" itemprop="answerCount">2</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/18555487/how-to-load-excel-template-and-write-to-it-in-phpexcel?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active" data-shortcut="A">
+            active</a>
+        <a href="http://stackoverflow.com/questions/18555487/how-to-load-excel-template-and-write-to-it-in-phpexcel?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest" data-shortcut="O">
+            oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/18555487/how-to-load-excel-template-and-write-to-it-in-phpexcel?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes" data-shortcut="V">
+            votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="18555961"></a>
+<div id="answer-18555961" class="answer accepted-answer" data-answerid="18555961" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="18555961">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">14</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>You can read your excel template like this with PHPExcel:</p>
+
+<pre class="lang-php prettyprint prettyprinted"><code><span class="pln">$objPHPExcel </span><span class="pun">=</span><span class="pln"> </span><span class="typ">PHPExcel_IOFactory</span><span class="pun">::</span><span class="pln">load</span><span class="pun">(</span><span class="str">"./forms/english/cash.xlsx"</span><span class="pun">);</span></code></pre>
+
+<p>and you can write to cells like this:</p>
+
+<pre class="lang-php prettyprint prettyprinted"><code><span class="pln">  $objPHPExcel</span><span class="pun">-&gt;</span><span class="pln">setActiveSheetIndex</span><span class="pun">(</span><span class="lit">0</span><span class="pun">)</span><span class="pln">
+                            </span><span class="pun">-&gt;</span><span class="pln">setCellValue</span><span class="pun">(</span><span class="str">'A2'</span><span class="pun">,</span><span class="pln"> </span><span class="str">"No"</span><span class="pun">)</span><span class="pln">
+                            </span><span class="pun">-&gt;</span><span class="pln">setCellValue</span><span class="pun">(</span><span class="str">'B2'</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Name"</span><span class="pun">)</span><span class="pln">
+                            </span><span class="pun">-&gt;</span><span class="pln">setCellValue</span><span class="pun">(</span><span class="str">'C2'</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Email"</span><span class="pun">)</span><span class="pln">
+                            </span><span class="pun">-&gt;</span><span class="pln">setCellValue</span><span class="pun">(</span><span class="str">'D2'</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Phone"</span><span class="pun">)</span><span class="pln">
+                            </span><span class="pun">-&gt;</span><span class="pln">setCellValue</span><span class="pun">(</span><span class="str">'E2'</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Address"</span><span class="pun">);</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/18555961" title="short permalink to this answer" class="short-link" id="link-post-18555961">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/18555961/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2013-09-01 06:44:18Z" class="relativetime">Sep 1 '13 at 6:44</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1542982/mehdi-jalal"><div class="gravatar-wrapper-32"><img src="./php - How to load excel template and write to it in PHPExcel_ - Stack Overflow_files/QBPXZ.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1542982/mehdi-jalal">Mehdi Jalal</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">2,501</span><span title="5 gold badges"><span class="badge1"></span><span class="badgecount">5</span></span><span title="19 silver badges"><span class="badge2"></span><span class="badgecount">19</span></span><span title="38 bronze badges"><span class="badge3"></span><span class="badgecount">38</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-18555961" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-18555961" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/18555487/how-to-load-excel-template-and-write-to-it-in-phpexcel#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk1493422773",4).setZone(44); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1493422773"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjo0NzE0OTMsImNoIjoxMTc4LCJjayI6e30sImNyIjoxNjI3NzY0LCJkaSI6IjBhNzljOWYxMDQzNjRhOWQ4M2MwY2U3OGI3ZGJmMGNlIiwiZG0iOjEsImZjIjoxOTI0NDQzLCJmbCI6MjE0MjMxMiwiaXAiOiIxMjQuMTA3LjE2Ny45Iiwia3ciOiJwaHAsdGVtcGxhdGVzLHBocGV4Y2VsLHgtcGVyc29uYS1mcm9udGVuZCIsIm53IjoyMiwicGMiOjAsImVjIjowLCJwciI6MTYwNCwicnQiOjEsInN0Ijo4Mjc3LCJ1ayI6InVlMS03ZDQ2OTk1Yjg4YTM0NzUxOTE5YTkyNmY1MmY2ODUzYyIsInpuIjo0NCwidHMiOjE0ODYwODg4NTM2MDAsImJmIjp0cnVlLCJwbiI6ImFkemVyazE0OTM0MjI3NzMiLCJ1ciI6Imh0dHA6Ly9zdGFja292ZXJmbG93LmNvbS9qb2JzP3V0bV9zb3VyY2U9d2Vic2l0ZSZ1dG1fbWVkaXVtPWJhbm5lciZ1dG1fY29udGVudD1sZWFkZXJib2FyZF8yJnV0bV9jYW1wYWlnbj1ob3VzZV9hZHNfaG91c2VfYWRzX1JPU19TTyJ9&amp;s=vTaiO1ycUzQ_vLTvIiV49ib1Tuw" rel="nofollow" target="_blank" title=""><img src="./php - How to load excel template and write to it in PHPExcel_ - Stack Overflow_files/c6eb02709d7d40c48ae0ff1632e88956.png" title="" alt="" border="0" width="728" height="90"></a><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="http://stackoverflow.com/questions/18555487/how-to-load-excel-template-and-write-to-it-in-phpexcel#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./php - How to load excel template and write to it in PHPExcel_ - Stack Overflow_files/i(1).gif"></div>
+  
+<a name="18555637"></a>
+<div id="answer-18555637" class="answer" data-answerid="18555637" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="18555637">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">7</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>see the example, 30template.php in github site</p>
+
+<p><a href="https://github.com/PHPOffice/PHPExcel/blob/develop/Examples/30template.php">https://github.com/PHPOffice/PHPExcel/blob/develop/Examples/30template.php</a></p>
+
+<p>load template :</p>
+
+<pre class="lang-php prettyprint prettyprinted"><code><span class="pln">$objReader </span><span class="pun">=</span><span class="pln"> </span><span class="typ">PHPExcel_IOFactory</span><span class="pun">::</span><span class="pln">createReader</span><span class="pun">(</span><span class="str">'Excel5'</span><span class="pun">);</span><span class="pln">
+
+$objPHPExcel </span><span class="pun">=</span><span class="pln"> $objReader</span><span class="pun">-&gt;</span><span class="pln">load</span><span class="pun">(</span><span class="str">"templates/30template.xls"</span><span class="pun">);</span></code></pre>
+
+<p>see in the example write via </p>
+
+<pre class="lang-php prettyprint prettyprinted"><code><span class="pln">$objPHPExcel</span><span class="pun">-&gt;</span><span class="pln">getActiveSheet</span><span class="pun">()-&gt;</span><span class="pln">setCellValue</span><span class="pun">()</span><span class="pln"> </span></code></pre>
+
+<p>to add image use PHPExcel_Worksheet_Drawing :</p>
+
+<pre class="lang-php prettyprint prettyprinted"><code><span class="com">// Add an image to the worksheet</span><span class="pln">
+$objDrawing </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">PHPExcel_Worksheet_Drawing</span><span class="pun">();</span><span class="pln">
+$objDrawing</span><span class="pun">-&gt;</span><span class="pln">setName</span><span class="pun">(</span><span class="str">'My Image'</span><span class="pun">);</span><span class="pln">
+$objDrawing</span><span class="pun">-&gt;</span><span class="pln">setDescription</span><span class="pun">(</span><span class="str">'The Image that I am inserting'</span><span class="pun">);</span><span class="pln">
+$objDrawing</span><span class="pun">-&gt;</span><span class="pln">setPath</span><span class="pun">(</span><span class="str">'./images/myImage.png'</span><span class="pun">);</span><span class="pln">
+$objDrawing</span><span class="pun">-&gt;</span><span class="pln">setCoordinates</span><span class="pun">(</span><span class="str">'B2'</span><span class="pun">);</span><span class="pln">
+$objDrawing</span><span class="pun">-&gt;</span><span class="pln">setWorksheet</span><span class="pun">(</span><span class="pln">$objPHPExcel</span><span class="pun">-&gt;</span><span class="pln">getActiveSheet</span><span class="pun">());</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/18555637" title="short permalink to this answer" class="short-link" id="link-post-18555637">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/18555637/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/18555637/revisions" title="show all edits to this post">edited <span title="2013-09-01 07:01:44Z" class="relativetime">Sep 1 '13 at 7:01</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2013-09-01 05:47:08Z" class="relativetime">Sep 1 '13 at 5:47</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/74314/haim-evgi"><div class="gravatar-wrapper-32"><img src="./php - How to load excel template and write to it in PHPExcel_ - Stack Overflow_files/a617e29c27601cb6770a98e9ab945761" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/74314/haim-evgi">Haim Evgi</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 69,636" dir="ltr">69.6k</span><span title="31 gold badges"><span class="badge1"></span><span class="badgecount">31</span></span><span title="160 silver badges"><span class="badge2"></span><span class="badgecount">160</span></span><span title="187 bronze badges"><span class="badge3"></span><span class="badgecount">187</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-18555637" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-27297675" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">how to write inside the template and how to add images</span>
+		            –&nbsp;<span class="comment-user">user1894072</span>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/18555487/how-to-load-excel-template-and-write-to-it-in-phpexcel#comment27297675_18555637"><span title="2013-09-01 06:36:51Z" class="relativetime-clean">Sep 1 '13 at 6:36</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-49814802" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Image Resize: $objDrawing-&gt;setResizeProportional(true); $objDrawing-&gt;setWidthAndHeight(230, 170);</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/2039290/user2039290" title="69 reputation" class="comment-user">user2039290</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/18555487/how-to-load-excel-template-and-write-to-it-in-phpexcel#comment49814802_18555637"><span title="2015-06-17 09:29:23Z" class="relativetime-clean">Jun 17 '15 at 9:29</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-18555637" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/18555487/how-to-load-excel-template-and-write-to-it-in-phpexcel#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="http://stackoverflow.com/questions/18555487/answer/submit" method="post" class="post-form">
+						    <input type="hidden" id="post-id" value="18555487">
+                            <input type="hidden" id="qualityBanWarningShown" name="qualityBanWarningShown" value="false">
+                            <input type="hidden" name="referrer" value="">
+							<h2 class="space">Your Answer</h2>
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+                // Have to fire editor after snippets, if snippets enabled
+                if (StackExchange.settings.snippets.snippetsEnabled) {
+                    StackExchange.using("snippets", function() {
+                        createEditor();
+                    });
+                }
+                else {
+                    createEditor();
+                }
+            });
+
+            function createEditor() {
+                prepareEditor({
+                    heartbeatType: 'answer',
+                convertImagesToLinks: true,
+                reputationToPostImages: 10,
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                    ,immediatelyShowMarkdownHelp:true
+                    });
+                
+
+        }
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor js-post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="bb2b678f457a22870dda0dd9e449a176">
+        <input id="author" name="author" type="text">
+    </div>
+
+
+
+</div>
+							<div style="position: relative;">
+								
+								            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://stackoverflow.com/users/login?ssrc=question_page&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f18555487%2fhow-to-load-excel-template-and-write-to-it-in-phpexcel%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Email and Password</span></p>
+                        </div>
+                    </div>
+                    <input type="hidden" name="manual-openid" class="manual-openid">
+                    <input type="hidden" name="use-facebook" class="use-facebook" value="false">
+                    <input type="hidden" name="use-google" class="use-google" value="false">
+                    <input type="button" class="submit-openid" value="Submit" style="display:none">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', 'http%3a%2f%2fstackoverflow.com%2fquestions%2f18555487%2fhow-to-load-excel-template-and-write-to-it-in-phpexcel%23new-answer', 'question_page');
+                    }
+                );
+            </script>
+            <noscript>
+                        &lt;h3&gt;Post as a guest&lt;/h3&gt;
+    &lt;div class="form-item"&gt;
+        &lt;table&gt;
+        &lt;tr&gt;
+                    &lt;td class="vm"&gt;
+                &lt;div&gt;
+                    &lt;label for="display-name"&gt;Name&lt;/label&gt;
+                    &lt;input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105"&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label for="m-address"&gt;Email&lt;/label&gt;
+                    &lt;input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown" /&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+            </noscript>
+
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+									<a href="http://stackoverflow.com/questions/18555487/how-to-load-excel-template-and-write-to-it-in-phpexcel#" class="btn-clear discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" name="privacy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" name="tos" target="_blank">terms of service</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1">								</div>
+						</form>
+
+
+
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2013-09-01 05:16:17Z"><b>3 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>15644 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/18555487/how-to-load-excel-template-and-write-to-it-in-phpexcel?lastactivity" class="lastactivity-link" title="2015-09-04 03:44:13Z">1 year ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk1241712597",[5,17,2221]).setZone(45); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1241712597"><div id="careersadsdoublehigh" style="display:none;"></div><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="http://stackoverflow.com/questions/18555487/how-to-load-excel-template-and-write-to-it-in-phpexcel#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./php - How to load excel template and write to it in PHPExcel_ - Stack Overflow_files/i(2).gif"></div>
+            <div id="hireme" class="clc-jobs-multi blue tagged"><a class="top " href="https://stackoverflow.com/jobs?allowsremote=true" target="_blank" data-clc-click="https://clc.stackoverflow.com/click?an=45w8I9HijvcVD9aabx4BTEwMDAwsDCAQryTNmB2twcBwHIgZJBl6NoBEGRlBCqS9BZgYLnQzg8TXPHR__Nxyp7-__WwWDiaG_mpmBiZJhpsPzjM-t-Qoj7ZnZC7IKJBWFmFiiJgM1pBy4OuPx5Z_f4fbS0vxMDHMaIaKxh1YaRkWx2XP8EdnkUKr2KTWk_MA&amp;cr=10439&amp;ct=1&amp;url=https%3A%2F%2Fstackoverflow.com%2Fjobs%3Fallowsremote%3Dtrue&amp;sig=wA8KwF7Wpajvgw"><span>Work from anywhere</span></a><div class="middle"><ul class="jobs"><li class="&quot;clc-dismissable&quot;"><div class="job-wrap"><a class="job" title="Senior/Lead Front-End Javascript Engineer (AngularJS) at Compucorp. Click to learn more." href="https://stackoverflow.com/jobs/132845/senior-lead-front-end-javascript-engineer-compucorp" target="_blank" data-clc-click="https://clc.stackoverflow.com/click?an=45w8I9HijvcVD9aabx4BTEwMDAwsDCAQryTNmB2twcBwHIgZJBl6NoBEGRlBCqS9BZgYLnQzg8TXPHR__Nxyp7-__WwWDiaG_mpmBiZJhpsPzjM-t-Qoj7ZnZC7IKJBWFmFiiJgM1pBy4OuPx5Z_f4fbS0vxMDHMaIaKxh1YaRkWx2XP8EdnkUKr2KTWk_MA&amp;cr=232400&amp;ct=0&amp;url=https%3A%2F%2Fstackoverflow.com%2Fjobs%2F132845%2Fsenior-lead-front-end-javascript-engineer-compucorp&amp;sig=4hTXGMhGm6PAvA"><div class="title">Senior/Lead Front-End Javascript Engineer (AngularJS)</div><div><span class="company">Compucorp</span><span class="location">Greater London, UK</span></div><div class="opts"><span class="opt salary">£20,000 - £30,000</span><span class="opt remote">Remote</span></div><span class="post-tag">angularjs</span><span class="post-tag">reactjs</span></a></div><a class="clc-dismiss" data-clc-click="https://clc.stackoverflow.com/click?an=45w8I9HijvcVD9aabx4BTEwMDAwsDCAQryTNmB2twcBwHIgZJBl6NoBEGRlBCqS9BZgYLnQzg8TXPHR__Nxyp7-__WwWDiaG_mpmBiZJhpsPzjM-t-Qoj7ZnZC7IKJBWFmFiiJgM1pBy4OuPx5Z_f4fbS0vxMDHMaIaKxh1YaRkWx2XP8EdnkUKr2KTWk_MA&amp;cr=232400&amp;ct=-1&amp;sig=Wqm1x09HALXAgg" data-clc-meta-target="-1"><span class="clc-tooltip above-left">dismiss this job</span></a></li><li class="&quot;clc-dismissable&quot;"><div class="job-wrap"><a class="job" title="Prototyping in PHP, MySQL and Javascript at Inock France. Click to learn more." href="https://stackoverflow.com/jobs/17069/prototyping-in-php-mysql-and-javascript-inock-france" target="_blank" data-clc-click="https://clc.stackoverflow.com/click?an=45w8I9HijvcVD9aabx4BTEwMDAwsDCAQryTNmB2twcBwHIgZJBl6NoBEGRlBCqS9BZgYLnQzg8TXPHR__Nxyp7-__WwWDiaG_mpmBiZJhpsPzjM-t-Qoj7ZnZC7IKJBWFmFiiJgM1pBy4OuPx5Z_f4fbS0vxMDHMaIaKxh1YaRkWx2XP8EdnkUKr2KTWk_MA&amp;cr=228239&amp;ct=0&amp;url=https%3A%2F%2Fstackoverflow.com%2Fjobs%2F17069%2Fprototyping-in-php-mysql-and-javascript-inock-france&amp;sig=yuwncprjFonMmA"><div class="title">Prototyping in PHP, MySQL and Javascript</div><div><span class="company">Inock France</span><span class="location">Paris, France</span></div><div class="opts"><span class="opt remote">Remote</span></div><span class="post-tag highlight">php</span><span class="post-tag">mysql</span></a></div><a class="clc-dismiss" data-clc-click="https://clc.stackoverflow.com/click?an=45w8I9HijvcVD9aabx4BTEwMDAwsDCAQryTNmB2twcBwHIgZJBl6NoBEGRlBCqS9BZgYLnQzg8TXPHR__Nxyp7-__WwWDiaG_mpmBiZJhpsPzjM-t-Qoj7ZnZC7IKJBWFmFiiJgM1pBy4OuPx5Z_f4fbS0vxMDHMaIaKxh1YaRkWx2XP8EdnkUKr2KTWk_MA&amp;cr=228239&amp;ct=-1&amp;sig=ix7qIYdPwQ_0Hg" data-clc-meta-target="-1"><span class="clc-tooltip above-left">dismiss this job</span></a></li><li class="&quot;clc-dismissable&quot;"><div class="job-wrap"><a class="job" title="React Javascript Engineer (senior/lead) (remote) at MobyMax. Click to learn more." href="https://stackoverflow.com/jobs/133802/react-javascript-engineer-senior-lead-remote-mobymax" target="_blank" data-clc-click="https://clc.stackoverflow.com/click?an=45w8I9HijvcVD9aabx4BTEwMDAwsDCAQryTNmB2twcBwHIgZJBl6NoBEGRlBCqS9BZgYLnQzg8TXPHR__Nxyp7-__WwWDiaG_mpmBiZJhpsPzjM-t-Qoj7ZnZC7IKJBWFmFiiJgM1pBy4OuPx5Z_f4fbS0vxMDHMaIaKxh1YaRkWx2XP8EdnkUKr2KTWk_MA&amp;cr=234328&amp;ct=0&amp;url=https%3A%2F%2Fstackoverflow.com%2Fjobs%2F133802%2Freact-javascript-engineer-senior-lead-remote-mobymax&amp;sig=MMKv7s-OThStng"><div class="title">React Javascript Engineer (senior/lead) (remote)</div><div><span class="company">MobyMax</span><span class="location">No office location</span></div><div class="opts"><span class="opt remote">Remote</span></div><span class="post-tag">reactjs</span><span class="post-tag">javascript</span></a></div><a class="clc-dismiss" data-clc-click="https://clc.stackoverflow.com/click?an=45w8I9HijvcVD9aabx4BTEwMDAwsDCAQryTNmB2twcBwHIgZJBl6NoBEGRlBCqS9BZgYLnQzg8TXPHR__Nxyp7-__WwWDiaG_mpmBiZJhpsPzjM-t-Qoj7ZnZC7IKJBWFmFiiJgM1pBy4OuPx5Z_f4fbS0vxMDHMaIaKxh1YaRkWx2XP8EdnkUKr2KTWk_MA&amp;cr=234328&amp;ct=-1&amp;sig=bO3hPfDM4gf9kQ" data-clc-meta-target="-1"><span class="clc-tooltip above-left">dismiss this job</span></a></li><li class="&quot;clc-dismissable&quot;"><div class="job-wrap"><a class="job" title="Ruby on Rails Senior Architect - $50/hr at Crossover. Click to learn more." href="https://stackoverflow.com/jobs/122725/ruby-on-rails-senior-architect-50-hr-crossover" target="_blank" data-clc-click="https://clc.stackoverflow.com/click?an=45w8I9HijvcVD9aabx4BTEwMDAwsDCAQryTNmB2twcBwHIgZJBl6NoBEGRlBCqS9BZgYLnQzg8TXPHR__Nxyp7-__WwWDiaG_mpmBiZJhpsPzjM-t-Qoj7ZnZC7IKJBWFmFiiJgM1pBy4OuPx5Z_f4fbS0vxMDHMaIaKxh1YaRkWx2XP8EdnkUKr2KTWk_MA&amp;cr=230296&amp;ct=0&amp;url=https%3A%2F%2Fstackoverflow.com%2Fjobs%2F122725%2Fruby-on-rails-senior-architect-50-hr-crossover&amp;sig=E9pIBmMRWbAllw"><div class="title">Ruby on Rails Senior Architect - $50/hr</div><div><span class="company">Crossover</span><span class="location">No office location</span></div><div class="opts"><span class="opt remote">Remote</span></div><span class="post-tag">ruby</span><span class="post-tag">ruby-on-rails</span></a></div><a class="clc-dismiss" data-clc-click="https://clc.stackoverflow.com/click?an=45w8I9HijvcVD9aabx4BTEwMDAwsDCAQryTNmB2twcBwHIgZJBl6NoBEGRlBCqS9BZgYLnQzg8TXPHR__Nxyp7-__WwWDiaG_mpmBiZJhpsPzjM-t-Qoj7ZnZC7IKJBWFmFiiJgM1pBy4OuPx5Z_f4fbS0vxMDHMaIaKxh1YaRkWx2XP8EdnkUKr2KTWk_MA&amp;cr=230296&amp;ct=-1&amp;sig=ZzSSzxZG3ufI7w" data-clc-meta-target="-1"><span class="clc-tooltip above-left">dismiss this job</span></a></li></ul></div><img src="./php - How to load excel template and write to it in PHPExcel_ - Stack Overflow_files/impression.gif" class="impression" style="display: none;"></div>
+        <script>
+window.clc_request = 'ApMWnzPcS9QIAAAAAF8iGwECAAAAAgAAAAArAAAAfHBocHx0ZW1wbGF0ZXN8cGhwZXhjZWx8eC1wZXJzb25hLWZyb250ZW5kfAAyOrofigwKObqj';
+;(function(n){var t,r,i;try{if(typeof[].indexOf!="function")return;if(window.attachEvent&&!window.addEventListener)return;if(n.allowed[0]!=="*"&&n.allowed.indexOf(location.hostname)===-1)return;t=window;t.clc=t.clc||{};r=t.clc_request||t.clcfl_request;r||console.warn("clc_request missing");t.clc.init=t.clc.init||[];t.clc.init.push(function(n){return n.load()});t.clc.options=n;i=document.createElement("script");i.async=!0;i.src=n.lib;document.body.appendChild(i)}catch(u){console.error("[clc] Error in loader:",u)}}).call(null, {"azw":true,"kt":2000,"tto":true,"autoload":true,"d":{"sb":["hireme","clc-sb"],"tlb":["careers1","clc-tlb"],"mlb":["careers3","clc-mlb"]},"allowed":["stackoverflow.com","serverfault.com","blog.codinghorror.com","talent.stackoverflow.com"],"h":"clc.stackoverflow.com","u":"https://clc.stackoverflow.com/markup.js","lib":"https://cdn.sstatic.net/clc/clc.min.js?v=e297fe5bed6f"});        </script>
+			<div style="margin-bottom: 10px;">
+        
+
+<script>
+    StackExchange.ready(function () {
+        StackExchange.newsletterAd.init();
+    });
+</script>
+
+<div id="newsletter-ad">
+        <p id="newsletter-ad-header">Get the <b>weekly newsletter!</b> In it, you'll get:</p>
+        <ul>
+            <li>The week's top questions and answers</li>
+            <li>Important community announcements</li>
+            <li>Questions that need answers</li>
+        </ul>
+    <div id="newsletter-signup-container"><input id="newsletter-signup" type="button" value="Sign up for the newsletter"></div>
+    <p id="newsletter-preview-container">see an <a href="http://stackexchange.com/newsletters/newsletter?site=stackoverflow.com" id="newsletter-preview">example newsletter</a></p>
+    <div class="dno">
+        
+<p class="privacy-policy-agreement">
+By subscribing, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" name="privacy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" name="tos" target="_blank">terms of service</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1">
+    </div>
+</div>
+
+    </div>
+
+            
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/8503577?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">2</div></a><a href="http://stackoverflow.com/questions/8503577/phpexcel-how-to-write-superscript-in-an-excel?rq=1" class="question-hyperlink">phpExcel , how to write superscript in an excel</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/8797103?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">18</div></a><a href="http://stackoverflow.com/questions/8797103/how-to-open-an-excel-file-with-phpexcel-for-both-reading-and-writing?rq=1" class="question-hyperlink">How to open an Excel file with PHPExcel for both reading and writing?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/13171841?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">5</div></a><a href="http://stackoverflow.com/questions/13171841/phpexcel-using-it-with-excel-template-chart-goes-missing-php?rq=1" class="question-hyperlink">phpexcel - using it with excel template (chart goes missing) php</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/17058960?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="http://stackoverflow.com/questions/17058960/how-to-use-phpexcel-to-replace-tags-in-excel-template?rq=1" class="question-hyperlink">How to use PHPexcel to replace tags in excel template?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/24741463?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">1</div></a><a href="http://stackoverflow.com/questions/24741463/how-to-fill-data-to-template-excel-by-php-without-api?rq=1" class="question-hyperlink">How to fill data to template excel by php without api</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/32985107?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">1</div></a><a href="http://stackoverflow.com/questions/32985107/ms-excel-file-doesnt-load-in-phpexcel?rq=1" class="question-hyperlink">ms excel file doesn't load in PHPExcel</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/34242628?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="http://stackoverflow.com/questions/34242628/how-unprotect-excel-file-while-load-it-with-phpexcel?rq=1" class="question-hyperlink">how unprotect excel file while load it with PHPExcel</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/35496726?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="http://stackoverflow.com/questions/35496726/call-to-undefined-method-phpexcelsheetnameexists-when-loading-a-template-exc?rq=1" class="question-hyperlink">Call to undefined method PHPExcel::sheetNameExists() When Loading a Template Excel File</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/37592461?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">1</div></a><a href="http://stackoverflow.com/questions/37592461/phpexcel-load-excel-template-from-database-blob-without-temporary-file?rq=1" class="question-hyperlink">PHPExcel load excel template from database blob without temporary file</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/39449403?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="http://stackoverflow.com/questions/39449403/write-in-a-excel-file-with-phpexcel?rq=1" class="question-hyperlink">Write in a Excel file with PHPExcel</a></div>
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-networkengineering" title="Network Engineering Stack Exchange"></div><a href="http://networkengineering.stackexchange.com/questions/38573/difference-between-control-plane-data-plane-and-management-plane" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:496 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Difference between control plane, data plane and management plane?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-bicycles" title="Bicycles Stack Exchange"></div><a href="http://bicycles.stackexchange.com/questions/45107/when-installing-a-rear-rack-should-i-attach-the-struts-to-the-frame-or-the-seat" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:126 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    When installing a rear rack, should I attach the struts to the frame or the seat post on my small bike?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="http://tex.stackexchange.com/questions/351762/how-to-use-ifstar-with-arguments" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to use @ifstar with arguments
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-history" title="History Stack Exchange"></div><a href="http://history.stackexchange.com/questions/35278/why-did-the-chinese-nationalist-party-members-go-to-the-island-of-taiwan-and-not" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:324 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why did the Chinese Nationalist party members go to the island of Taiwan and not to any other island?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/151768/how-did-the-clones-know-it-was-palpatine" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How did the clones know it was Palpatine?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/108976/windows-copy-file-dialog" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Windows copy file dialog
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/2126479/is-it-possible-to-write-a-mathematical-formula-for-the-following-sequence" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it possible to write a mathematical formula for the following sequence
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-gaming" title="Arqade"></div><a href="http://gaming.stackexchange.com/questions/299628/why-are-only-the-default-skins-allowed-in-tournaments" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:41 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why are only the default skins allowed in tournaments?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/42013390/is-removing-the-element-from-the-front-of-a-list-in-python-cheap" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is removing the element from the front of a list in Python cheap?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-blender" title="Blender Stack Exchange"></div><a href="http://blender.stackexchange.com/questions/72772/understanding-the-nature-of-a-blender-render" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:502 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Understanding the nature of a Blender render
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="http://worldbuilding.stackexchange.com/questions/70003/evolution-of-tree-dwelling-species-that-will-help-predators-find-prey-if-prey-sp" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Evolution of tree-dwelling species that will help predators find prey if prey species doesn't give it a bribe?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/371200/what-is-a-word-for-not-seeing-obvious-warning-signs" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is a word for not seeing obvious "warning signs"?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/94208/how-does-magic-interact-with-wizard-armor-abilities-and-spells-in-dungeon-world" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How does magic interact with Wizard armor abilities and spells in Dungeon World?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="http://workplace.stackexchange.com/questions/84215/should-i-ask-for-a-25-higher-salary-than-that-advertised-for-a-job-im-well-sui" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Should I ask for a 25% higher salary than that advertised for a job I'm well suited to?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/150153/is-a-dumbphone-mobile-more-secure-for-basic-phone-calls-than-a-smartphone" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is a 'dumbphone' mobile more secure for basic phone calls than a smartphone?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-superuser" title="Super User"></div><a href="http://superuser.com/questions/1174175/how-can-i-use-coaxial-cable-for-ethernet" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can I use coaxial cable for ethernet
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-space" title="Space Exploration Stack Exchange"></div><a href="http://space.stackexchange.com/questions/20002/what-are-the-two-bright-objects-separating-from-the-falcon-9" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:508 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What are the two bright objects separating from the Falcon 9?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/2126471/what-is-the-probability-that-eventually-it-will-rain-forever" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is the probability that eventually it will rain forever?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/371152/what-do-you-call-a-person-who-is-utterly-independent-and-a-loner" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What do you call a person who is utterly independent and a loner?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/2126167/how-do-we-prove-a-set-axioms-never-lead-to-a-contradiction" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do we prove a set axioms never lead to a contradiction?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-bicycles" title="Bicycles Stack Exchange"></div><a href="http://bicycles.stackexchange.com/questions/45092/are-rotor-bolts-designed-to-shear" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:126 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Are rotor bolts designed to shear?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-electronics" title="Electrical Engineering Stack Exchange"></div><a href="http://electronics.stackexchange.com/questions/283760/what-does-232-signify-in-the-rs232-standard" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:135 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What does 232 signify in the RS232 standard?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-webmasters" title="Webmasters Stack Exchange"></div><a href="http://webmasters.stackexchange.com/questions/103428/apache-force-https-by-default-on-custom-port" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:45 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Apache - Force https by default on custom port
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="http://worldbuilding.stackexchange.com/questions/70015/how-large-can-a-water-bear-become-before-it-loses-its-abilities" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How large can a water bear become before it loses its abilities?
+                </a>
+
+            </li>
+    </ul>
+
+        <a href="http://stackoverflow.com/questions/18555487/how-to-load-excel-template-and-write-to-it-in-phpexcel#" class="show-more js-show-more js-gps-track" data-gps-track="posts_hot_network.click({ item_type:3, location:11 })">
+            more hot questions
+        </a>
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/18555487" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/18555487/ivc/43c8');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/18555487/ivc/43c8" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang">lang-php</div></div>
+
+
+        </div>
+    </div><script async="" src="./php - How to load excel template and write to it in PHPExcel_ - Stack Overflow_files/clc.min.js.download"></script>
+    <div id="footer" class="categories">
+        <div class="footerwrap">            
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                    <a href="http://stackoverflow.com/company/about">about us</a>
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                    <a href="http://stackoverflow.blog/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackoverflow.com/company/work-here">work here</a>
+                    <a href="https://www.stackoverflowbusiness.com/advertise">advertising info</a>
+                        <a href="http://stackoverflow.com/jobs/directory/developer-jobs">developer jobs directory</a>
+
+                    <a onclick="StackExchange.switchMobile(&quot;on&quot;)">mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                        <li><a href="http://softwareengineering.stackexchange.com/" title="professionals, academics, and students working within the systems development life cycle who care about creating, delivering, and maintaining software responsibly">Software Engineering</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="information security professionals">Information Security</a></li>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Wolfram Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                        <li><a href="http://expressionengine.stackexchange.com/" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                        <li><a href="http://crypto.stackexchange.com/" title="software developers, mathematicians and others interested in cryptography">Cryptography</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://codereview.stackexchange.com/" title="peer programmer code reviews">Code Review</a></li>
+                        <li><a href="http://magento.stackexchange.com/" title="users of the Magento e-Commerce platform">Magento</a></li>
+                        <li><a href="http://dsp.stackexchange.com/" title="practitioners of the art and science of signal, image and video processing">Signal Processing</a></li>
+                        <li><a href="http://raspberrypi.stackexchange.com/" title="users and developers of hardware and software for Raspberry Pi">Raspberry Pi</a></li>
+                        <li><a href="http://codegolf.stackexchange.com/" title="programming puzzle enthusiasts and code golfers">Programming Puzzles &amp; Code Golf</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://movies.stackexchange.com/" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                        <li><a href="http://music.stackexchange.com/" title="musicians, students, and enthusiasts">Music: Practice &amp; Theory</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (8)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://ell.stackexchange.com/" title="speakers of other languages learning English">English Language Learners</a></li>
+                        <li><a href="http://japanese.stackexchange.com/" title="students, teachers, and linguists wanting to discuss the finer points of the Japanese language">Japanese Language</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                        <li><a href="http://anime.stackexchange.com/" title="anime and manga fans">Anime &amp; Manga</a></li>
+                        <li><a href="http://mechanics.stackexchange.com/" title="mechanics and DIY enthusiast owners of cars, trucks, and motorcycles">Motor Vehicle Maintenance &amp; Repair</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (17)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://chemistry.stackexchange.com/" title="scientists, academics, teachers and students">Chemistry</a></li>
+                        <li><a href="http://biology.stackexchange.com/" title="biology researchers, academics, and students">Biology</a></li>
+                        <li><a href="http://cs.stackexchange.com/" title="students, researchers and practitioners of computer science">Computer Science</a></li>
+                        <li><a href="http://philosophy.stackexchange.com/" title="those interested in the study of the fundamental nature of knowledge, reality, and existence">Philosophy</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (3)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="https://www.stackoverflowbusiness.com/talent">Stack Overflow Talent</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+            <div id="copyright">
+                site design / logo © 2017 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2017.2.2.24932
+            </div>
+                </div>
+    </div>
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled&lt;img src="https://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    
+    
+        
+        ados.run.push(function () {
+                setTimeout(function () { $("#adzerk-user-match").remove(); }, window.AUMIframeDone ? 0 : 2000);
+                ados_setKeywords('php,templates,phpexcel,x-persona-frontend');; ados_load();
+        });   
+        
+</script>
+
+    <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+                ga('create', 'UA-5620270-1');
+                ga('create', 'UA-5620270-59', {name: 'pageData', sampleRate: 5 });
+                ga('set', 'dimension2', '|php|templates|phpexcel|');
+                ga('pageData.set', 'dimension2', '|php|templates|phpexcel|');
+                ga('send', 'pageview');
+                ga('pageData.send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+                qc.async = true;
+                qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+                s.parentNode.insertBefore(qc, s);
+                _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+                            var sc=document.createElement('script');
+                sc.async=true;
+                sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+                s.parentNode.insertBefore(sc, s);
+                _comscore.push({ c1: "2", c2: "17440561" });
+        })();
+
+    </script>
+        
+    
+            <script type="text/javascript">
+                
+                (function(appendChild) {
+                    Node.prototype.appendChild = function() {
+                        var parent = this;
+                        var newNode = arguments[0];
+                        if (parent.nodeName === 'HEAD'
+                            && newNode
+                            && newNode.nodeName === 'SCRIPT'
+                            && newNode.src) {
+                            
+                            window.setTimeout(function() {
+                                var result = newNode.src.match(/^https:\/\/maps\.googleapis\.com\/maps\/api\/place\/js\/(\w+)Service\./i) || [];
+                                var service = result[1];
+                                if (service) {
+                                    if (service === 'Autocompletion') service =  2;
+                                    else if (service === 'Place') service = 1;
+                                    else service = 0;
+                                    StackExchange.using('gps', function() {
+                                        StackExchange.gps.track('google_maps_places_api.call', { service: service });
+                                    });
+                                }
+                            }, 0);
+                        }
+                        return appendChild.apply(this, arguments);
+                    };
+                })(Node.prototype.appendChild);
+            </script>
+    
+<div style="overflow: hidden; position: absolute; z-index: 1002; width: 330px; height: 172px; top: 1186px; left: 661.5px;"><div id="user-menu"><div class="um-header">
+    <div class="um-gravatar">
+        <a href="http://stackoverflow.com/users/1542982/mehdi-jalal"><div class="gravatar-wrapper-64"><img src="./php - How to load excel template and write to it in PHPExcel_ - Stack Overflow_files/QBPXZ(1).jpg" alt="" width="64" height="64" style="width: 64px; height: 64px; visibility: visible;"></div></a>
+    </div>
+    <div class="um-header-info"><a href="http://stackoverflow.com/users/1542982/mehdi-jalal" class="um-user-link">Mehdi Jalal</a><br>
+        <div class="um-flair"><span class="reputation-score" title="reputation score " dir="ltr">2,501</span><span title="5 gold badges"><span class="badge1"></span><span class="badgecount">5</span></span><span title="19 silver badges"><span class="badge2"></span><span class="badgecount">19</span></span><span title="38 bronze badges"><span class="badge3"></span><span class="badgecount">38</span></span></div>
+        <a href="http://www.tenders.af/" rel="nofollow noreferrer">tenders.af</a>        <br>
+
+    </div>
+    <div class="um-about-me"> OpenERP, SharePoint, Web Application &amp; Database Developer
+
+<br>My Websites:
+
+<br><a href="http://www.tenders.af/" rel="nofollow">http://www.tenders.af</a> 
+
+<br><a href="http://www.kabultenders.com/" rel="nofollow">http://www.kabultenders.com</a> 
+
+ <a href="http://www.bitlinker.af/" rel="nofollow">http://www.bitlinker.af</a>
+</div>
+</div></div></div></body></html>

@@ -1,0 +1,1639 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0070)http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head profile="http://gmpg.org/xfn/11"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>php:   Read and write Excel file using PHP (example)Simple. Clean. Works!</title>
+	<link rel="stylesheet" type="text/css" media="all" href="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/style.css">
+	<link rel="pingback" href="http://www.ahowto.net/xmlrpc.php">
+	<link rel="dns-prefetch" href="http://maps.googleapis.com/">
+<link rel="dns-prefetch" href="http://s0.wp.com/">
+<link rel="dns-prefetch" href="http://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Simple. Clean. Works! » Feed" href="http://www.ahowto.net/feed/">
+<link rel="alternate" type="application/rss+xml" title="Simple. Clean. Works! » Comments Feed" href="http://www.ahowto.net/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Simple. Clean. Works! » Read and write Excel file using PHP (example) Comments Feed" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.ahowto.net\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.1"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/wp-emoji-release.min.js.download" type="text/javascript"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="crayon-css" href="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/crayon.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-theme-classic-css" href="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/classic.css" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-font-monaco-css" href="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/monaco.css" type="text/css" media="all">
+<link rel="stylesheet" id="font_awsome-css-css" href="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/font-awesome.css" type="text/css" media="all">
+<link rel="stylesheet" id="bootstrap-css-css" href="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/bootstrap.css" type="text/css" media="all">
+<link rel="stylesheet" id="bootstrap_theme-css-css" href="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/bootstrap-theme.css" type="text/css" media="all">
+<link rel="stylesheet" id="frontend_main-css-css" href="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/frontend_main.css" type="text/css" media="all">
+<link rel="stylesheet" id="contact-form-7-css" href="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="wpt-twitter-feed-css" href="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/twitter-feed.css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/jetpack.css" type="text/css" media="all">
+<script type="text/javascript" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/jquery.js.download"></script>
+<script type="text/javascript" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/jquery-migrate.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var related_posts_js_options = {"post_heading":"h4"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/related-posts.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"http:\/\/www.ahowto.net\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/crayon.min.js.download"></script>
+<script type="text/javascript" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/js"></script>
+<script type="text/javascript" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/init_map.js.download"></script>
+<script type="text/javascript" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/frontend_main.js.download"></script>
+<script type="text/javascript" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/js(1)"></script>
+<link rel="https://api.w.org/" href="http://www.ahowto.net/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.ahowto.net/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.ahowto.net/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="How to extract embedded subtitles (.srt/.ass) from MKV files" href="http://www.ahowto.net/linux/how-to-extract-embedded-subtitles-srt-ass-from-mkv-files/">
+<link rel="next" title="Color Cell in a stringgrid" href="http://www.ahowto.net/delphi/color-cell-in-a-stringgrid/">
+<meta name="generator" content="WordPress 4.6.1">
+<link rel="canonical" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/">
+<link rel="shortlink" href="http://wp.me/p28gs4-D">
+<link rel="alternate" type="application/json+oembed" href="http://www.ahowto.net/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.ahowto.net%2Fphp%2Fread-and-write-excel-file-using-php-example%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://www.ahowto.net/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.ahowto.net%2Fphp%2Fread-and-write-excel-file-using-php-example%2F&amp;format=xml">
+
+<!-- platinum seo pack 1.3.8 -->
+<meta name="robots" content="index,follow,noodp,noydir">
+<meta name="description" content="This post will describe a basic usage of PHPExcel to read and write Excel file. Although in this demo I use .xls extension, PHPExcel really can write and read">
+<meta name="keywords" content="excel,php,phpexcel,script">
+<link rel="canonical" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/">
+<!-- /platinum one seo pack -->
+
+<link rel="dns-prefetch" href="http://v0.wordpress.com/">
+<link rel="dns-prefetch" href="http://jetpack.wordpress.com/">
+<link rel="dns-prefetch" href="http://s0.wp.com/">
+<link rel="dns-prefetch" href="http://s1.wp.com/">
+<link rel="dns-prefetch" href="http://s2.wp.com/">
+<link rel="dns-prefetch" href="http://public-api.wordpress.com/">
+<link rel="dns-prefetch" href="http://0.gravatar.com/">
+<link rel="dns-prefetch" href="http://1.gravatar.com/">
+<link rel="dns-prefetch" href="http://2.gravatar.com/">
+<link rel="dns-prefetch" href="http://widgets.wp.com/">
+<link rel="dns-prefetch" href="http://i0.wp.com/">
+<link rel="dns-prefetch" href="http://i1.wp.com/">
+<link rel="dns-prefetch" href="http://i2.wp.com/">
+
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Read and write Excel file using PHP (example)">
+<meta property="og:url" content="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/">
+<meta property="og:description" content="This post will describe a basic usage of PHPExcel to read and write Excel file. Although in this demo I use .xls extension, PHPExcel really can write and read Excel 2007 (.xlsx) files too. Download…">
+<meta property="article:published_time" content="2012-01-24T04:12:05+00:00">
+<meta property="article:modified_time" content="2012-07-27T23:52:39+00:00">
+<meta property="og:site_name" content="Simple. Clean. Works!">
+<meta property="og:image" content="http://www.ahowto.net/wp-content/uploads/2012/01/result-excel-300x179.jpg">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+	<meta name="viewport" content="width=device-width"><!-- for mobile -->
+<script type="text/javascript" charset="UTF-8" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/common.js.download"></script><script type="text/javascript" charset="UTF-8" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/util.js.download"></script><script type="text/javascript" charset="UTF-8" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/stats.js.download"></script><script type="text/javascript" charset="UTF-8" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/common.js(1).download"></script><script type="text/javascript" charset="UTF-8" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/util.js(1).download"></script><script type="text/javascript" charset="UTF-8" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/stats.js(1).download"></script></head>
+<body class="single single-post postid-39 single-format-standard">
+<div id="nav">
+	<div class="nav-inside">
+		<div id="menus">
+			<ul id="menus-dt" class="menus-dt">
+				<li id="menu-item-365" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-365"><a href="http://www.ahowto.net/">Home</a></li>
+<li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22"><a title="Who is Achmad Z" href="http://www.ahowto.net/about/">About</a></li>
+<li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23"><a title="How to contact Achmad Z" href="http://www.ahowto.net/contact/">Contact</a></li>
+<li id="menu-item-58" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58"><a href="http://www.ahowto.net/sitemap/">Sitemap</a></li>
+<li id="menu-item-370" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-370"><a href="http://www.ahowto.net/privacy-policy/">Privacy Policy</a></li>
+			</ul>
+			<ul id="menus-m" class="menus-m">
+				<li>Menu</li>
+			</ul>
+		</div>
+		<div id="search">
+			<form id="searchform" method="get" action="http://www.ahowto.net/">
+<input type="text" value="Search: type, hit enter" onfocus="if (this.value == &#39;Search: type, hit enter&#39;) {this.value = &#39;&#39;;}" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Search: type, hit enter&#39;;}" size="35" maxlength="50" name="s" id="s">
+<input type="submit" id="searchsubmit" value="SEARCH">
+</form>		</div>
+	</div>
+</div>
+<div id="header">
+		<div class="site_title">
+		<h1><a href="http://www.ahowto.net/">Simple. Clean. Works!</a></h1>
+		<h2>Achmad Z's Archives</h2>
+		<div class="clear"></div>
+	</div>
+	</div>
+<div id="wrapper">
+<div id="content">
+		<div class="post-single post-39 post type-post status-publish format-standard hentry category-php tag-excel tag-php tag-phpexcel tag-script" id="post-39"><!-- post div -->
+		<h2 class="title">Read and write Excel file using PHP (example)</h2>
+		<div class="post-info-top">
+			<span class="post-info-date">
+				Posted by <a href="http://www.ahowto.net/author/admin/" title="View all posts by admin" rel="author">admin</a>
+				on				2012/01/24							</span>
+						<span class="addcomment"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#respond" rel="nofollow" title="Leave a comment ?">Leave a comment</a> (43)</span>
+			<span class="gotocomments"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comments" rel="nofollow" title="Go to comments ?">Go to comments</a></span>
+					</div>
+		<div class="clear"></div>
+		<div class="entry">
+			<p>This post will describe a basic usage of <a title="Open Source read-write Excel library for PHP" href="http://www.phpexcel.net/">PHPExcel</a> to read and write Excel file. Although in this demo I use .xls extension, PHPExcel really can write and read Excel 2007 (.xlsx) files too.</p>
+<p><a title="Read and Write .xlsx using PHP" href="http://phpexcel.codeplex.com/">Download PHPExcel here</a> (free of charge, it’s open source <img draggable="false" class="emoji" alt="😀" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/1f600.svg"> ).</p>
+<p>Unzip the PHPExcel .zip file into your project destination. You only need to extract “<strong>Classes</strong>” folder.</p>
+<p><em><strong><span style="text-decoration: underline;">Our scenario:</span></strong></em> user will fill some HTML form then from this input, we will populate a new Excel file (.xls) and send it to user as downloadable file.</p>
+<div id="attachment_40" style="width: 306px" class="wp-caption aligncenter"><a href="https://i2.wp.com/www.ahowto.net/wp-content/uploads/2012/01/template-screenshot.jpg"><img class="size-full wp-image-40 " title="Excel template screenshot" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/template-screenshot.jpg" alt="Our Excel template screenshot" width="296" height="183"></a><p class="wp-caption-text">Excel template screen shot</p></div>
+<p>We will fill C1 cell with the current date when the form submitted. C3 cell will be the user’s name and C4 cell will contain user’s message. Our template file –&gt; <a href="http://demo.ahowto.net/phpexcel/template.xls">http://demo.ahowto.net/phpexcel/template.xls</a></p>
+<p>Full source code of our simple form can be seen by viewing source code (Ctrl+U on Firefox) our demo URL: <strong><a title="Read and write Excel file using PHP demo page" href="http://demo.ahowto.net/phpexcel/">http://demo.ahowto.net/phpexcel/</a></strong></p>
+<p>Form inputs will be processed by process.php below:</p>
+<p>&nbsp;</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5893f8bc51120217429926" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">PHP</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">//processing form submitted
+
+if (!isset($_POST['btnSubmit'])) exit;
+
+//include PHPExcel library
+require_once "Classes/PHPExcel/IOFactory.php";
+
+//load Excel template file
+$objTpl = PHPExcel_IOFactory::load("template.xls");
+$objTpl-&gt;setActiveSheetIndex(0);  //set first sheet as active
+
+$objTpl-&gt;getActiveSheet()-&gt;setCellValue('C2', date('Y-m-d'));  //set C1 to current date
+$objTpl-&gt;getActiveSheet()-&gt;getStyle('C2')-&gt;getAlignment()-&gt;setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_RIGHT); //C1 is right-justified
+
+$objTpl-&gt;getActiveSheet()-&gt;setCellValue('C3', stripslashes($_POST['txtName']));
+$objTpl-&gt;getActiveSheet()-&gt;setCellValue('C4', stripslashes($_POST['txtMessage']));
+
+$objTpl-&gt;getActiveSheet()-&gt;getStyle('C4')-&gt;getAlignment()-&gt;setWrapText(true);  //set wrapped for some long text message
+
+$objTpl-&gt;getActiveSheet()-&gt;getColumnDimension('C')-&gt;setWidth(40);  //set column C width
+$objTpl-&gt;getActiveSheet()-&gt;getRowDimension('4')-&gt;setRowHeight(120);  //set row 4 height
+$objTpl-&gt;getActiveSheet()-&gt;getStyle('A4:C4')-&gt;getAlignment()-&gt;setVertical(PHPExcel_Style_Alignment::VERTICAL_TOP); //A4 until C4 is vertically top-aligned
+
+//prepare download
+$filename=mt_rand(1,100000).'.xls'; //just some random filename
+header('Content-Type: application/vnd.ms-excel');
+header('Content-Disposition: attachment;filename="'.$filename.'"');
+header('Cache-Control: max-age=0');
+
+$objWriter = PHPExcel_IOFactory::createWriter($objTpl, 'Excel5');  //downloadable file is in Excel 2003 format (.xls)
+$objWriter-&gt;save('php://output');  //send it to user, of course you can save it to disk also!
+
+exit; //done.. exiting!</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5893f8bc51120217429926-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5893f8bc51120217429926-2">2</div><div class="crayon-num" data-line="crayon-5893f8bc51120217429926-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5893f8bc51120217429926-4">4</div><div class="crayon-num" data-line="crayon-5893f8bc51120217429926-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5893f8bc51120217429926-6">6</div><div class="crayon-num" data-line="crayon-5893f8bc51120217429926-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5893f8bc51120217429926-8">8</div><div class="crayon-num" data-line="crayon-5893f8bc51120217429926-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5893f8bc51120217429926-10">10</div><div class="crayon-num" data-line="crayon-5893f8bc51120217429926-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-5893f8bc51120217429926-12">12</div><div class="crayon-num" data-line="crayon-5893f8bc51120217429926-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-5893f8bc51120217429926-14">14</div><div class="crayon-num" data-line="crayon-5893f8bc51120217429926-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-5893f8bc51120217429926-16">16</div><div class="crayon-num" data-line="crayon-5893f8bc51120217429926-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-5893f8bc51120217429926-18">18</div><div class="crayon-num" data-line="crayon-5893f8bc51120217429926-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-5893f8bc51120217429926-20">20</div><div class="crayon-num" data-line="crayon-5893f8bc51120217429926-21">21</div><div class="crayon-num crayon-striped-num" data-line="crayon-5893f8bc51120217429926-22">22</div><div class="crayon-num" data-line="crayon-5893f8bc51120217429926-23">23</div><div class="crayon-num crayon-striped-num" data-line="crayon-5893f8bc51120217429926-24">24</div><div class="crayon-num" data-line="crayon-5893f8bc51120217429926-25">25</div><div class="crayon-num crayon-striped-num" data-line="crayon-5893f8bc51120217429926-26">26</div><div class="crayon-num" data-line="crayon-5893f8bc51120217429926-27">27</div><div class="crayon-num crayon-striped-num" data-line="crayon-5893f8bc51120217429926-28">28</div><div class="crayon-num" data-line="crayon-5893f8bc51120217429926-29">29</div><div class="crayon-num crayon-striped-num" data-line="crayon-5893f8bc51120217429926-30">30</div><div class="crayon-num" data-line="crayon-5893f8bc51120217429926-31">31</div><div class="crayon-num crayon-striped-num" data-line="crayon-5893f8bc51120217429926-32">32</div><div class="crayon-num" data-line="crayon-5893f8bc51120217429926-33">33</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5893f8bc51120217429926-1"><span class="crayon-c">//processing form submitted</span></div><div class="crayon-line crayon-striped-line" id="crayon-5893f8bc51120217429926-2">&nbsp;</div><div class="crayon-line" id="crayon-5893f8bc51120217429926-3"><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-o">!</span><span class="crayon-k ">isset</span><span class="crayon-sy">(</span><span class="crayon-v">$_POST</span><span class="crayon-sy">[</span><span class="crayon-s">'btnSubmit'</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-k ">exit</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5893f8bc51120217429926-4">&nbsp;</div><div class="crayon-line" id="crayon-5893f8bc51120217429926-5"><span class="crayon-c">//include PHPExcel library</span></div><div class="crayon-line crayon-striped-line" id="crayon-5893f8bc51120217429926-6"><span class="crayon-k ">require_once</span><span class="crayon-h"> </span><span class="crayon-s">"Classes/PHPExcel/IOFactory.php"</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5893f8bc51120217429926-7">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5893f8bc51120217429926-8"><span class="crayon-c">//load Excel template file</span></div><div class="crayon-line" id="crayon-5893f8bc51120217429926-9"><span class="crayon-v">$objTpl</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">PHPExcel_IOFactory::</span><span class="crayon-e">load</span><span class="crayon-sy">(</span><span class="crayon-s">"template.xls"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5893f8bc51120217429926-10"><span class="crayon-v">$objTpl</span><span class="crayon-o">-&gt;</span><span class="crayon-e">setActiveSheetIndex</span><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//set first sheet as active</span></div><div class="crayon-line" id="crayon-5893f8bc51120217429926-11">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5893f8bc51120217429926-12"><span class="crayon-v">$objTpl</span><span class="crayon-o">-&gt;</span><span class="crayon-e">getActiveSheet</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-o">-&gt;</span><span class="crayon-e">setCellValue</span><span class="crayon-sy">(</span><span class="crayon-s">'C2'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">date</span><span class="crayon-sy">(</span><span class="crayon-s">'Y-m-d'</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//set C1 to current date</span></div><div class="crayon-line" id="crayon-5893f8bc51120217429926-13"><span class="crayon-v">$objTpl</span><span class="crayon-o">-&gt;</span><span class="crayon-e">getActiveSheet</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-o">-&gt;</span><span class="crayon-e">getStyle</span><span class="crayon-sy">(</span><span class="crayon-s">'C2'</span><span class="crayon-sy">)</span><span class="crayon-o">-&gt;</span><span class="crayon-e">getAlignment</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-o">-&gt;</span><span class="crayon-e">setHorizontal</span><span class="crayon-sy">(</span><span class="crayon-e">PHPExcel_Style_Alignment::</span><span class="crayon-cn">HORIZONTAL_RIGHT</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//C1 is right-justified</span></div><div class="crayon-line crayon-striped-line" id="crayon-5893f8bc51120217429926-14">&nbsp;</div><div class="crayon-line" id="crayon-5893f8bc51120217429926-15"><span class="crayon-v">$objTpl</span><span class="crayon-o">-&gt;</span><span class="crayon-e">getActiveSheet</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-o">-&gt;</span><span class="crayon-e">setCellValue</span><span class="crayon-sy">(</span><span class="crayon-s">'C3'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">stripslashes</span><span class="crayon-sy">(</span><span class="crayon-v">$_POST</span><span class="crayon-sy">[</span><span class="crayon-s">'txtName'</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5893f8bc51120217429926-16"><span class="crayon-v">$objTpl</span><span class="crayon-o">-&gt;</span><span class="crayon-e">getActiveSheet</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-o">-&gt;</span><span class="crayon-e">setCellValue</span><span class="crayon-sy">(</span><span class="crayon-s">'C4'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">stripslashes</span><span class="crayon-sy">(</span><span class="crayon-v">$_POST</span><span class="crayon-sy">[</span><span class="crayon-s">'txtMessage'</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5893f8bc51120217429926-17">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5893f8bc51120217429926-18"><span class="crayon-v">$objTpl</span><span class="crayon-o">-&gt;</span><span class="crayon-e">getActiveSheet</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-o">-&gt;</span><span class="crayon-e">getStyle</span><span class="crayon-sy">(</span><span class="crayon-s">'C4'</span><span class="crayon-sy">)</span><span class="crayon-o">-&gt;</span><span class="crayon-e">getAlignment</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-o">-&gt;</span><span class="crayon-e">setWrapText</span><span class="crayon-sy">(</span><span class="crayon-t">true</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//set wrapped for some long text message</span></div><div class="crayon-line" id="crayon-5893f8bc51120217429926-19">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5893f8bc51120217429926-20"><span class="crayon-v">$objTpl</span><span class="crayon-o">-&gt;</span><span class="crayon-e">getActiveSheet</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-o">-&gt;</span><span class="crayon-e">getColumnDimension</span><span class="crayon-sy">(</span><span class="crayon-s">'C'</span><span class="crayon-sy">)</span><span class="crayon-o">-&gt;</span><span class="crayon-e">setWidth</span><span class="crayon-sy">(</span><span class="crayon-cn">40</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//set column C width</span></div><div class="crayon-line" id="crayon-5893f8bc51120217429926-21"><span class="crayon-v">$objTpl</span><span class="crayon-o">-&gt;</span><span class="crayon-e">getActiveSheet</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-o">-&gt;</span><span class="crayon-e">getRowDimension</span><span class="crayon-sy">(</span><span class="crayon-s">'4'</span><span class="crayon-sy">)</span><span class="crayon-o">-&gt;</span><span class="crayon-e">setRowHeight</span><span class="crayon-sy">(</span><span class="crayon-cn">120</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//set row 4 height</span></div><div class="crayon-line crayon-striped-line" id="crayon-5893f8bc51120217429926-22"><span class="crayon-v">$objTpl</span><span class="crayon-o">-&gt;</span><span class="crayon-e">getActiveSheet</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-o">-&gt;</span><span class="crayon-e">getStyle</span><span class="crayon-sy">(</span><span class="crayon-s">'A4:C4'</span><span class="crayon-sy">)</span><span class="crayon-o">-&gt;</span><span class="crayon-e">getAlignment</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-o">-&gt;</span><span class="crayon-e">setVertical</span><span class="crayon-sy">(</span><span class="crayon-e">PHPExcel_Style_Alignment::</span><span class="crayon-cn">VERTICAL_TOP</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//A4 until C4 is vertically top-aligned</span></div><div class="crayon-line" id="crayon-5893f8bc51120217429926-23">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5893f8bc51120217429926-24"><span class="crayon-c">//prepare download</span></div><div class="crayon-line" id="crayon-5893f8bc51120217429926-25"><span class="crayon-v">$filename</span><span class="crayon-o">=</span><span class="crayon-e">mt_rand</span><span class="crayon-sy">(</span><span class="crayon-cn">1</span><span class="crayon-sy">,</span><span class="crayon-cn">100000</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-s">'.xls'</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//just some random filename</span></div><div class="crayon-line crayon-striped-line" id="crayon-5893f8bc51120217429926-26"><span class="crayon-e">header</span><span class="crayon-sy">(</span><span class="crayon-s">'Content-Type: application/vnd.ms-excel'</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5893f8bc51120217429926-27"><span class="crayon-e">header</span><span class="crayon-sy">(</span><span class="crayon-s">'Content-Disposition: attachment;filename="'</span><span class="crayon-sy">.</span><span class="crayon-v">$filename</span><span class="crayon-sy">.</span><span class="crayon-s">'"'</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5893f8bc51120217429926-28"><span class="crayon-e">header</span><span class="crayon-sy">(</span><span class="crayon-s">'Cache-Control: max-age=0'</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5893f8bc51120217429926-29">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5893f8bc51120217429926-30"><span class="crayon-v">$objWriter</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">PHPExcel_IOFactory::</span><span class="crayon-e">createWriter</span><span class="crayon-sy">(</span><span class="crayon-v">$objTpl</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'Excel5'</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//downloadable file is in Excel 2003 format (.xls)</span></div><div class="crayon-line" id="crayon-5893f8bc51120217429926-31"><span class="crayon-v">$objWriter</span><span class="crayon-o">-&gt;</span><span class="crayon-e">save</span><span class="crayon-sy">(</span><span class="crayon-s">'php://output'</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//send it to user, of course you can save it to disk also!</span></div><div class="crayon-line crayon-striped-line" id="crayon-5893f8bc51120217429926-32">&nbsp;</div><div class="crayon-line" id="crayon-5893f8bc51120217429926-33"><span class="crayon-k ">exit</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//done.. exiting!</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0058 seconds] -->
+<p>I already put a lot of comment on the codes. It should be clear. On the code above, I show you how to read Excel .xls file, change cell content, formatting a cell (alignment), change column width, set row height and finally “force” send result file to user.</p>
+<p>The Excel result file should be like this:</p>
+<p><a href="https://i1.wp.com/www.ahowto.net/wp-content/uploads/2012/01/result-excel.jpg"><img class="aligncenter size-medium wp-image-43" title="Excel result from template" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/result-excel-300x179.jpg" alt="Our Excel result from template created by PHP" srcset="https://i1.wp.com/www.ahowto.net/wp-content/uploads/2012/01/result-excel.jpg?resize=300%2C179 300w, https://i1.wp.com/www.ahowto.net/wp-content/uploads/2012/01/result-excel.jpg?w=459 459w" sizes="(max-width: 300px) 100vw, 300px" width="300" height="179"></a></p>
+<p>You can do more than I showed here (such as setting cell color, rotation, inserting images, formula, printing, etc.) &nbsp;by reading PHPExcel <strong>Documentation</strong> and see the codes in <strong>Tests</strong> folder (it is included in the PHPExcel download zip).</p>
+<div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-loaded" id="like-post-wrapper-31522540-39-5893f8bc5ff0b" data-src="//widgets.wp.com/likes/#blog_id=31522540&amp;post_id=39&amp;origin=www.ahowto.net&amp;obj_id=31522540-39-5893f8bc5ff0b" data-name="like-post-frame-31522540-39-5893f8bc5ff0b"><h3 class="sd-title">Like this:</h3><div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px; display: none;"><span class="button"><span>Like</span></span> <span class="loading">Loading...</span></div><iframe class="post-likes-widget jetpack-likes-widget" name="like-post-frame-31522540-39-5893f8bc5ff0b" height="55px" width="100%" frameborder="0" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/saved_resource.html"></iframe><span class="sd-text-color"></span><a class="sd-link-color"></a></div>
+<div id="jp-relatedposts" class="jp-relatedposts" style="display: block;">
+	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+<div class="jp-relatedposts-items jp-relatedposts-items-minimal"><p class="jp-relatedposts-post jp-relatedposts-post0" data-post-id="293" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="http://www.ahowto.net/php/easily-integrateload-phpexcel-into-codeigniter-framework/" title="Easily integrate/load PHPExcel into CodeIgniter Framework
+
+PHPExcel is a set of PHP classes/library to read and write Excel files (.XLS/.XLSX). Based on CodeIgniter wiki page, integrating and using PHPExcel into CodeIgniter framework need some modification in PHPExcel source code. With the steps that I will show you, you will not need to edit any PHPExcel source…" rel="nofollow" data-origin="39" data-position="0">Easily integrate/load PHPExcel into CodeIgniter Framework</a></span><span class="jp-relatedposts-post-date">2012/06/24</span><span class="jp-relatedposts-post-context">In "php"</span></p><p class="jp-relatedposts-post jp-relatedposts-post1" data-post-id="317" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="http://www.ahowto.net/php/easily-integrate-ezpdf-a-k-a-pdf-php-into-codeigniter-framework/" title="Easily integrate ezPDF (a.k.a pdf-php) into CodeIgniter Framework
+
+Got another spare time, so, another simple tips for you. Last post I already show how to easily integrate PHPExcel in CodeIgniter so you&#39;ll be able to create downloadable XLS report easily. We will complete our CodeIgniter reporting capability by adding PDF output feature. (Yeah, I know PHPExcel can also…" rel="nofollow" data-origin="39" data-position="1">Easily integrate ezPDF (a.k.a pdf-php) into CodeIgniter Framework</a></span><span class="jp-relatedposts-post-date">2012/07/05</span><span class="jp-relatedposts-post-context">In "php"</span></p><p class="jp-relatedposts-post jp-relatedposts-post2" data-post-id="390" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="http://www.ahowto.net/php/nusphere-phped-code-completion-for-codeigniter-framework/" title="NuSphere PhpED code completion for CodeIgniter Framework
+
+NuSphere PhpED is PHP IDE of my choice since when I&#39;m in college while CodeIgniter is my PHP Framework of choice because of it&#39;s simplicity, extensibility and documentation. Creating website using CodeIgniter Framework on PhpED is quite a hassle because of non-working code completion for CodeIgniter&#39;s MVC. PhpED won&#39;t show…" rel="nofollow" data-origin="39" data-position="2">NuSphere PhpED code completion for CodeIgniter Framework</a></span><span class="jp-relatedposts-post-date">2012/07/21</span><span class="jp-relatedposts-post-context">In "Featured Articles"</span></p></div></div><h2 id="related-posts-via-taxonomies-title">Related Posts via Taxonomies</h2><ul id="related-posts-via-taxonomies-list"><li><a href="http://www.ahowto.net/php/easily-integrateload-phpexcel-into-codeigniter-framework/" title="Easily integrate/load PHPExcel into CodeIgniter Framework">Easily integrate/load PHPExcel into CodeIgniter Framework</a> (4)</li><li><a href="http://www.ahowto.net/php/script-to-check-the-last-date-when-bing-com-bot-is-indexing-your-site/" title="Script to check the last date when Bing.com bot is indexing your site">Script to check the last date when Bing.com bot is indexing your site</a> (3)</li><li><a href="http://www.ahowto.net/php/script-to-check-how-many-pages-from-a-site-is-indexed-in-bing-com/" title="Script to check how many pages from a site is indexed in Bing.com">Script to check how many pages from a site is indexed in Bing.com</a> (3)</li><li><a href="http://www.ahowto.net/php/script-to-check-if-a-domain-is-banned-from-adsense-program-or-not/" title="Script to check if a domain is banned from Adsense program or not">Script to check if a domain is banned from Adsense program or not</a> (3)</li><li><a href="http://www.ahowto.net/php/use-maxmind-free-geolitecountry-for-geo-targetting-visitor/" title="Use Maxmind Free GeoLiteCountry for geo targeting visitors (example)">Use Maxmind Free GeoLiteCountry for geo targeting visitors (example)</a> (3)</li></ul>					</div><!-- END entry -->
+		
+				
+		<div class="post-info-bottom">
+			<span class="post-info-category"><a href="http://www.ahowto.net/category/php/" rel="category tag">php</a></span><span class="post-info-tags"><a href="http://www.ahowto.net/tag/excel/" rel="tag">excel</a>, <a href="http://www.ahowto.net/tag/php/" rel="tag">php</a>, <a href="http://www.ahowto.net/tag/phpexcel/" rel="tag">phpexcel</a>, <a href="http://www.ahowto.net/tag/script/" rel="tag">script</a></span>
+		</div>
+		<div id="nav-below">
+			<div class="nav-previous"><a href="http://www.ahowto.net/linux/how-to-extract-embedded-subtitles-srt-ass-from-mkv-files/" rel="prev"><span class="meta-nav">←</span> How to extract embedded subtitles (.srt/.ass) from MKV files</a></div>
+			<div class="nav-next"><a href="http://www.ahowto.net/delphi/color-cell-in-a-stringgrid/" rel="next">Color Cell in a stringgrid <span class="meta-nav">→</span></a></div>
+		</div><!-- #nav-below -->					
+	</div><!-- END post -->
+	<!-- You can start editing here. -->
+
+			<div id="comments-div"><span id="comments-addcomment"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#respond" rel="nofollow" title="Leave a comment ?">Leave a comment ?</a></span><h2 id="comments">43 Comments.</h2></div>
+		<ol class="commentlist" id="thecomments">
+				
+<li class="comment even thread-even depth-1" id="li-comment-500">
+	<div id="comment-500">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/3469c1ecd2f2b20e48f7e6cded1bc353" srcset="http://0.gravatar.com/avatar/3469c1ecd2f2b20e48f7e6cded1bc353?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn">badtrip</cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-500">2012/06/24 at 21:34</a></span>
+		</div>
+		<div class="comment-text">
+			<p><img draggable="false" class="emoji" alt="😈" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/1f608.svg">  <img draggable="false" class="emoji" alt="👿" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/1f47f.svg">  <img draggable="false" class="emoji" alt="👿" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/1f47f.svg"></p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=500#respond" onclick="return addComment.moveForm( &quot;comment-500&quot;, &quot;500&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to badtrip">Reply</a>		</div>
+	</div>
+
+</li><!-- #comment-## -->
+
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-521">
+	<div id="comment-521">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/39ced2183e55d91c3ae70cfb74cb365c" srcset="http://0.gravatar.com/avatar/39ced2183e55d91c3ae70cfb74cb365c?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn">olivia</cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-521">2012/07/03 at 01:40</a></span>
+		</div>
+		<div class="comment-text">
+			<p>Beautiful, thanks.</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=521#respond" onclick="return addComment.moveForm( &quot;comment-521&quot;, &quot;521&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to olivia">Reply</a>		</div>
+	</div>
+
+</li><!-- #comment-## -->
+
+<li class="comment even thread-even depth-1" id="li-comment-2548">
+	<div id="comment-2548">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/de207896981f567851edfa41f82fe16e" srcset="http://1.gravatar.com/avatar/de207896981f567851edfa41f82fe16e?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn">pankaj</cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-2548">2012/08/30 at 17:28</a></span>
+		</div>
+		<div class="comment-text">
+			<p>I says at first a lot of  thanks .<br>
+I want save the excel  file at my physical location .<br>
+c:\wamp\www\……<br>
+Can you help me .</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=2548#respond" onclick="return addComment.moveForm( &quot;comment-2548&quot;, &quot;2548&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to pankaj">Reply</a>		</div>
+	</div>
+
+<ul class="children">
+
+<li class="comment byuser comment-author-admin bypostauthor odd alt depth-2" id="li-comment-2551">
+	<div id="comment-2551">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/008162d67d9500ac8aaf637d62db5afa" srcset="http://0.gravatar.com/avatar/008162d67d9500ac8aaf637d62db5afa?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn">admin</cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-2551">2012/08/31 at 05:35</a></span>
+		</div>
+		<div class="comment-text">
+			<p>remove all <strong>header()</strong> PHP code and<br>
+just change from this:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5893f8bc52846623680131" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; z-index: 4;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">PHP</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">$objWriter-&gt;save('php://output');</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5893f8bc52846623680131-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5893f8bc52846623680131-1"><span class="crayon-v">$objWriter</span><span class="crayon-o">-&gt;</span><span class="crayon-e">save</span><span class="crayon-sy">(</span><span class="crayon-s">'php://output'</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0002 seconds] -->
+<p>into this:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5893f8bc5284c997035729" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; z-index: 4;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">PHP</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">$objWriter-&gt;save('your_target_filename.xls');</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5893f8bc5284c997035729-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5893f8bc5284c997035729-1"><span class="crayon-v">$objWriter</span><span class="crayon-o">-&gt;</span><span class="crayon-e">save</span><span class="crayon-sy">(</span><span class="crayon-s">'your_target_filename.xls'</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0002 seconds] -->
+<p>Your file will be saved in the same directory/folder as the PHP file</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=2551#respond" onclick="return addComment.moveForm( &quot;comment-2551&quot;, &quot;2551&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to admin">Reply</a>		</div>
+	</div>
+
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-2582">
+	<div id="comment-2582">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/e8593fa4157195b69a8996f31f214c82" srcset="http://2.gravatar.com/avatar/e8593fa4157195b69a8996f31f214c82?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn">vde</cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-2582">2012/09/28 at 03:55</a></span>
+		</div>
+		<div class="comment-text">
+			<p>Great for basic XLS, but …</p>
+<p>I have make a bot which write data into a template excel file.<br>
+All are ok but not at all optimized for insert many lines from a n array. In this case performance are bad and crash the api.</p>
+<p>For write many lines dynamicaly, use writeexcel library.</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=2582#respond" onclick="return addComment.moveForm( &quot;comment-2582&quot;, &quot;2582&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to vde">Reply</a>		</div>
+	</div>
+
+</li><!-- #comment-## -->
+
+<li class="comment odd alt thread-even depth-1" id="li-comment-2622">
+	<div id="comment-2622">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/dd10c9830b3a151a9c46cc984536d4a3" srcset="http://1.gravatar.com/avatar/dd10c9830b3a151a9c46cc984536d4a3?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn"><a href="http://harryayam.blogspot.com/" rel="external nofollow" class="url">rizky</a></cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-2622">2012/10/17 at 15:46</a></span>
+		</div>
+		<div class="comment-text">
+			<p>where must i set a location of my excel template..??</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=2622#respond" onclick="return addComment.moveForm( &quot;comment-2622&quot;, &quot;2622&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to rizky">Reply</a>		</div>
+	</div>
+
+<ul class="children">
+
+<li class="comment byuser comment-author-admin bypostauthor even depth-2" id="li-comment-2623">
+	<div id="comment-2623">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/008162d67d9500ac8aaf637d62db5afa" srcset="http://0.gravatar.com/avatar/008162d67d9500ac8aaf637d62db5afa?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn">admin</cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-2623">2012/10/17 at 16:18</a></span>
+		</div>
+		<div class="comment-text">
+			<p>place it where-ever you want — as long as the script has access to it — . The safest place would in the same folder/directory as the script</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=2623#respond" onclick="return addComment.moveForm( &quot;comment-2623&quot;, &quot;2623&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to admin">Reply</a>		</div>
+	</div>
+
+<ul class="children">
+
+<li class="comment odd alt depth-3" id="li-comment-2624">
+	<div id="comment-2624">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/dd10c9830b3a151a9c46cc984536d4a3" srcset="http://1.gravatar.com/avatar/dd10c9830b3a151a9c46cc984536d4a3?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn"><a href="http://harryayam.blogspot.com/" rel="external nofollow" class="url">rizky</a></cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-2624">2012/10/17 at 17:39</a></span>
+		</div>
+		<div class="comment-text">
+			<p>I am sorry, I’m making an application using ExtJS and PHP,<br>
+I put the same location with a php script,<br>
+and the error :</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5893f8bc52708422011005" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">PHP</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;b&gt;Fatal error&lt;/b&gt;:  Uncaught exception 'Exception' with message 'Could not open template.xls for reading! File does not exist.' in C:\wamp\www\nrcfv2_prev\system\cms\modules\accounts\controllers\phpexcel\Classes\PHPExcel\Reader\Excel5.php:519
+Stack trace:
+#0 C:\wamp\www\nrcfv2_prev\system\cms\modules\accounts\controllers\phpexcel\Classes\PHPExcel\IOFactory.php(268): PHPExcel_Reader_Excel5-&gt;canRead('template.xls')
+#1 C:\wamp\www\nrcfv2_prev\system\cms\modules\accounts\controllers\phpexcel\Classes\PHPExcel\IOFactory.php(191): PHPExcel_IOFactory::createReaderForFile('template.xls')
+#2 C:\wamp\www\nrcfv2_prev\system\cms\modules\accounts\controllers\admin.php(721): PHPExcel_IOFactory::load('template.xls')
+#3 [internal function]: Admin-&gt;save()
+#4 C:\wamp\www\nrcfv2_prev\system\codeigniter\core\CodeIgniter.php(339): call_user_func_array(Array, Array)
+#5 C:\wamp\www\nrcfv2_prev\index.php(289): require_once('C:\wamp\www\nrc...')
+#6 {main}
+  thrown in &lt;b&gt;C:\wamp\www\nrcfv2_prev\system\cms\modules\accounts\controllers\phpexcel\Classes\PHPExcel\Reader\Excel5.php&lt;/b&gt; on line &lt;b&gt;519&lt;/b&gt;</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5893f8bc52708422011005-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5893f8bc52708422011005-2">2</div><div class="crayon-num" data-line="crayon-5893f8bc52708422011005-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5893f8bc52708422011005-4">4</div><div class="crayon-num" data-line="crayon-5893f8bc52708422011005-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5893f8bc52708422011005-6">6</div><div class="crayon-num" data-line="crayon-5893f8bc52708422011005-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5893f8bc52708422011005-8">8</div><div class="crayon-num" data-line="crayon-5893f8bc52708422011005-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5893f8bc52708422011005-10">10</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5893f8bc52708422011005-1"><span class="crayon-o">&lt;</span><span class="crayon-i">b</span><span class="crayon-o">&gt;</span><span class="crayon-e">Fatal </span><span class="crayon-i">error</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-i">b</span><span class="crayon-o">&gt;</span><span class="crayon-o">:</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">Uncaught </span><span class="crayon-i">exception</span><span class="crayon-h"> </span><span class="crayon-s">'Exception'</span><span class="crayon-h"> </span><span class="crayon-e">with </span><span class="crayon-i">message</span><span class="crayon-h"> </span><span class="crayon-s">'Could not open template.xls for reading! File does not exist.'</span><span class="crayon-h"> </span><span class="crayon-st">in</span><span class="crayon-h"> </span><span class="crayon-cn">C</span><span class="crayon-o">:</span><span class="crayon-sy">\</span><span class="crayon-i">wamp</span><span class="crayon-sy">\</span><span class="crayon-i">www</span><span class="crayon-sy">\</span><span class="crayon-i">nrcfv2_prev</span><span class="crayon-sy">\</span><span class="crayon-i">system</span><span class="crayon-sy">\</span><span class="crayon-i">cms</span><span class="crayon-sy">\</span><span class="crayon-i">modules</span><span class="crayon-sy">\</span><span class="crayon-i">accounts</span><span class="crayon-sy">\</span><span class="crayon-i">controllers</span><span class="crayon-sy">\</span><span class="crayon-i">phpexcel</span><span class="crayon-sy">\</span><span class="crayon-i">Classes</span><span class="crayon-sy">\</span><span class="crayon-i">PHPExcel</span><span class="crayon-sy">\</span><span class="crayon-i">Reader</span><span class="crayon-sy">\</span><span class="crayon-i">Excel5</span><span class="crayon-sy">.</span><span class="crayon-i">php</span><span class="crayon-o">:</span><span class="crayon-cn">519</span></div><div class="crayon-line crayon-striped-line" id="crayon-5893f8bc52708422011005-2"><span class="crayon-e">Stack </span><span class="crayon-i">trace</span><span class="crayon-o">:</span></div><div class="crayon-line" id="crayon-5893f8bc52708422011005-3"><span class="crayon-c">#0 C:\wamp\www\nrcfv2_prev\system\cms\modules\accounts\controllers\phpexcel\Classes\PHPExcel\IOFactory.php(268): PHPExcel_Reader_Excel5-&gt;canRead('template.xls')</span></div><div class="crayon-line crayon-striped-line" id="crayon-5893f8bc52708422011005-4"><span class="crayon-c">#1 C:\wamp\www\nrcfv2_prev\system\cms\modules\accounts\controllers\phpexcel\Classes\PHPExcel\IOFactory.php(191): PHPExcel_IOFactory::createReaderForFile('template.xls')</span></div><div class="crayon-line" id="crayon-5893f8bc52708422011005-5"><span class="crayon-c">#2 C:\wamp\www\nrcfv2_prev\system\cms\modules\accounts\controllers\admin.php(721): PHPExcel_IOFactory::load('template.xls')</span></div><div class="crayon-line crayon-striped-line" id="crayon-5893f8bc52708422011005-6"><span class="crayon-c">#3 [internal function]: Admin-&gt;save()</span></div><div class="crayon-line" id="crayon-5893f8bc52708422011005-7"><span class="crayon-c">#4 C:\wamp\www\nrcfv2_prev\system\codeigniter\core\CodeIgniter.php(339): call_user_func_array(Array, Array)</span></div><div class="crayon-line crayon-striped-line" id="crayon-5893f8bc52708422011005-8"><span class="crayon-c">#5 C:\wamp\www\nrcfv2_prev\index.php(289): require_once('C:\wamp\www\nrc...')</span></div><div class="crayon-line" id="crayon-5893f8bc52708422011005-9"><span class="crayon-c">#6 {main}</span></div><div class="crayon-line crayon-striped-line" id="crayon-5893f8bc52708422011005-10"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">thrown </span><span class="crayon-st">in</span><span class="crayon-h"> </span><span class="crayon-o">&lt;</span><span class="crayon-i">b</span><span class="crayon-o">&gt;</span><span class="crayon-cn">C</span><span class="crayon-o">:</span><span class="crayon-sy">\</span><span class="crayon-i">wamp</span><span class="crayon-sy">\</span><span class="crayon-i">www</span><span class="crayon-sy">\</span><span class="crayon-i">nrcfv2_prev</span><span class="crayon-sy">\</span><span class="crayon-i">system</span><span class="crayon-sy">\</span><span class="crayon-i">cms</span><span class="crayon-sy">\</span><span class="crayon-i">modules</span><span class="crayon-sy">\</span><span class="crayon-i">accounts</span><span class="crayon-sy">\</span><span class="crayon-i">controllers</span><span class="crayon-sy">\</span><span class="crayon-i">phpexcel</span><span class="crayon-sy">\</span><span class="crayon-i">Classes</span><span class="crayon-sy">\</span><span class="crayon-i">PHPExcel</span><span class="crayon-sy">\</span><span class="crayon-i">Reader</span><span class="crayon-sy">\</span><span class="crayon-i">Excel5</span><span class="crayon-sy">.</span><span class="crayon-i">php</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-i">b</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-e">on </span><span class="crayon-i">line</span><span class="crayon-h"> </span><span class="crayon-o">&lt;</span><span class="crayon-i">b</span><span class="crayon-o">&gt;</span><span class="crayon-cn">519</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-i">b</span><span class="crayon-o">&gt;</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0039 seconds] -->
+<p>please help me to solve this.</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=2624#respond" onclick="return addComment.moveForm( &quot;comment-2624&quot;, &quot;2624&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to rizky">Reply</a>		</div>
+	</div>
+
+<ul class="children">
+
+<li class="comment byuser comment-author-admin bypostauthor even depth-4" id="li-comment-2625">
+	<div id="comment-2625">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/008162d67d9500ac8aaf637d62db5afa" srcset="http://0.gravatar.com/avatar/008162d67d9500ac8aaf637d62db5afa?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn">admin</cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-2625">2012/10/17 at 17:44</a></span>
+		</div>
+		<div class="comment-text">
+			<p>I’m not familiar on how extJS work but you can always use “desperate measure” <img draggable="false" class="emoji" alt="😛" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/1f61b.svg"> by using absolute path.. something like this:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5893f8bc5266e351092238" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; z-index: 4;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">PHP</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">$objTpl = PHPExcel_IOFactory::load("c:\\wamp\\www\\nrcfv2_prev\\template.xls");</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5893f8bc5266e351092238-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5893f8bc5266e351092238-1"><span class="crayon-v">$objTpl</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">PHPExcel_IOFactory::</span><span class="crayon-e">load</span><span class="crayon-sy">(</span><span class="crayon-s">"c:\\wamp\\www\\nrcfv2_prev\\template.xls"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0003 seconds] -->
+<p>and put your excel template in c:\wamp\www\nrcfv2_prev\</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=2625#respond" onclick="return addComment.moveForm( &quot;comment-2625&quot;, &quot;2625&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to admin">Reply</a>		</div>
+	</div>
+
+<ul class="children">
+
+<li class="comment odd alt depth-5" id="li-comment-2626">
+	<div id="comment-2626">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/dd10c9830b3a151a9c46cc984536d4a3" srcset="http://1.gravatar.com/avatar/dd10c9830b3a151a9c46cc984536d4a3?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn"><a href="http://harryayam.blogspot.com/" rel="external nofollow" class="url">rizky</a></cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-2626">2012/10/17 at 17:55</a></span>
+		</div>
+		<div class="comment-text">
+			<p>thanks for the reply,<br>
+here I just want to edit a field with a script:<br>
+$objTpl-&gt;getActiveSheet()-&gt;setCellValue(‘C2’, date(‘Y-m-d’))<br>
+and the error:<br>
+Severity: Notice<br>
+Message: Constant IDENTIFIER_OLE already defined<br>
+Filename: Shared/OLERead.php<br>
+Line Number: 28<br>
+ and the error:<br>
+Severity: Notice<br>
+Message: Constant IDENTIFIER_OLE already defined<br>
+Filename: Shared/OLERead.php<br>
+Line Number: 28<br>
+ Thanks</p>
+					</div>
+		<div class="reply">
+					</div>
+	</div>
+
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+<li class="comment byuser comment-author-admin bypostauthor even thread-odd thread-alt depth-1" id="li-comment-2627">
+	<div id="comment-2627">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/008162d67d9500ac8aaf637d62db5afa" srcset="http://0.gravatar.com/avatar/008162d67d9500ac8aaf637d62db5afa?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn">admin</cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-2627">2012/10/17 at 18:16</a></span>
+		</div>
+		<div class="comment-text">
+			<p><b>@rizky:</b><br>
+that’s just NOTICE error, you can disable it by editing your php.ini and edit your error_reporting value to:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5893f8bc5253a404530196" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; z-index: 4;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">PHP</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">error_reporting = E_ALL &amp; ~E_NOTICE &amp; ~E_STRICT &amp; ~E_DEPRECATED</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5893f8bc5253a404530196-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5893f8bc5253a404530196-1"><span class="crayon-i">error_reporting</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e ">E_ALL</span><span class="crayon-h"> </span><span class="crayon-o">&amp;</span><span class="crayon-h"> </span><span class="crayon-o">~</span><span class="crayon-e ">E_NOTICE</span><span class="crayon-h"> </span><span class="crayon-o">&amp;</span><span class="crayon-h"> </span><span class="crayon-o">~</span><span class="crayon-e ">E_STRICT</span><span class="crayon-h"> </span><span class="crayon-o">&amp;</span><span class="crayon-h"> </span><span class="crayon-o">~</span><span class="crayon-e ">E_DEPRECATED</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0005 seconds] -->
+<p>restart your Apache after that.</p>
+<p>you can also set this value via php script like this:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5893f8bc52542209448588" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; z-index: 4;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">PHP</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">error_reporting(E_ALL &amp; ~E_NOTICE &amp; ~E_STRICT &amp; ~E_DEPRECATED);</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5893f8bc52542209448588-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5893f8bc52542209448588-1"><span class="crayon-e">error_reporting</span><span class="crayon-sy">(</span><span class="crayon-e ">E_ALL</span><span class="crayon-h"> </span><span class="crayon-o">&amp;</span><span class="crayon-h"> </span><span class="crayon-o">~</span><span class="crayon-e ">E_NOTICE</span><span class="crayon-h"> </span><span class="crayon-o">&amp;</span><span class="crayon-h"> </span><span class="crayon-o">~</span><span class="crayon-e ">E_STRICT</span><span class="crayon-h"> </span><span class="crayon-o">&amp;</span><span class="crayon-h"> </span><span class="crayon-o">~</span><span class="crayon-e ">E_DEPRECATED</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0005 seconds] -->
+<p>but the first solution is more guaranteed to work.</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=2627#respond" onclick="return addComment.moveForm( &quot;comment-2627&quot;, &quot;2627&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to admin">Reply</a>		</div>
+	</div>
+
+</li><!-- #comment-## -->
+
+<li class="comment odd alt thread-even depth-1" id="li-comment-2629">
+	<div id="comment-2629">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/dd10c9830b3a151a9c46cc984536d4a3" srcset="http://1.gravatar.com/avatar/dd10c9830b3a151a9c46cc984536d4a3?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn"><a href="http://harryayam.blogspot.com/" rel="external nofollow" class="url">rizky</a></cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-2629">2012/10/18 at 10:24</a></span>
+		</div>
+		<div class="comment-text">
+			<p>Thank you,<br>
+I’ve tried, but no effect,<br>
+I really need this, please, can you send a small sample project to edit excel file with php.<br>
+if you are willing, please send it to: <a href="mailto:rizkylazu@yahoo.com">rizkylazu@yahoo.com</a><br>
+Thank you very much</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=2629#respond" onclick="return addComment.moveForm( &quot;comment-2629&quot;, &quot;2629&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to rizky">Reply</a>		</div>
+	</div>
+
+</li><!-- #comment-## -->
+
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-2630">
+	<div id="comment-2630">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/dd10c9830b3a151a9c46cc984536d4a3" srcset="http://1.gravatar.com/avatar/dd10c9830b3a151a9c46cc984536d4a3?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn"><a href="http://harryayam.blogspot.com/" rel="external nofollow" class="url">rizky</a></cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-2630">2012/10/18 at 10:41</a></span>
+		</div>
+		<div class="comment-text">
+			<p>oh, My application is already running</p>
+<p>thank you very much</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=2630#respond" onclick="return addComment.moveForm( &quot;comment-2630&quot;, &quot;2630&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to rizky">Reply</a>		</div>
+	</div>
+
+</li><!-- #comment-## -->
+
+<li class="comment odd alt thread-even depth-1" id="li-comment-2847">
+	<div id="comment-2847">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/149b42a9923810c5e2d4433ab93f9a0d" srcset="http://1.gravatar.com/avatar/149b42a9923810c5e2d4433ab93f9a0d?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn"><a href="http://www.zerod.com.br/" rel="external nofollow" class="url">dimitrikx</a></cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-2847">2013/01/02 at 11:24</a></span>
+		</div>
+		<div class="comment-text">
+			<p>thanks.<br>
+Dimitri Vargas Figueiredo Guimarães</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=2847#respond" onclick="return addComment.moveForm( &quot;comment-2847&quot;, &quot;2847&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to dimitrikx">Reply</a>		</div>
+	</div>
+
+</li><!-- #comment-## -->
+
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-2854">
+	<div id="comment-2854">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/aaced7414d5b39a79dc99ffe789519d6" srcset="http://1.gravatar.com/avatar/aaced7414d5b39a79dc99ffe789519d6?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn">Harshish Patel</cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-2854">2013/01/11 at 07:07</a></span>
+		</div>
+		<div class="comment-text">
+			<p>Excellent Job…<br>
+Works very nice!!<br>
+Thank you</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=2854#respond" onclick="return addComment.moveForm( &quot;comment-2854&quot;, &quot;2854&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to Harshish Patel">Reply</a>		</div>
+	</div>
+
+</li><!-- #comment-## -->
+
+<li class="comment odd alt thread-even depth-1" id="li-comment-2873">
+	<div id="comment-2873">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/f057494789ae0d8665bc931c036cd320" srcset="http://0.gravatar.com/avatar/f057494789ae0d8665bc931c036cd320?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn">Pibe</cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-2873">2013/02/05 at 01:26</a></span>
+		</div>
+		<div class="comment-text">
+			<p>Fuck this shit men!</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=2873#respond" onclick="return addComment.moveForm( &quot;comment-2873&quot;, &quot;2873&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to Pibe">Reply</a>		</div>
+	</div>
+
+</li><!-- #comment-## -->
+
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-2886">
+	<div id="comment-2886">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/b0409e12892183c4234ca4d13837d420" srcset="http://2.gravatar.com/avatar/b0409e12892183c4234ca4d13837d420?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn">captnskippy</cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-2886">2013/03/04 at 02:23</a></span>
+		</div>
+		<div class="comment-text">
+			<p>Wanted to know if multiple people can write to or read from the same excel file over a network ??</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=2886#respond" onclick="return addComment.moveForm( &quot;comment-2886&quot;, &quot;2886&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to captnskippy">Reply</a>		</div>
+	</div>
+
+</li><!-- #comment-## -->
+
+<li class="comment odd alt thread-even depth-1" id="li-comment-2906">
+	<div id="comment-2906">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/54d1ca80bcad361517856287bcfbcbec" srcset="http://2.gravatar.com/avatar/54d1ca80bcad361517856287bcfbcbec?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn"><a href="http://www.scan-aqua.dk/" rel="external nofollow" class="url">Dartfrogdk</a></cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-2906">2013/03/31 at 19:17</a></span>
+		</div>
+		<div class="comment-text">
+			<p>Hello, i hope you can answer my question.</p>
+<p>can this code let multiple user log into a website and enter a user number and a value, then not save a new file but all users use one xls file.</p>
+<p>ex.</p>
+<p>215     +50 kg<br>
+524     -200 kg</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=2906#respond" onclick="return addComment.moveForm( &quot;comment-2906&quot;, &quot;2906&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to Dartfrogdk">Reply</a>		</div>
+	</div>
+
+</li><!-- #comment-## -->
+
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-2918">
+	<div id="comment-2918">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/e2fde1f693986efa88bff1e86340beb4" srcset="http://2.gravatar.com/avatar/e2fde1f693986efa88bff1e86340beb4?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn"><a href="http://www.bcw.se/" rel="external nofollow" class="url">Brian</a></cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-2918">2013/04/14 at 14:49</a></span>
+		</div>
+		<div class="comment-text">
+			<p>Hello!</p>
+<p>I am a hobby coder, so please bear with my inexperience, if you would be so kind.</p>
+<p>I love the demo version, works wonderfully. However, I am wondering if you know someway to add functionality in the html forms where delimiters from Excel sheet will appropriately skip ‘s</p>
+<p>So in essence: copying data from three cells in the same row with put one cells data in three different ‘s aligned horizontally, and the same but transposed for three cells in the same column:</p>
+<p>Maybe some sample code is in order:</p>
+<p><code></code></p><code>
+<p>    	Column One<br>
+    	Column Two<br>
+    	Column Three</p>
+</code><p><code></code></p>
+<p>And let’s say for arguments sake I had 6 cells in Excel, aligned exactly how the ‘s are in the above sample form:</p>
+<p>Blue	Single	10<br>
+Orange	Double	20</p>
+<p>Is there any solution (javaScript or jQuery) where the “\t” and “\n” hidden delimiters would be recognized and skip ‘s appropriately rather than dumping all data of the 6 selected cells into only one </p>
+<p>Tall order I am guessing</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=2918#respond" onclick="return addComment.moveForm( &quot;comment-2918&quot;, &quot;2918&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to Brian">Reply</a>		</div>
+	</div>
+
+<ul class="children">
+
+<li class="comment odd alt depth-2" id="li-comment-2919">
+	<div id="comment-2919">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/e2fde1f693986efa88bff1e86340beb4" srcset="http://2.gravatar.com/avatar/e2fde1f693986efa88bff1e86340beb4?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn"><a href="http://www.bcw.se/" rel="external nofollow" class="url">Brian</a></cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-2919">2013/04/14 at 14:50</a></span>
+		</div>
+		<div class="comment-text">
+			<p>Ok, the code didn’t show how I thought it ought to…. hence the inexperience</p>
+<p>the code:</p>
+<p>    	Column One<br>
+    	Column Two<br>
+    	Column Three</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=2919#respond" onclick="return addComment.moveForm( &quot;comment-2919&quot;, &quot;2919&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to Brian">Reply</a>		</div>
+	</div>
+
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+<li class="comment even thread-even depth-1" id="li-comment-2920">
+	<div id="comment-2920">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/257e3fc15284fa043f2b840313bd8607" srcset="http://2.gravatar.com/avatar/257e3fc15284fa043f2b840313bd8607?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn"><a href="http://www.bcw.se/" rel="external nofollow" class="url">Brian</a></cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-2920">2013/04/14 at 14:56</a></span>
+		</div>
+		<div class="comment-text">
+			<p>crud, it still isn’t working to show the sample form code, and now I am barfing all over you blog…. great! Don’t I feel like the f’ing a’hole.</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=2920#respond" onclick="return addComment.moveForm( &quot;comment-2920&quot;, &quot;2920&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to Brian">Reply</a>		</div>
+	</div>
+
+</li><!-- #comment-## -->
+
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-2923">
+	<div id="comment-2923">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/82ce72e43f87571749f072683a5360b1" srcset="http://2.gravatar.com/avatar/82ce72e43f87571749f072683a5360b1?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn"><a href="http://www.itechriver.com/" rel="external nofollow" class="url">Zeeshan</a></cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-2923">2013/04/17 at 15:24</a></span>
+		</div>
+		<div class="comment-text">
+			<p>Nothing so great in writing out a excel file. Real point is how would you “READ” an Excel file?</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=2923#respond" onclick="return addComment.moveForm( &quot;comment-2923&quot;, &quot;2923&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to Zeeshan">Reply</a>		</div>
+	</div>
+
+</li><!-- #comment-## -->
+
+<li class="comment even thread-even depth-1" id="li-comment-2940">
+	<div id="comment-2940">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/2c897c158c25cd1d4fb89dad24a47dc3" srcset="http://2.gravatar.com/avatar/2c897c158c25cd1d4fb89dad24a47dc3?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn">auujay</cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-2940">2013/04/27 at 15:39</a></span>
+		</div>
+		<div class="comment-text">
+			<p>i want to upload the excel file and show it on html tabl…</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=2940#respond" onclick="return addComment.moveForm( &quot;comment-2940&quot;, &quot;2940&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to auujay">Reply</a>		</div>
+	</div>
+
+</li><!-- #comment-## -->
+
+<li class="pingback odd alt thread-odd thread-alt depth-1" id="li-comment-3048">
+	<div id="comment-3048">
+		<div class="comment-author vcard pingback">
+			<cite class="fn zbench_pingback"><a href="http://ghichepcanhan.com/2013/07/13/easily-integrateload-phpexcel-into-codeigniter-framework/" rel="external nofollow" class="url">Easily integrate/load PHPExcel into CodeIgniter Framework | Ghi chép cá nhân</a> - pingback on 2013/07/13 at 10:19</cite>
+		</div>
+	</div>
+</li><!-- #comment-## -->
+
+<li class="comment even thread-even depth-1" id="li-comment-3084">
+	<div id="comment-3084">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/084258f227aa24267e5d87b35d3ff7c0" srcset="http://0.gravatar.com/avatar/084258f227aa24267e5d87b35d3ff7c0?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn">john</cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-3084">2013/08/15 at 02:09</a></span>
+		</div>
+		<div class="comment-text">
+			<p>I like the functionality, but I am unable to get it working. For example, the 01pharSimple.php example gives me “Failed opening required ‘../Build/PHPExcel.phar'” – but I haven’t PHPExcel.phar anywhere in my box at all… <img draggable="false" class="emoji" alt="🙁" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/1f641.svg"> Any idea?</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=3084#respond" onclick="return addComment.moveForm( &quot;comment-3084&quot;, &quot;3084&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to john">Reply</a>		</div>
+	</div>
+
+</li><!-- #comment-## -->
+
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-3236">
+	<div id="comment-3236">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/ceba9e4abd094111e4227c737b6aaefa" srcset="http://0.gravatar.com/avatar/ceba9e4abd094111e4227c737b6aaefa?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn">kamatchi</cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-3236">2014/02/19 at 19:41</a></span>
+		</div>
+		<div class="comment-text">
+			<p>hai</p>
+<p>Kamu here.Actually i need to upload records by using excel with help of php.Ecel file having user details,in that email is primary key unique value,i need to check db email with excel email value.if exists value store in one table otherwise value store in one table. Please assist me?</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=3236#respond" onclick="return addComment.moveForm( &quot;comment-3236&quot;, &quot;3236&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to kamatchi">Reply</a>		</div>
+	</div>
+
+</li><!-- #comment-## -->
+
+<li class="comment even thread-even depth-1" id="li-comment-3308">
+	<div id="comment-3308">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/02ea7749341ffe887f5fbb92ef21a6f0" srcset="http://0.gravatar.com/avatar/02ea7749341ffe887f5fbb92ef21a6f0?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn">Nizam</cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-3308">2014/03/12 at 16:34</a></span>
+		</div>
+		<div class="comment-text">
+			<p>Hi. First of all Thank you for this article. Its amazing.<br>
+I’m not able to write the data into the file. Here is my code</p>
+<p>include ‘Classes/PHPExcel/IOFactory.php’;<br>
+include ‘Classes/PHPExcel/Writer/Excel2007.php’;</p>
+<p>$objPHPExcel = new PHPExcel();<br>
+				$objReader = PHPExcel_IOFactory::createReader(‘Excel2007’);<br>
+				//we load the file that we want to read<br>
+				$objPHPExcel = PHPExcel_IOFactory::load(“/home/bigc/Documents/test.xlsx”);<br>
+				$objPHPExcel-&gt;setActiveSheetIndex(0);</p>
+<p>				// Change the file<br>
+				$objPHPExcel-&gt;setActiveSheetIndex(0)<br>
+				            -&gt;setCellValue(‘A1’, ‘Hello’)<br>
+				            -&gt;setCellValue(‘B1’, ‘World!’);</p>
+<p>				// Write the file<br>
+				$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, ‘Excel2007’);<br>
+				ini_set(‘display_errors’, 1);<br>
+				$objWriter-&gt;save(“test.xlsx”);</p>
+<p>The error is<br>
+Fatal error: Uncaught exception ‘PHPExcel_Writer_Exception’ with message ‘Could not close zip file test.xlsx.’ in /home/bigc/Development/Development/Classes/PHPExcel/Writer/Excel2007.php:399 Stack trace: #0 /home/bigc/Development/Development/Upload.php(39): PHPExcel_Writer_Excel2007-&gt;save(‘test.xlsx’) #1 {main} thrown in /home/bigc/Development/Development/Classes/PHPExcel/Writer/Excel2007.php on line 399</p>
+<p>Do you have any idea about this?</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=3308#respond" onclick="return addComment.moveForm( &quot;comment-3308&quot;, &quot;3308&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to Nizam">Reply</a>		</div>
+	</div>
+
+</li><!-- #comment-## -->
+
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-10452">
+	<div id="comment-10452">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/9dc8e06293eca518cf1ba6cff14ab9b8" srcset="http://0.gravatar.com/avatar/9dc8e06293eca518cf1ba6cff14ab9b8?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn">pawan nagar</cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-10452">2014/05/20 at 18:40</a></span>
+		</div>
+		<div class="comment-text">
+			<p>how we can write in excel file in codeigniter can please help i will we very thankfull to you</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=10452#respond" onclick="return addComment.moveForm( &quot;comment-10452&quot;, &quot;10452&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to pawan nagar">Reply</a>		</div>
+	</div>
+
+</li><!-- #comment-## -->
+
+<li class="comment even thread-even depth-1" id="li-comment-16028">
+	<div id="comment-16028">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/381fb7ca104b278a7ac5752f5435e69d" srcset="http://0.gravatar.com/avatar/381fb7ca104b278a7ac5752f5435e69d?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn">aahh</cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-16028">2014/06/18 at 19:01</a></span>
+		</div>
+		<div class="comment-text">
+			<p>hi,</p>
+<p>i have generated a excel file using eexcelview and phpexcel extension,i want to add title and header to that excel file i dont know exactly what to add and where to add.</p>
+<p> please help me as i am new to yii framework.</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=16028#respond" onclick="return addComment.moveForm( &quot;comment-16028&quot;, &quot;16028&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to aahh">Reply</a>		</div>
+	</div>
+
+<ul class="children">
+
+<li class="comment byuser comment-author-admin bypostauthor odd alt depth-2" id="li-comment-16029">
+	<div id="comment-16029">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/008162d67d9500ac8aaf637d62db5afa" srcset="http://0.gravatar.com/avatar/008162d67d9500ac8aaf637d62db5afa?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn">admin</cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-16029">2014/06/18 at 19:05</a></span>
+		</div>
+		<div class="comment-text">
+			<p>I have no idea about phpExcel on yii.<br>
+What title and header? On a cell?</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=16029#respond" onclick="return addComment.moveForm( &quot;comment-16029&quot;, &quot;16029&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to admin">Reply</a>		</div>
+	</div>
+
+<ul class="children">
+
+<li class="comment even depth-3" id="li-comment-16143">
+	<div id="comment-16143">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/381fb7ca104b278a7ac5752f5435e69d" srcset="http://0.gravatar.com/avatar/381fb7ca104b278a7ac5752f5435e69d?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn">aahh</cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-16143">2014/06/19 at 12:04</a></span>
+		</div>
+		<div class="comment-text">
+			<p>ya in a cell.</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=16143#respond" onclick="return addComment.moveForm( &quot;comment-16143&quot;, &quot;16143&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to aahh">Reply</a>		</div>
+	</div>
+
+</li><!-- #comment-## -->
+
+<li class="comment odd alt depth-3" id="li-comment-16144">
+	<div id="comment-16144">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/381fb7ca104b278a7ac5752f5435e69d" srcset="http://0.gravatar.com/avatar/381fb7ca104b278a7ac5752f5435e69d?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn">aahh</cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-16144">2014/06/19 at 12:07</a></span>
+		</div>
+		<div class="comment-text">
+			<p>Everything is packed in eexcelview and phpexcel i hope so,I just have to define the title by some name.</p>
+<p>I did this but its still not working.</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=16144#respond" onclick="return addComment.moveForm( &quot;comment-16144&quot;, &quot;16144&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to aahh">Reply</a>		</div>
+	</div>
+
+</li><!-- #comment-## -->
+
+<li class="comment even depth-3" id="li-comment-29134">
+	<div id="comment-29134">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/ae25bf5553dd1a9374e2645259967fda" srcset="http://1.gravatar.com/avatar/ae25bf5553dd1a9374e2645259967fda?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn">vicky</cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-29134">2014/10/18 at 21:21</a></span>
+		</div>
+		<div class="comment-text">
+			<p>$date = new DateTime();<br>
+echo $date-&gt;format(‘ Y-m-d ‘) . “\n”;<br>
+this function change the current date format now i want change date format of my excel file from column A1</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=29134#respond" onclick="return addComment.moveForm( &quot;comment-29134&quot;, &quot;29134&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to vicky">Reply</a>		</div>
+	</div>
+
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+<li class="pingback odd alt thread-odd thread-alt depth-1" id="li-comment-28321">
+	<div id="comment-28321">
+		<div class="comment-author vcard pingback">
+			<cite class="fn zbench_pingback"><a href="http://www.ahowto.net/php/easily-integrateload-phpexcel-into-codeigniter-framework" rel="external nofollow" class="url">php: Easily integrate/load PHPExcel into CodeIgniter Framework</a> - pingback on 2014/09/05 at 18:23</cite>
+		</div>
+	</div>
+</li><!-- #comment-## -->
+
+<li class="comment even thread-even depth-1" id="li-comment-29135">
+	<div id="comment-29135">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/ae25bf5553dd1a9374e2645259967fda" srcset="http://1.gravatar.com/avatar/ae25bf5553dd1a9374e2645259967fda?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn">vicky</cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-29135">2014/10/19 at 00:17</a></span>
+		</div>
+		<div class="comment-text">
+			<p>$time = strtotime( $date);<br>
+$newformat = date(‘Y-m-d’,$time);<br>
+echo $newformat;<br>
+when i put some numeric value in $time = strtotime( 12.15.2014); then he work perfectly but when i use $date then he show output is 1970.1.1 why?  i store in $date string   like this 10/12/2014<br>
+anyone tell me how i do this</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=29135#respond" onclick="return addComment.moveForm( &quot;comment-29135&quot;, &quot;29135&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to vicky">Reply</a>		</div>
+	</div>
+
+</li><!-- #comment-## -->
+
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-29761">
+	<div id="comment-29761">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/5eda1c220e3bd04a79f99bc58ec7fd35" srcset="http://2.gravatar.com/avatar/5eda1c220e3bd04a79f99bc58ec7fd35?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn">AJ</cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-29761">2014/11/27 at 12:54</a></span>
+		</div>
+		<div class="comment-text">
+			<p>Thank you so much ….<br>
+Excellent Job…<br>
+Works perfectly!!<br>
+THAKS A TON !!<br>
+<img draggable="false" class="emoji" alt="🙂" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/1f642.svg"></p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=29761#respond" onclick="return addComment.moveForm( &quot;comment-29761&quot;, &quot;29761&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to AJ">Reply</a>		</div>
+	</div>
+
+</li><!-- #comment-## -->
+
+<li class="comment even thread-even depth-1" id="li-comment-30182">
+	<div id="comment-30182">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/f4d17a6d1e0d6c9d5408ff3459a7efc1" srcset="http://0.gravatar.com/avatar/f4d17a6d1e0d6c9d5408ff3459a7efc1?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn">pankaj</cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-30182">2015/01/03 at 17:42</a></span>
+		</div>
+		<div class="comment-text">
+			<p>can any one help me to read the image from the excel sheet in php</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=30182#respond" onclick="return addComment.moveForm( &quot;comment-30182&quot;, &quot;30182&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to pankaj">Reply</a>		</div>
+	</div>
+
+</li><!-- #comment-## -->
+
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-30259">
+	<div id="comment-30259">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/0573f6d4790216de13a961b8624da664" srcset="http://0.gravatar.com/avatar/0573f6d4790216de13a961b8624da664?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn"><a href="https://plus.google.com/+AbhishekTyagiAvspS" rel="external nofollow" class="url">Abhishek Tyagi</a></cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-30259">2015/01/12 at 15:56</a></span>
+		</div>
+		<div class="comment-text">
+			<p>Hello there,<br>
+I have a bit of different requirement/situation in here,<br>
+Let me explain and please help-<br>
+Suppose I have a user logging in using sessions.<br>
+Now, the user has to fill a form having 3 inputs, these inputs belong to a specific user(unique).<br>
+And, within his session login time, the user fills the form n number of times.<br>
+Now in the end the user click on compare to find out the UNIQUE row or rows which he just entered. All of this data is saved in the excel sheet. After getting the unique row or rows if any and being displayed as the result, the user logs off and this happens all over again when a new user comes with a new excel sheet creation, input, comparison, result display.</p>
+<p>EXAMPLE VIEW OF INPUTS –</p>
+<p>FORM_INPUT 1st time         col1 col2 col3<br>
+FORM_INPUT 2nd time        col1 col2 col3<br>
+FORM_INPUT 3rd time         col1 col2 col3<br>
+FORM_INPUT 4th time         col1 col2 col3<br>
+FORM_INPUT 5th time         col1 col2 col3<br>
+FORM_INPUT 6th time         col1 col2 col3<br>
+FORM_INPUT 7th time         col1 col2 col3</p>
+<p>as per the user..</p>
+<p>the column values gets and has to be same many times that’s why it is also required for me/user to get the unique row across three column values…</p>
+<p>I blv that u can help.</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=30259#respond" onclick="return addComment.moveForm( &quot;comment-30259&quot;, &quot;30259&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to Abhishek Tyagi">Reply</a>		</div>
+	</div>
+
+</li><!-- #comment-## -->
+
+<li class="comment even thread-even depth-1" id="li-comment-32872">
+	<div id="comment-32872">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/89d04f7277a4ab231d683feb9291d774" srcset="http://2.gravatar.com/avatar/89d04f7277a4ab231d683feb9291d774?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn">bf</cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-32872">2015/08/27 at 07:16</a></span>
+		</div>
+		<div class="comment-text">
+			<p>hola<br>
+y como poder hacerlo al reves?</p>
+<p>es decir que se pueda llevar lo escrito en el archivo excel al formulario para poder cargarlo? en php, teniendo al archivo excel como base de datos SIN mysql</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=32872#respond" onclick="return addComment.moveForm( &quot;comment-32872&quot;, &quot;32872&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to bf">Reply</a>		</div>
+	</div>
+
+</li><!-- #comment-## -->
+
+<li class="pingback odd alt thread-odd thread-alt depth-1" id="li-comment-33551">
+	<div id="comment-33551">
+		<div class="comment-author vcard pingback">
+			<cite class="fn zbench_pingback"><a href="http://www.eterniinrete.it/wordpress/?p=107" rel="external nofollow" class="url">PHPExcel e Codeigniter | Journal</a> - pingback on 2015/12/04 at 17:44</cite>
+		</div>
+	</div>
+</li><!-- #comment-## -->
+
+<li class="comment even thread-even depth-1" id="li-comment-33607">
+	<div id="comment-33607">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/608955377a785553f52db136c9690817" srcset="http://0.gravatar.com/avatar/608955377a785553f52db136c9690817?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn">Ajay</cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-33607">2016/01/05 at 23:13</a></span>
+		</div>
+		<div class="comment-text">
+			<p>Hi,</p>
+<p>I have excel file with 45 sheets in it. All the sheets have some value and formula to fetch data from other sheet. My problem is i’m unable to edit the whole sheet. Every time i tried doing this, only first 5 sheets are updated and rest all sheets are saved as blank.</p>
+<p>Please help me out.</p>
+<p>Please find my code below:</p>
+<p>load(“$file”);<br>
+//$worksheet= $objPHPExcel-&gt;setActiveSheetIndex(0);<br>
+$sheets = array(‘sheet1′,’sheet2′,…..,’sheet45’);<br>
+foreach($sheets as $sheetname){<br>
+//$worksheet = $objPHPExcel-&gt;setActiveSheetIndexByName($sheetname);<br>
+$objPHPExcel-&gt;setActiveSheetIndex($sheetno);<br>
+$sheetno++;<br>
+$baseRow = 8;</p>
+<p>	$end_date_2 = date(‘Y/m/d’);<br>
+	$end_date_1 = date(‘Y/m/d’,strtotime(‘first day of this month’));<br>
+	$startDate = DateTime::createFromFormat(“Y/m/d”,$end_date_1,new DateTimeZone(“Europe/London”));<br>
+	$endDate = DateTime::createFromFormat(“Y/m/d”,$end_date_2,new DateTimeZone(“Europe/London”));</p>
+<p>	$periodInterval = new DateInterval( “P1D” ); // 1-day, though can be more sophisticated rule<br>
+	$period = new DatePeriod( $startDate, $periodInterval, $endDate );</p>
+<p>	$stats = array();<br>
+	$temp = array();<br>
+	foreach($period as $date){<br>
+	   $dbdate = $date-&gt;format(“Y-m-d”);</p>
+<p>	   //Search data starts here<br>
+		$result = mysqli_query($con, “SELECT ROUND( SUM( adcost ) , 2 ) AS searchcost, SUM( transactions ) as transactions, SUM( transactionRevenue ) as revenue FROM analytics_campaign_quantity_284 WHERE campaign NOT LIKE  ‘%app%’ AND <code>day</code> = ‘$dbdate'”)or die(mysqli_error());<br>
+			while($row = mysqli_fetch_array($result))<br>
+			{<br>
+					$temp[‘date’] = $date-&gt;format(“m-d-Y”);<br>
+					$temp[‘searchcost’] = $row[‘searchcost’];<br>
+					$temp[‘transaction’] = $row[‘transactions’];<br>
+					$temp[‘idealTransaction’] = ‘=$G$2/($C$3-$D$8+1)*(ROW()-7)’;<br>
+					$temp[‘transactionDeviance’] = ‘=((SUMIFS($F$8:$F$99,$D$8:$D$99,”&lt;="&amp;$D8))-G8)/G8';<br>
+					$temp['seatSold'] = '';<br>
+					$temp['revenue'] = $row['revenue'];<br>
+					$temp['idealRevenue'] = '=$K$2/($C$3-$D$8+1)*(ROW()-7)';<br>
+					$temp['revenueDeviance'] = '=((SUMIFS($J$8:$J$99,$D$8:$D$99,"&lt;="&amp;$D8))-K8)/K8';<br>
+					$temp['costperTransaction'] = '=';<br>
+					$temp['avgTransactionValue'] = '=';<br>
+					$temp['CoS'] = '=';<br>
+					$temp['seatSoldDeviance'] = '=($P$2-O8)/$P$2';<br>
+			}</p>
+<p>		//Search Data ends here</p>
+<p>		//Apps Data starts here</p>
+<p>		$result = mysqli_query($con, "SELECT ROUND( SUM( adcost ) , 2 ) AS appCost, SUM( itemQuantity ) as appInstalls, SUM( sessions ) as sessions, SUM( newUser ) as newUsers FROM analytics_campaign_quantity_284 WHERE campaign LIKE  '%app%' AND <code>day</code> = '$dbdate'")or die(mysqli_error());<br>
+			while($row = mysqli_fetch_array($result))<br>
+			{<br>
+					$temp['appCost'] = $row['appCost'];<br>
+					$temp['appInstalls'] = $row['appInstalls'];<br>
+					$temp['idealInstalls'] = '=$G$2/($C$3-$D$8+1)*(ROW()-7)';<br>
+					$temp['appDeviance'] = '=((SUMIFS($F$8:$F$99,$D$8:$D$99,"&lt;="&amp;$D8))-T8)/T8';<br>
+					$temp['sessions'] = $row['sessions'];<br>
+					$temp['newUsers'] = $row['newUsers'];<br>
+			}<br>
+					$temp['totalCost'] = $temp['searchcost']+$temp['appCost'];<br>
+					$temp['idealSpends'] = '=$AB$2/($C$3-$D$8+1)*(ROW()-7)';<br>
+					$temp['totalDeviance'] = '=((SUMIFS($AA$8:$AA$99,$D$8:$D$99,"&lt;="&amp;$D8))-AB8)/AB8';<br>
+				$stats[] = $temp;          </p>
+<p>		//apps data ends here<br>
+	}<br>
+//echo '
+</p><pre>'; print_r($stats); die;
+
+	$lastRow = 8;
+	$lastColumn = 'D';
+    foreach($stats as $data){
+		$lastColumn = 'D';
+        
+        foreach($data as $key =&gt; $value){ 
+					if($lastColumn=='Q' || $lastColumn=='V' || $lastColumn=='Y'){
+						$lastColumn++;
+					}
+					//echo $lastColumn.$lastRow.'__'.$key.'__'.$value.'';
+					if (strpos($value,'=') !== false || $key = 'date') {
+						
+					}
+					else{
+                    $objPHPExcel-&gt;getActiveSheet()-&gt;setCellValue($lastColumn.$lastRow, "$value");
+					}
+				$lastColumn++; 
+            
+        }
+		echo '';
+		$lastRow++;
+    }
+	
+}
+	$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
+    $filename = 'XYZ_'.date('d-m-y').'.xlsx';
+    $objWriter-&gt;save($filename);
+?&gt;</pre>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=33607#respond" onclick="return addComment.moveForm( &quot;comment-33607&quot;, &quot;33607&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to Ajay">Reply</a>		</div>
+	</div>
+
+</li><!-- #comment-## -->
+
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-34179">
+	<div id="comment-34179">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/083adf5409af38dd93214d871dfc359a" srcset="http://0.gravatar.com/avatar/083adf5409af38dd93214d871dfc359a?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn"><a href="http://gravatar.com/timtess2003" rel="external nofollow" class="url">timtess2003</a></cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-34179">2016/08/25 at 17:20</a></span>
+		</div>
+		<div class="comment-text">
+			<p>this is quite awesome and has solved my problem to a large extent, but likewise still have some issues.<br>
+please i will like to retrieve data from a particular cell</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=34179#respond" onclick="return addComment.moveForm( &quot;comment-34179&quot;, &quot;34179&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to timtess2003">Reply</a>		</div>
+	</div>
+
+</li><!-- #comment-## -->
+
+<li class="comment even thread-even depth-1" id="li-comment-34377">
+	<div id="comment-34377">
+		<div class="comment-author vcard">
+			<img alt="" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/471b44461ce67c32040be8af7c05323a" srcset="http://1.gravatar.com/avatar/471b44461ce67c32040be8af7c05323a?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">			<cite class="fn"><a href="https://plus.google.com/+KChaudhry" rel="external nofollow" class="url">Dr K Chaudhry</a></cite>
+			<span class="comment-meta commentmetadata"><a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#comment-34377">2016/10/23 at 17:19</a></span>
+		</div>
+		<div class="comment-text">
+			<p>Sent and processed! Thanks KC! – That is the form output.<br>
+Whom was it sent to or how I can retrieve the output file – I vainly struugled to make out.</p>
+					</div>
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/?replytocom=34377#respond" onclick="return addComment.moveForm( &quot;comment-34377&quot;, &quot;34377&quot;, &quot;respond&quot;, &quot;39&quot; )" aria-label="Reply to Dr K Chaudhry">Reply</a>		</div>
+	</div>
+
+</li><!-- #comment-## -->
+		</ol>
+		<div class="navigation"></div>
+	
+	<script type="text/javascript">
+	/* <![CDATA[ */
+		function grin(tag) {
+			var myField;
+			tag = ' ' + tag + ' ';
+			if (document.getElementById('comment') && document.getElementById('comment').type == 'textarea') {
+				myField = document.getElementById('comment');
+			} else {
+				return false;
+			}
+			if (document.selection) {
+				myField.focus();
+				sel = document.selection.createRange();
+				sel.text = tag;
+				myField.focus();
+			}
+			else if (myField.selectionStart || myField.selectionStart == '0') {
+				var startPos = myField.selectionStart;
+				var endPos = myField.selectionEnd;
+				var cursorPos = endPos;
+				myField.value = myField.value.substring(0, startPos)
+							  + tag
+							  + myField.value.substring(endPos, myField.value.length);
+				cursorPos += tag.length;
+				myField.focus();
+				myField.selectionStart = cursorPos;
+				myField.selectionEnd = cursorPos;
+			}
+			else {
+				myField.value += tag;
+				myField.focus();
+			}
+		}
+	/* ]]> */
+	</script>
+			
+		<div id="respond" class="comment-respond">
+			<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#respond" style="display:none;">Cancel reply</a></small></h3>
+			<form id="commentform" class="comment-form">
+				<iframe src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/saved_resource(4).html" allowtransparency="false" style="width:100%; height: 430px;border:0;" frameborder="0" scrolling="no" name="jetpack_remote_comment" id="jetpack_remote_comment"></iframe>
+			<input id="ak_js" name="ak_js" type="hidden" value="1486146489714"></form>
+		</div>
+
+		
+		<input type="hidden" name="comment_parent" id="comment_parent" value="">
+
+				<div class="trackbacks-pingbacks">
+			<h3>Trackbacks and Pingbacks:</h3>
+			<ul id="pinglist">
+				    <li id="comment-3048">
+        <a href="http://ghichepcanhan.com/2013/07/13/easily-integrateload-phpexcel-into-codeigniter-framework/" rel="external nofollow" class="url">Easily integrate/load PHPExcel into CodeIgniter Framework | Ghi chép cá nhân</a> - Pingback on 2013/07/13/ 10:19</li><!-- #comment-## -->
+    <li id="comment-28321">
+        <a href="http://www.ahowto.net/php/easily-integrateload-phpexcel-into-codeigniter-framework" rel="external nofollow" class="url">php: Easily integrate/load PHPExcel into CodeIgniter Framework</a> - Pingback on 2014/09/05/ 18:23</li><!-- #comment-## -->
+    <li id="comment-33551">
+        <a href="http://www.eterniinrete.it/wordpress/?p=107" rel="external nofollow" class="url">PHPExcel e Codeigniter | Journal</a> - Pingback on 2015/12/04/ 17:44</li><!-- #comment-## -->
+			</ul>
+		</div>
+	</div><!--content-->
+<div id="sidebar-border">
+	<div id="rss_border">
+		<div class="rss_border">
+			<div id="rss_wrap">
+				<div class="rss_wrap">
+										<a class="rss " href="http://www.ahowto.net/feed/" rel="bookmark" title="RSS Feed">RSS Feed</a>
+										<a class="twitter" href="http://twitter.com/achmadz" rel="author" title="Follow me on twitter.">Follow me on twitter.</a>
+															<a class="facebook" href="http://facebook.com/chmdznr" rel="author" title="Facebook">Facebook</a>
+																								</div>
+			</div>
+		</div>
+	</div>
+	<div id="sidebar">
+
+<div id="blog_subscription-2" class="widget jetpack_subscription_widget"><h3 class="widgettitle">Subscribe to Blog via Email</h3>
+			<form action="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#" method="post" accept-charset="utf-8" id="subscribe-blog-blog_subscription-2">
+				<div id="subscribe-text"><p>Enter your email address to subscribe to this blog and receive notifications of new posts by email.</p>
+</div><p>Join 60 other subscribers</p>
+					<p id="subscribe-email">
+						<label id="jetpack-subscribe-label" for="subscribe-field-blog_subscription-2" style="clip: rect(1px 1px 1px 1px); position: absolute; height: 1px; width: 1px; overflow: hidden;">
+							Email Address						</label>
+						<input type="email" name="email" required="required" class="required" value="" id="subscribe-field-blog_subscription-2" placeholder="Email Address">
+					</p>
+
+					<p id="subscribe-submit">
+						<input type="hidden" name="action" value="subscribe">
+						<input type="hidden" name="source" value="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/">
+						<input type="hidden" name="sub-type" value="widget">
+						<input type="hidden" name="redirect_fragment" value="blog_subscription-2">
+												<input type="submit" value="Subscribe" name="jetpack_subscriptions_widget">
+					</p>
+							</form>
+
+			<script>
+			/*
+			Custom functionality for safari and IE
+			 */
+			(function( d ) {
+				// In case the placeholder functionality is available we remove labels
+				if ( ( 'placeholder' in d.createElement( 'input' ) ) ) {
+					var label = d.querySelector( 'label[for=subscribe-field-blog_subscription-2]' );
+						label.style.clip 	 = 'rect(1px, 1px, 1px, 1px)';
+						label.style.position = 'absolute';
+						label.style.height   = '1px';
+						label.style.width    = '1px';
+						label.style.overflow = 'hidden';
+				}
+
+				// Make sure the email value is filled in before allowing submit
+				var form = d.getElementById('subscribe-blog-blog_subscription-2'),
+					input = d.getElementById('subscribe-field-blog_subscription-2'),
+					handler = function( event ) {
+						if ( '' === input.value ) {
+							input.focus();
+
+							if ( event.preventDefault ){
+								event.preventDefault();
+							}
+
+							return false;
+						}
+					};
+
+				if ( window.addEventListener ) {
+					form.addEventListener( 'submit', handler, false );
+				} else {
+					form.attachEvent( 'onsubmit', handler );
+				}
+			})( document );
+			</script>
+				
+</div>		<div id="recent-posts-2" class="widget widget_recent_entries">		<h3 class="widgettitle">Recent Posts</h3>		<ul>
+					<li>
+				<a href="http://www.ahowto.net/php/codeigniter-and-xmlrpc/">CodeIgniter and XMLRPC</a>
+							<span class="post-date">2016/05/22</span>
+						</li>
+					<li>
+				<a href="http://www.ahowto.net/php/codeigniter-and-nusoap/">CodeIgniter and NuSOAP</a>
+							<span class="post-date">2016/05/21</span>
+						</li>
+					<li>
+				<a href="http://www.ahowto.net/project/gmap-net-component-moving-marker/">GMap.NET component : Moving Marker</a>
+							<span class="post-date">2016/04/23</span>
+						</li>
+					<li>
+				<a href="http://www.ahowto.net/mt_rand/cygwin-failed-to-build-ardupilot-because-of-isnan-isinf/">cygwin: failed to build ArduPilot because of isnan / isinf</a>
+							<span class="post-date">2016/04/22</span>
+						</li>
+					<li>
+				<a href="http://www.ahowto.net/mt_rand/test-4g-lte-semarang/">Test 4G LTE Semarang</a>
+							<span class="post-date">2016/04/19</span>
+						</li>
+				</ul>
+		</div>		<div id="text-2" class="widget widget_text">			<div class="textwidget"><a href="https://plus.google.com/116868083050249657616" rel="publisher"></a>
+</div>
+		</div><div id="categories-3" class="widget widget_categories"><h3 class="widgettitle">Categories</h3>		<ul>
+	<li class="cat-item cat-item-11"><a href="http://www.ahowto.net/category/android/">android</a> (1)
+</li>
+	<li class="cat-item cat-item-8"><a href="http://www.ahowto.net/category/delphi/">delphi</a> (2)
+</li>
+	<li class="cat-item cat-item-16"><a href="http://www.ahowto.net/category/featured-articles/">Featured Articles</a> (11)
+</li>
+	<li class="cat-item cat-item-10"><a href="http://www.ahowto.net/category/internet/">internet</a> (12)
+</li>
+	<li class="cat-item cat-item-13"><a href="http://www.ahowto.net/category/lazarusfpc/">Lazarus/FPC</a> (2)
+</li>
+	<li class="cat-item cat-item-4"><a href="http://www.ahowto.net/category/linux/">linux</a> (22)
+</li>
+	<li class="cat-item cat-item-14"><a href="http://www.ahowto.net/category/matlab/">matlab</a> (7)
+</li>
+	<li class="cat-item cat-item-3"><a href="http://www.ahowto.net/category/mt_rand/">mt_rand</a> (8)
+</li>
+	<li class="cat-item cat-item-7"><a href="http://www.ahowto.net/category/php/">php</a> (23)
+</li>
+	<li class="cat-item cat-item-6"><a href="http://www.ahowto.net/category/project/">project</a> (8)
+</li>
+	<li class="cat-item cat-item-12"><a href="http://www.ahowto.net/category/review/">review</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="http://www.ahowto.net/category/uncategorized/">Uncategorized</a> (2)
+</li>
+	<li class="cat-item cat-item-9"><a href="http://www.ahowto.net/category/windows/">windows</a> (14)
+</li>
+		</ul>
+</div><div id="tag_cloud-3" class="widget widget_tag_cloud"><h3 class="widgettitle">Tags</h3><div class="tagcloud"><a href="http://www.ahowto.net/tag/android/" class="tag-link-107 tag-link-position-1" title="4 topics" style="font-size: 11.08pt;">android</a>
+<a href="http://www.ahowto.net/tag/apt/" class="tag-link-60 tag-link-position-2" title="5 topics" style="font-size: 12.2pt;">apt</a>
+<a href="http://www.ahowto.net/tag/asus/" class="tag-link-18 tag-link-position-3" title="2 topics" style="font-size: 8pt;">asus</a>
+<a href="http://www.ahowto.net/tag/azure/" class="tag-link-44 tag-link-position-4" title="2 topics" style="font-size: 8pt;">azure</a>
+<a href="http://www.ahowto.net/tag/bing-com/" class="tag-link-24 tag-link-position-5" title="6 topics" style="font-size: 13.18pt;">bing.com</a>
+<a href="http://www.ahowto.net/tag/bios/" class="tag-link-21 tag-link-position-6" title="2 topics" style="font-size: 8pt;">bios</a>
+<a href="http://www.ahowto.net/tag/codeigniter/" class="tag-link-34 tag-link-position-7" title="10 topics" style="font-size: 15.84pt;">codeigniter</a>
+<a href="http://www.ahowto.net/tag/datamarket/" class="tag-link-45 tag-link-position-8" title="2 topics" style="font-size: 8pt;">datamarket</a>
+<a href="http://www.ahowto.net/tag/debian/" class="tag-link-59 tag-link-position-9" title="14 topics" style="font-size: 17.8pt;">debian</a>
+<a href="http://www.ahowto.net/tag/delphi/" class="tag-link-105 tag-link-position-10" title="4 topics" style="font-size: 11.08pt;">delphi</a>
+<a href="http://www.ahowto.net/tag/fpc/" class="tag-link-51 tag-link-position-11" title="2 topics" style="font-size: 8pt;">fpc</a>
+<a href="http://www.ahowto.net/tag/freepascal/" class="tag-link-47 tag-link-position-12" title="2 topics" style="font-size: 8pt;">freepascal</a>
+<a href="http://www.ahowto.net/tag/freeware/" class="tag-link-65 tag-link-position-13" title="10 topics" style="font-size: 15.84pt;">freeware</a>
+<a href="http://www.ahowto.net/tag/gadget/" class="tag-link-69 tag-link-position-14" title="5 topics" style="font-size: 12.2pt;">gadget</a>
+<a href="http://www.ahowto.net/tag/gis/" class="tag-link-88 tag-link-position-15" title="7 topics" style="font-size: 13.88pt;">gis</a>
+<a href="http://www.ahowto.net/tag/google/" class="tag-link-40 tag-link-position-16" title="7 topics" style="font-size: 13.88pt;">google</a>
+<a href="http://www.ahowto.net/tag/guide/" class="tag-link-30 tag-link-position-17" title="4 topics" style="font-size: 11.08pt;">GUIDE</a>
+<a href="http://www.ahowto.net/tag/htaccess/" class="tag-link-78 tag-link-position-18" title="4 topics" style="font-size: 11.08pt;">htaccess</a>
+<a href="http://www.ahowto.net/tag/image/" class="tag-link-56 tag-link-position-19" title="4 topics" style="font-size: 11.08pt;">image</a>
+<a href="http://www.ahowto.net/tag/internet/" class="tag-link-102 tag-link-position-20" title="19 topics" style="font-size: 19.48pt;">internet</a>
+<a href="http://www.ahowto.net/tag/lazarus/" class="tag-link-52 tag-link-position-21" title="2 topics" style="font-size: 8pt;">lazarus</a>
+<a href="http://www.ahowto.net/tag/library/" class="tag-link-35 tag-link-position-22" title="6 topics" style="font-size: 13.18pt;">library</a>
+<a href="http://www.ahowto.net/tag/linux/" class="tag-link-106 tag-link-position-23" title="24 topics" style="font-size: 20.88pt;">linux</a>
+<a href="http://www.ahowto.net/tag/matlab/" class="tag-link-103 tag-link-position-24" title="7 topics" style="font-size: 13.88pt;">matlab</a>
+<a href="http://www.ahowto.net/tag/m-script/" class="tag-link-31 tag-link-position-25" title="7 topics" style="font-size: 13.88pt;">m script</a>
+<a href="http://www.ahowto.net/tag/mysql/" class="tag-link-53 tag-link-position-26" title="4 topics" style="font-size: 11.08pt;">mysql</a>
+<a href="http://www.ahowto.net/tag/open-source/" class="tag-link-64 tag-link-position-27" title="17 topics" style="font-size: 18.92pt;">open source</a>
+<a href="http://www.ahowto.net/tag/pascal/" class="tag-link-50 tag-link-position-28" title="4 topics" style="font-size: 11.08pt;">pascal</a>
+<a href="http://www.ahowto.net/tag/payment-proof/" class="tag-link-27 tag-link-position-29" title="4 topics" style="font-size: 11.08pt;">payment proof</a>
+<a href="http://www.ahowto.net/tag/php/" class="tag-link-100 tag-link-position-30" title="29 topics" style="font-size: 22pt;">php</a>
+<a href="http://www.ahowto.net/tag/phpexcel/" class="tag-link-67 tag-link-position-31" title="2 topics" style="font-size: 8pt;">phpexcel</a>
+<a href="http://www.ahowto.net/tag/phpoffice/" class="tag-link-38 tag-link-position-32" title="2 topics" style="font-size: 8pt;">phpoffice</a>
+<a href="http://www.ahowto.net/tag/project/" class="tag-link-104 tag-link-position-33" title="8 topics" style="font-size: 14.58pt;">project</a>
+<a href="http://www.ahowto.net/tag/review/" class="tag-link-101 tag-link-position-34" title="9 topics" style="font-size: 15.28pt;">review</a>
+<a href="http://www.ahowto.net/tag/script/" class="tag-link-23 tag-link-position-35" title="26 topics" style="font-size: 21.3pt;">script</a>
+<a href="http://www.ahowto.net/tag/server/" class="tag-link-77 tag-link-position-36" title="14 topics" style="font-size: 17.8pt;">server</a>
+<a href="http://www.ahowto.net/tag/tablet/" class="tag-link-70 tag-link-position-37" title="2 topics" style="font-size: 8pt;">tablet</a>
+<a href="http://www.ahowto.net/tag/treq/" class="tag-link-68 tag-link-position-38" title="2 topics" style="font-size: 8pt;">treq</a>
+<a href="http://www.ahowto.net/tag/utility/" class="tag-link-63 tag-link-position-39" title="18 topics" style="font-size: 19.2pt;">utility</a>
+<a href="http://www.ahowto.net/tag/video/" class="tag-link-72 tag-link-position-40" title="4 topics" style="font-size: 11.08pt;">video</a>
+<a href="http://www.ahowto.net/tag/webcam/" class="tag-link-43 tag-link-position-41" title="2 topics" style="font-size: 8pt;">webcam</a>
+<a href="http://www.ahowto.net/tag/web-service/" class="tag-link-46 tag-link-position-42" title="10 topics" style="font-size: 15.84pt;">web service</a>
+<a href="http://www.ahowto.net/tag/windows/" class="tag-link-99 tag-link-position-43" title="16 topics" style="font-size: 18.5pt;">windows</a>
+<a href="http://www.ahowto.net/tag/wordpress/" class="tag-link-87 tag-link-position-44" title="4 topics" style="font-size: 11.08pt;">wordpress</a>
+<a href="http://www.ahowto.net/tag/ytconv/" class="tag-link-39 tag-link-position-45" title="4 topics" style="font-size: 11.08pt;">ytconv</a></div>
+</div>
+
+	</div><!-- end: #sidebar -->
+</div><!-- end: #sidebar-border --></div><!--wrapper-->
+<div class="clear"></div>
+<div id="footer">
+	<div id="footer-inside">
+		<p>
+			Copyright © 2017 Simple. Clean. Works!			| Powered by <a href="http://zww.me/">zBench</a> and <a href="http://wordpress.org/">WordPress</a>		</p>
+		<span id="back-to-top">↑ <a href="http://www.ahowto.net/php/read-and-write-excel-file-using-php-example/#" rel="nofollow" title="Back to top">Top</a></span>
+	</div>
+</div><!--footer-->
+
+<script type="text/javascript">
+	//////// Handles toggling the navigation menu for small screens
+	( function() {
+		var nav = document.getElementById( 'menus' ), button = document.getElementById( 'menus-m' ), menu = document.getElementById( 'menus-dt' );
+		if ( ! nav ) {
+			return;
+		}
+		if ( ! button ) {
+			return;
+		}
+		// Hide button if menu is missing or empty.
+		if ( ! menu || ! menu.childNodes.length ) {
+			button.style.display = 'none';
+			return;
+		}
+		button.onclick = function() {
+			if ( -1 !== button.className.indexOf( 'b-toggled-on' ) ) {
+				button.className = button.className.replace( ' b-toggled-on', '' );
+				menu.className = menu.className.replace( ' toggled-on', '' );
+			} else {
+				button.className += ' b-toggled-on';
+				menu.className += ' toggled-on';
+			}
+		};
+	} )();
+</script>
+
+	<div style="display:none">
+	<div class="grofile-hash-map-3469c1ecd2f2b20e48f7e6cded1bc353">
+	</div>
+	<div class="grofile-hash-map-39ced2183e55d91c3ae70cfb74cb365c">
+	</div>
+	<div class="grofile-hash-map-de207896981f567851edfa41f82fe16e">
+	</div>
+	<div class="grofile-hash-map-008162d67d9500ac8aaf637d62db5afa">
+	</div>
+	<div class="grofile-hash-map-e8593fa4157195b69a8996f31f214c82">
+	</div>
+	<div class="grofile-hash-map-dd10c9830b3a151a9c46cc984536d4a3">
+	</div>
+	<div class="grofile-hash-map-149b42a9923810c5e2d4433ab93f9a0d">
+	</div>
+	<div class="grofile-hash-map-aaced7414d5b39a79dc99ffe789519d6">
+	</div>
+	<div class="grofile-hash-map-f057494789ae0d8665bc931c036cd320">
+	</div>
+	<div class="grofile-hash-map-b0409e12892183c4234ca4d13837d420">
+	</div>
+	<div class="grofile-hash-map-54d1ca80bcad361517856287bcfbcbec">
+	</div>
+	<div class="grofile-hash-map-e2fde1f693986efa88bff1e86340beb4">
+	</div>
+	<div class="grofile-hash-map-257e3fc15284fa043f2b840313bd8607">
+	</div>
+	<div class="grofile-hash-map-82ce72e43f87571749f072683a5360b1">
+	</div>
+	<div class="grofile-hash-map-2c897c158c25cd1d4fb89dad24a47dc3">
+	</div>
+	<div class="grofile-hash-map-084258f227aa24267e5d87b35d3ff7c0">
+	</div>
+	<div class="grofile-hash-map-ceba9e4abd094111e4227c737b6aaefa">
+	</div>
+	<div class="grofile-hash-map-02ea7749341ffe887f5fbb92ef21a6f0">
+	</div>
+	<div class="grofile-hash-map-9dc8e06293eca518cf1ba6cff14ab9b8">
+	</div>
+	<div class="grofile-hash-map-381fb7ca104b278a7ac5752f5435e69d">
+	</div>
+	<div class="grofile-hash-map-ae25bf5553dd1a9374e2645259967fda">
+	</div>
+	<div class="grofile-hash-map-5eda1c220e3bd04a79f99bc58ec7fd35">
+	</div>
+	<div class="grofile-hash-map-f4d17a6d1e0d6c9d5408ff3459a7efc1">
+	</div>
+	<div class="grofile-hash-map-0573f6d4790216de13a961b8624da664">
+	</div>
+	<div class="grofile-hash-map-89d04f7277a4ab231d683feb9291d774">
+	</div>
+	<div class="grofile-hash-map-608955377a785553f52db136c9690817">
+	</div>
+	<div class="grofile-hash-map-083adf5409af38dd93214d871dfc359a">
+	</div>
+	<div class="grofile-hash-map-471b44461ce67c32040be8af7c05323a">
+	</div>
+	</div>
+<script type="text/javascript" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/form.js.download"></script>
+<script type="text/javascript" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/photon.js.download"></script>
+<script type="text/javascript" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/jquery.form.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/www.ahowto.net\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","recaptcha":{"messages":{"empty":"Please verify that you are not a robot."}},"sending":"Sending ..."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/scripts.js.download"></script>
+<script type="text/javascript" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/devicepx-jetpack.js.download"></script>
+<script type="text/javascript" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/comment-reply.min.js.download"></script>
+<script type="text/javascript" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/wp-embed.min.js.download"></script>
+<script type="text/javascript" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/postmessage.js.download"></script>
+<script type="text/javascript" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/jquery.jetpack-resize.js.download"></script>
+<script type="text/javascript" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/jquery.inview.js.download"></script>
+<script type="text/javascript" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/queuehandler.js.download"></script>
+		<iframe src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/master.html" scrolling="no" id="likes-master" name="likes-master" style="display:none;"></iframe>
+		<div id="likes-other-gravatars"><div class="likes-text"><span>%d</span> bloggers like this:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+		
+		<!--[if IE]>
+		<script type="text/javascript">
+		if ( 0 === window.location.hash.indexOf( '#comment-' ) ) {
+			// window.location.reload() doesn't respect the Hash in IE
+			window.location.hash = window.location.hash;
+		}
+		</script>
+		<![endif]-->
+		<script type="text/javascript">
+			var comm_par_el = document.getElementById( 'comment_parent' ),
+			    comm_par = (comm_par_el && comm_par_el.value) ? comm_par_el.value : '',
+			    frame = document.getElementById( 'jetpack_remote_comment' ),
+			    tellFrameNewParent;
+
+			tellFrameNewParent = function() {
+				if ( comm_par ) {
+					frame.src = "https://jetpack.wordpress.com/jetpack-comment/?blogid=31522540&postid=39&comment_registration=0&require_name_email=1&stc_enabled=1&stb_enabled=1&show_avatars=1&avatar_default=retro&greeting=Leave+a+Reply&greeting_reply=Leave+a+Reply+to+%25s&color_scheme=light&lang=en_US&jetpack_version=4.4.1&sig=d329cbc7d00098b39f79cae058e2f3ee9a7b97d3#parent=http%3A%2F%2Fwww.ahowto.net%2Fphp%2Fread-and-write-excel-file-using-php-example%2F" + '&replytocom=' + parseInt( comm_par, 10 ).toString();
+				} else {
+					frame.src = "https://jetpack.wordpress.com/jetpack-comment/?blogid=31522540&postid=39&comment_registration=0&require_name_email=1&stc_enabled=1&stb_enabled=1&show_avatars=1&avatar_default=retro&greeting=Leave+a+Reply&greeting_reply=Leave+a+Reply+to+%25s&color_scheme=light&lang=en_US&jetpack_version=4.4.1&sig=d329cbc7d00098b39f79cae058e2f3ee9a7b97d3#parent=http%3A%2F%2Fwww.ahowto.net%2Fphp%2Fread-and-write-excel-file-using-php-example%2F";
+				}
+			};
+
+	
+			if ( 'undefined' !== typeof addComment ) {
+				addComment._Jetpack_moveForm = addComment.moveForm;
+
+				addComment.moveForm = function( commId, parentId, respondId, postId ) {
+					var returnValue = addComment._Jetpack_moveForm( commId, parentId, respondId, postId ), cancelClick, cancel;
+
+					if ( false === returnValue ) {
+						cancel = document.getElementById( 'cancel-comment-reply-link' );
+						cancelClick = cancel.onclick;
+						cancel.onclick = function() {
+							var cancelReturn = cancelClick.call( this );
+							if ( false !== cancelReturn ) {
+								return cancelReturn;
+							}
+
+							if ( !comm_par ) {
+								return cancelReturn;
+							}
+
+							comm_par = 0;
+
+							tellFrameNewParent();
+
+							return cancelReturn;
+						};
+					}
+
+					if ( comm_par == parentId ) {
+						return returnValue;
+					}
+
+					comm_par = parentId;
+
+					tellFrameNewParent();
+
+					return returnValue;
+				};
+			}
+
+	
+			if ( window.postMessage ) {
+				if ( document.addEventListener ) {
+					window.addEventListener( 'message', function( event ) {
+						if ( "https:\/\/jetpack.wordpress.com" !== event.origin ) {
+							return;
+						}
+
+						jQuery( frame ).height( event.data );
+					} );
+				} else if ( document.attachEvent ) {
+					window.attachEvent( 'message', function( event ) {
+						if ( "https:\/\/jetpack.wordpress.com" !== event.origin ) {
+							return;
+						}
+
+						jQuery( frame ).height( event.data );
+					} );
+				}
+			}
+		</script>
+
+	<script type="text/javascript" src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/e-201705.js.download" async="" defer=""></script>
+<script type="text/javascript">
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:4.4.1',blog:'31522540',post:'39',tz:'7',srv:'www.ahowto.net'} ]);
+	_stq.push([ 'clickTrackerInit', '31522540', '39' ]);
+</script>
+
+<img src="./php_ Read and write Excel file using PHP (example)Simple. Clean. Works!_files/g.gif" alt=":)" width="6" height="5" id="wpstats"></body></html>
